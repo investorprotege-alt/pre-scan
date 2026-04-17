@@ -446,46 +446,83 @@ def build_tradingview_actions(scan: dict, session: str, cfg: dict) -> str:
 
 CSS = """
 <style>
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0d1117; color: #e6edf3; margin: 0; padding: 0; }
-  .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
-  h1 { font-size: 1.6em; border-bottom: 2px solid #30363d; padding-bottom: 10px; margin-bottom: 20px; }
-  h2 { font-size: 1.1em; color: #79c0ff; margin: 20px 0 10px; }
-  h3 { font-size: 0.95em; color: #d2a8ff; margin: 14px 0 6px; }
-  .section { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px; margin-bottom: 16px; }
-  .regime-panel { background: #161b22; border: 2px solid #388bfd; border-radius: 8px; padding: 16px; margin-bottom: 16px; }
-  .regime-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-bottom: 10px; }
-  .regime-item { background: #0d1117; border-radius: 6px; padding: 10px; }
-  .label { font-size: 0.75em; color: #8b949e; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; }
-  .value { font-size: 0.95em; }
-  .qqqe-detail { font-size: 0.8em; color: #8b949e; border-top: 1px solid #30363d; padding-top: 8px; margin-top: 4px; }
-  table { width: 100%; border-collapse: collapse; font-size: 0.85em; }
-  th { background: #21262d; color: #8b949e; text-align: left; padding: 8px; font-weight: 600; }
-  td { padding: 7px 8px; border-bottom: 1px solid #21262d; }
-  tr:hover td { background: #1c2128; }
-  tr.top-sector td { background: #0d2818; }
-  tr.highlight td { background: #0d2818; }
-  .badge { display: inline-block; padding: 2px 8px; border-radius: 20px; font-size: 0.8em; font-weight: 600; }
-  .badge.green  { background: #0d4429; color: #56d364; border: 1px solid #238636; }
-  .badge.red    { background: #3d0505; color: #f85149; border: 1px solid #da3633; }
-  .badge.orange { background: #3d2600; color: #e3b341; border: 1px solid #9e6a03; }
-  .badge.blue   { background: #051d4d; color: #79c0ff; border: 1px solid #1f6feb; }
-  .badge.neutral{ background: #21262d; color: #8b949e; border: 1px solid #30363d; }
-  .note { font-size: 0.8em; color: #8b949e; margin: 6px 0; }
-  .checklist-section ul.checklist { list-style: none; padding: 0; }
-  .checklist-section ul.checklist li { padding: 8px 0; border-bottom: 1px solid #21262d; }
-  .checklist-section ul.checklist li label { display: flex; gap: 10px; align-items: flex-start; cursor: pointer; }
-  .checklist-section input[type=checkbox] { margin-top: 2px; width: 16px; height: 16px; accent-color: #238636; }
-  .focus-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
-  .focus-card { border-radius: 6px; padding: 12px; text-align: center; }
-  .focus-card.filled { background: #0d2818; border: 1px solid #238636; }
-  .focus-card.empty  { background: #161b22; border: 2px dashed #30363d; }
-  .focus-ticker { font-size: 1.1em; font-weight: 700; color: #56d364; }
-  .focus-meta   { font-size: 0.75em; color: #8b949e; margin-top: 4px; }
-  .focus-empty  { font-size: 0.8em; color: #484f58; padding: 10px 0; }
-  code { background: #21262d; padding: 1px 5px; border-radius: 3px; font-size: 0.85em; }
-  .header-meta { font-size: 0.85em; color: #8b949e; margin-bottom: 16px; }
-  ul { padding-left: 20px; line-height: 1.8; }
-  li strong { color: #e6edf3; }
+  /* === Light theme — email-safe, no CSS variables, explicit colors throughout === */
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+         background: #f3f4f6; color: #111827; margin: 0; padding: 16px; }
+  .container { max-width: 960px; margin: 0 auto; background: #ffffff;
+               border: 1px solid #d1d5db; border-radius: 10px; padding: 24px; }
+
+  /* --- Headings --- */
+  h1 { font-size: 1.45em; color: #111827; border-bottom: 2px solid #2563eb;
+       padding-bottom: 10px; margin: 0 0 6px 0; }
+  h2 { font-size: 1em; font-weight: 700; color: #2563eb;
+       margin: 18px 0 10px 0; text-transform: uppercase; letter-spacing: 0.04em; }
+  h3 { font-size: 0.9em; font-weight: 700; color: #7c3aed; margin: 12px 0 6px 0; }
+
+  /* --- Sections --- */
+  .section { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px;
+             padding: 14px 16px; margin-bottom: 14px; }
+  .regime-panel { background: #eff6ff; border: 2px solid #2563eb;
+                  border-radius: 8px; padding: 14px 16px; margin-bottom: 14px; }
+
+  /* --- Regime grid (table fallback for email) --- */
+  .regime-grid { display: table; width: 100%; border-spacing: 8px; margin-bottom: 8px; }
+  .regime-item { display: inline-block; background: #ffffff; border: 1px solid #dbeafe;
+                 border-radius: 6px; padding: 8px 12px; margin: 4px; min-width: 130px;
+                 vertical-align: top; }
+  .label { font-size: 0.7em; color: #6b7280; text-transform: uppercase;
+           letter-spacing: 0.06em; margin-bottom: 3px; font-weight: 600; }
+  .value { font-size: 0.9em; color: #111827; font-weight: 500; }
+  .qqqe-detail { font-size: 0.78em; color: #6b7280; border-top: 1px solid #dbeafe;
+                 padding-top: 8px; margin-top: 6px; }
+
+  /* --- Tables --- */
+  table { width: 100%; border-collapse: collapse; font-size: 0.83em; }
+  th { background: #f3f4f6; color: #374151; text-align: left; padding: 7px 10px;
+       font-weight: 700; font-size: 0.8em; text-transform: uppercase;
+       letter-spacing: 0.04em; border-bottom: 2px solid #d1d5db; }
+  td { padding: 6px 10px; border-bottom: 1px solid #e5e7eb; color: #1f2937; }
+  tr.top-sector td { background: #f0fdf4; font-weight: 600; }
+  tr.highlight td  { background: #eff6ff; }
+
+  /* --- Badges (pill labels) --- */
+  .badge { display: inline-block; padding: 2px 9px; border-radius: 20px;
+           font-size: 0.75em; font-weight: 700; white-space: nowrap; }
+  .badge.green   { background: #dcfce7; color: #166534; border: 1px solid #86efac; }
+  .badge.red     { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }
+  .badge.orange  { background: #fef9c3; color: #854d0e; border: 1px solid #fde047; }
+  .badge.blue    { background: #dbeafe; color: #1e40af; border: 1px solid #93c5fd; }
+  .badge.neutral { background: #f3f4f6; color: #4b5563; border: 1px solid #d1d5db; }
+
+  /* --- Notes & meta --- */
+  .note { font-size: 0.78em; color: #6b7280; margin: 5px 0; }
+  .header-meta { font-size: 0.83em; color: #6b7280; margin-bottom: 14px; }
+  code { background: #f3f4f6; color: #111827; padding: 1px 5px;
+         border-radius: 3px; font-size: 0.85em; border: 1px solid #e5e7eb; }
+
+  /* --- Checklist --- */
+  .checklist-section ul.checklist { list-style: none; padding: 0; margin: 0; }
+  .checklist-section ul.checklist li { padding: 7px 0; border-bottom: 1px solid #e5e7eb; }
+  .checklist-section ul.checklist li:last-child { border-bottom: none; }
+  .checklist-section ul.checklist li label { display: flex; gap: 10px; cursor: pointer;
+                                              align-items: flex-start; color: #1f2937; }
+  .checklist-section input[type=checkbox] { margin-top: 2px; width: 15px; height: 15px;
+                                             accent-color: #2563eb; flex-shrink: 0; }
+
+  /* --- Focus list cards --- */
+  .focus-grid { display: table; width: 100%; }
+  .focus-card { display: inline-block; border-radius: 6px; padding: 10px 8px;
+                text-align: center; width: 18%; margin: 0 1%; vertical-align: top; }
+  .focus-card.filled { background: #f0fdf4; border: 1px solid #86efac; }
+  .focus-card.empty  { background: #f9fafb; border: 2px dashed #d1d5db; }
+  .focus-ticker { font-size: 1.05em; font-weight: 800; color: #166534; }
+  .focus-meta   { font-size: 0.7em; color: #6b7280; margin-top: 3px; }
+  .focus-empty  { font-size: 0.78em; color: #9ca3af; padding: 8px 0; }
+
+  /* --- Lists --- */
+  ul { padding-left: 20px; line-height: 1.9; color: #1f2937; }
+  li strong { color: #111827; }
+  ol { padding-left: 20px; line-height: 2; color: #1f2937; }
 </style>
 """
 
