@@ -39,10 +39,42 @@ AEST = pytz.timezone("Australia/Sydney")
 
 
 def load_email_config() -> dict:
-    if not EMAIL_CFG_PATH.exists():
-        return {"enabled": False, "error": "email_config.json not found"}
-    with open(EMAIL_CFG_PATH) as f:
-        return json.load(f)
+    """
+    Load email config from environment variables first (GitHub Actions / CI),
+    falling back to the local config/email_config.json file.
+
+    Environment variables (all optional, override JSON values):
+      GMAIL_APP_PASSWORD  — Gmail App Password (16 chars, no spaces)
+      GMAIL_SENDER        — Sending address (default: beeblegums@gmail.com)
+      GMAIL_RECIPIENT     — Receiving address (default: beeblegums@gmail.com)
+    """
+    # Start with file-based config if available
+    cfg = {}
+    if EMAIL_CFG_PATH.exists():
+        with open(EMAIL_CFG_PATH) as f:
+            cfg = json.load(f)
+
+    # Environment variables take precedence (used by GitHub Actions)
+    env_password  = os.environ.get("GMAIL_APP_PASSWORD", "").replace(" ", "")
+    env_sender    = os.environ.get("GMAIL_SENDER", "")
+    env_recipient = os.environ.get("GMAIL_RECIPIENT", "")
+
+    if env_password:
+        cfg["app_password"] = env_password
+        cfg["enabled"] = True          # env var presence implies intent to send
+    if env_sender:
+        cfg["sender_address"] = env_sender
+    if env_recipient:
+        cfg["recipient_address"] = env_recipient
+
+    # Apply defaults if still missing
+    cfg.setdefault("smtp_host",         "smtp.gmail.com")
+    cfg.setdefault("smtp_port",         587)
+    cfg.setdefault("sender_address",    "beeblegums@gmail.com")
+    cfg.setdefault("recipient_address", "beeblegums@gmail.com")
+    cfg.setdefault("enabled",           False)
+
+    return cfg
 
 
 def load_watchlist_config() -> dict:

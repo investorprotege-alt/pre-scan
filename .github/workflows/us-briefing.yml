@@ -1,0 +1,51 @@
+name: US Pre-Market Briefing
+
+# Runs Sun–Thu at 10:20 PM AEST (12:20 UTC Sun–Thu)
+# Note: during AEDT (daylight saving, Oct–Apr) this fires at 11:20 PM local —
+#       still 10 minutes before the 11:30 PM US open.
+on:
+  schedule:
+    - cron: '20 12 * * 0,1,2,3,4'   # Sun–Thu 12:20 UTC = Sun–Thu 10:20 PM AEST
+  workflow_dispatch:                  # allow manual "Run workflow" from GitHub UI
+
+jobs:
+  us-briefing:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20             # finviz_screener takes 2–3 min, allow headroom
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run sector scan
+        run: python scripts/sector_scan.py
+
+      - name: Run breadth monitor
+        run: python scripts/breadth_monitor.py
+
+      - name: Run Finviz screeners (Jeff Sun 4 scans)
+        run: python scripts/finviz_screener.py
+
+      - name: Generate briefing and send email
+        env:
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          GMAIL_SENDER:       ${{ secrets.GMAIL_SENDER }}
+          GMAIL_RECIPIENT:    ${{ secrets.GMAIL_RECIPIENT }}
+        run: python scripts/send_briefing.py --session=us --no-browser
+
+      - name: Upload briefing as artifact
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: us-briefing-${{ github.run_id }}
+          path: data/briefing_us_*.html
+          retention-days: 7

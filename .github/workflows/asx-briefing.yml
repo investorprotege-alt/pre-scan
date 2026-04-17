@@ -1,0 +1,48 @@
+name: ASX Pre-Market Briefing
+
+# Runs Mon–Fri at 6:50 AM AEST (20:50 UTC Sun–Thu)
+# Note: during AEDT (daylight saving, Oct–Apr) this fires at 7:50 AM local —
+#       still well before the 10:00 AM ASX open.
+on:
+  schedule:
+    - cron: '50 20 * * 0,1,2,3,4'   # Sun–Thu 20:50 UTC = Mon–Fri 6:50 AM AEST
+  workflow_dispatch:                  # allow manual "Run workflow" from GitHub UI
+
+jobs:
+  asx-briefing:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run sector scan
+        run: python scripts/sector_scan.py
+
+      - name: Run breadth monitor
+        run: python scripts/breadth_monitor.py
+
+      - name: Generate briefing and send email
+        env:
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          GMAIL_SENDER:       ${{ secrets.GMAIL_SENDER }}
+          GMAIL_RECIPIENT:    ${{ secrets.GMAIL_RECIPIENT }}
+        run: python scripts/send_briefing.py --session=asx --no-browser
+
+      - name: Upload briefing as artifact
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: asx-briefing-${{ github.run_id }}
+          path: data/briefing_asx_*.html
+          retention-days: 7

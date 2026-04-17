@@ -1,0 +1,37 @@
+name: Weekly RS Rankings
+
+# Runs every Sunday at 6:00 AM AEST (Saturday 20:00 UTC)
+# Refreshes IBD-style weighted RS scores for S&P 500 + ASX 200 universes.
+on:
+  schedule:
+    - cron: '0 20 * * 6'   # Saturday 20:00 UTC = Sunday 6:00 AM AEST
+  workflow_dispatch:         # allow manual "Run workflow" from GitHub UI
+
+jobs:
+  rs-ranker:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30     # downloads 700+ tickers, takes 5–15 min
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run RS ranker
+        run: python scripts/rs_ranker.py
+
+      - name: Upload RS rankings as artifact
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: rs-rankings-${{ github.run_id }}
+          path: data/rs_rankings.json
+          retention-days: 14
