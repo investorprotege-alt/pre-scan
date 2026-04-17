@@ -31,6 +31,7 @@ jobs:
 
       - name: Run RS ranker
         run: python scripts/rs_ranker.py
+        continue-on-error: true
 
       - name: Commit RS rankings for dashboard
         env:

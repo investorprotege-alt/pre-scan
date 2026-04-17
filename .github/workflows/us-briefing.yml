@@ -32,12 +32,15 @@ jobs:
 
       - name: Run sector scan
         run: python scripts/sector_scan.py
+        continue-on-error: true
 
       - name: Run breadth monitor
         run: python scripts/breadth_monitor.py
+        continue-on-error: true
 
       - name: Run Finviz screeners (Jeff Sun 4 scans)
         run: python scripts/finviz_screener.py
+        continue-on-error: true
 
       - name: Generate briefing and send email
         env:
