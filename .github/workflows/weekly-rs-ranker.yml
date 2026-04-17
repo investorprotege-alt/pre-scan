@@ -42,7 +42,7 @@ jobs:
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
           git add data/rs_rankings.json
           git diff --staged --quiet || git commit -m "chore: refresh RS rankings (weekly) [skip ci]"
-          git pull --rebase origin ${{ github.ref_name }}
+          git pull --rebase -X theirs origin ${{ github.ref_name }}
           git push origin HEAD:${{ github.ref_name }}
 
       - name: Upload RS rankings as artifact
