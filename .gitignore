@@ -1,5 +1,8 @@
-# Generated data files (rebuilt by scripts on each run)
-data/
+# Generated HTML briefings (large, ephemeral — uploaded as Actions artifacts)
+data/briefing_*.html
+
+# Keep JSON data files tracked so GitHub Pages dashboard can read them
+# data/*.json  ← intentionally NOT ignored
 
 # Email config contains Gmail App Password — never commit this
 config/email_config.json

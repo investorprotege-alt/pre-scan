@@ -28,6 +28,14 @@ jobs:
       - name: Run RS ranker
         run: python scripts/rs_ranker.py
 
+      - name: Commit RS rankings for dashboard
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/rs_rankings.json
+          git diff --staged --quiet || git commit -m "chore: refresh RS rankings (weekly) [skip ci]"
+          git push
+
       - name: Upload RS rankings as artifact
         uses: actions/upload-artifact@v4
         if: always()

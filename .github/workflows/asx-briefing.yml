@@ -39,6 +39,14 @@ jobs:
           GMAIL_RECIPIENT:    ${{ secrets.GMAIL_RECIPIENT }}
         run: python scripts/send_briefing.py --session=asx --no-browser
 
+      - name: Commit data files for dashboard
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/*.json
+          git diff --staged --quiet || git commit -m "chore: refresh market data (ASX session) [skip ci]"
+          git push
+
       - name: Upload briefing as artifact
         uses: actions/upload-artifact@v4
         if: always()
