@@ -33,12 +33,15 @@ jobs:
         run: python scripts/rs_ranker.py
 
       - name: Commit RS rankings for dashboard
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
           git add data/rs_rankings.json
           git diff --staged --quiet || git commit -m "chore: refresh RS rankings (weekly) [skip ci]"
-          git push
+          git push origin HEAD:${{ github.ref_name }}
 
       - name: Upload RS rankings as artifact
         uses: actions/upload-artifact@v4

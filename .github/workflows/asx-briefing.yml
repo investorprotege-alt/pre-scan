@@ -44,12 +44,15 @@ jobs:
         run: python scripts/send_briefing.py --session=asx --no-browser
 
       - name: Commit data files for dashboard
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
           git add data/*.json
           git diff --staged --quiet || git commit -m "chore: refresh market data (ASX session) [skip ci]"
-          git push
+          git push origin HEAD:${{ github.ref_name }}
 
       - name: Upload briefing as artifact
         uses: actions/upload-artifact@v4
