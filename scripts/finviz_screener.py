@@ -137,7 +137,7 @@ def download_universe(tickers: list) -> pd.DataFrame:
 
         def pct_ret(n):
             if len(c) <= n:
-                return None
+                return np.nan
             return round((float(c.iloc[-1]) / float(c.iloc[-1 - n]) - 1) * 100, 2)
 
         ret_1w  = pct_ret(5)
@@ -146,7 +146,7 @@ def download_universe(tickers: list) -> pd.DataFrame:
         ret_6m  = pct_ret(126)
 
         sma50   = float(c.rolling(50).mean().iloc[-1])
-        sma200  = float(c.rolling(200).mean().iloc[-1]) if len(c) >= 200 else None
+        sma200  = float(c.rolling(200).mean().iloc[-1]) if len(c) >= 200 else np.nan
         ema10   = float(c.ewm(span=10, adjust=False).mean().iloc[-1])
         ema21   = float(c.ewm(span=21, adjust=False).mean().iloc[-1])
         high_52w = float(h.iloc[-252:].max()) if len(h) >= 252 else float(h.max())
