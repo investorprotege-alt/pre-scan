@@ -1,0 +1,18 @@
+{
+  "generated_at": "2026-04-17T20:46:34.921034+10:00",
+  "mmtw_proxy": {
+    "mmtw_proxy": null,
+    "error": "no tickers"
+  },
+  "nh_nl": {
+    "error": "HTTP 404"
+  },
+  "mco_mcsi": {
+    "mco": null,
+    "mcsi": null,
+    "error": "no tickers"
+  },
+  "breadth_score": 0,
+  "breadth_summary": "BEARISH",
+  "breadth_factors": []
+}
