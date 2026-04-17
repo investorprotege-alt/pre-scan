@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pre-Market Trading Dashboard</title>
+<style>
+/* ===== RESET & BASE ===== */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0d1117;--bg2:#161b22;--bg3:#21262d;
+  --border:#30363d;--border2:#21262d;
+  --text:#e6edf3;--muted:#8b949e;--dim:#484f58;
+  --green:#56d364;--green-bg:#0d4429;--green-border:#238636;
+  --red:#f85149;--red-bg:#3d0505;--red-border:#da3633;
+  --orange:#e3b341;--orange-bg:#3d2600;--orange-border:#9e6a03;
+  --blue:#79c0ff;--blue-bg:#051d4d;--blue-border:#1f6feb;
+  --purple:#d2a8ff;
+}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:14px;line-height:1.5}
+
+/* ===== LAYOUT ===== */
+.app{display:grid;grid-template-rows:auto 1fr;height:100vh}
+.topbar{background:var(--bg2);border-bottom:1px solid var(--border);padding:10px 20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.topbar h1{font-size:1em;font-weight:700;color:var(--text)}
+.topbar .time-display{font-size:0.85em;color:var(--muted);margin-left:auto}
+.main{display:grid;grid-template-columns:220px 1fr;overflow:hidden}
+.sidebar{background:var(--bg2);border-right:1px solid var(--border);padding:12px 0;overflow-y:auto}
+.content{overflow-y:auto;padding:16px}
+
+/* ===== REGIME BAR ===== */
+.regime-bar{background:var(--bg2);border:2px solid var(--blue-border);border-radius:8px;padding:12px 16px;margin-bottom:16px;display:flex;gap:20px;flex-wrap:wrap;align-items:center}
+.regime-item{display:flex;flex-direction:column;gap:2px}
+.regime-label{font-size:0.7em;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em}
+.regime-value{font-size:0.9em;font-weight:600}
+
+/* ===== TABS ===== */
+.tab-nav{display:flex;gap:4px;margin-bottom:16px;border-bottom:1px solid var(--border);padding-bottom:0}
+.tab-btn{background:none;border:none;color:var(--muted);padding:8px 16px;cursor:pointer;border-bottom:2px solid transparent;font-size:0.9em;font-weight:500;transition:all 0.15s;margin-bottom:-1px}
+.tab-btn:hover{color:var(--text)}
+.tab-btn.active{color:var(--blue);border-bottom-color:var(--blue)}
+.tab-panel{display:none}
+.tab-panel.active{display:block}
+
+/* ===== SIDEBAR NAV ===== */
+.nav-section{padding:8px 12px 4px;font-size:0.7em;text-transform:uppercase;letter-spacing:0.08em;color:var(--dim);font-weight:600}
+.nav-item{display:block;padding:6px 16px;color:var(--muted);cursor:pointer;border-left:3px solid transparent;font-size:0.85em;transition:all 0.1s;background:none;border-top:none;border-right:none;border-bottom:none;width:100%;text-align:left}
+.nav-item:hover{color:var(--text);background:var(--bg3)}
+.nav-item.active{color:var(--blue);border-left-color:var(--blue);background:rgba(31,111,235,0.08)}
+
+/* ===== CARDS & SECTIONS ===== */
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:14px;margin-bottom:14px}
+.card h2{font-size:0.95em;color:var(--blue);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.card h3{font-size:0.85em;color:var(--purple);margin:12px 0 8px}
+.step-number{background:var(--blue-bg);color:var(--blue);border:1px solid var(--blue-border);border-radius:50%;width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;font-size:0.75em;font-weight:700;flex-shrink:0}
+
+/* ===== TABLES ===== */
+table{width:100%;border-collapse:collapse;font-size:0.82em}
+th{background:var(--bg3);color:var(--muted);text-align:left;padding:6px 8px;font-weight:600;font-size:0.8em;text-transform:uppercase;letter-spacing:0.03em}
+td{padding:6px 8px;border-bottom:1px solid var(--border2)}
+tr:hover td{background:var(--bg3)}
+tr.top-row td{background:rgba(13,68,41,0.4)}
+tr.top-row:hover td{background:rgba(13,68,41,0.7)}
+.loading-row td{color:var(--muted);font-style:italic}
+
+/* ===== BADGES ===== */
+.badge{display:inline-block;padding:1px 7px;border-radius:20px;font-size:0.75em;font-weight:600;white-space:nowrap}
+.badge.g{background:var(--green-bg);color:var(--green);border:1px solid var(--green-border)}
+.badge.r{background:var(--red-bg);color:var(--red);border:1px solid var(--red-border)}
+.badge.o{background:var(--orange-bg);color:var(--orange);border:1px solid var(--orange-border)}
+.badge.b{background:var(--blue-bg);color:var(--blue);border:1px solid var(--blue-border)}
+.badge.n{background:var(--bg3);color:var(--muted);border:1px solid var(--border)}
+
+/* ===== CHECKLIST ===== */
+.checklist{list-style:none}
+.checklist li{padding:8px 0;border-bottom:1px solid var(--border2);display:flex;gap:10px;align-items:flex-start}
+.checklist li:last-child{border-bottom:none}
+.checklist label{display:flex;gap:10px;cursor:pointer;align-items:flex-start;flex:1}
+.checklist input[type=checkbox]{width:16px;height:16px;accent-color:var(--green);margin-top:1px;flex-shrink:0;cursor:pointer}
+.check-cat{color:var(--muted);font-size:0.8em;min-width:90px}
+.check-desc{color:var(--text);font-size:0.85em}
+.checklist li.checked label .check-cat,
+.checklist li.checked label .check-desc{color:var(--dim)}
+
+/* ===== FOCUS CARDS ===== */
+.focus-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:8px}
+.focus-card{border-radius:6px;padding:12px 8px;text-align:center;min-height:80px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:border-color 0.15s}
+.focus-card.filled{background:var(--green-bg);border:1px solid var(--green-border)}
+.focus-card.empty{background:var(--bg2);border:2px dashed var(--border);color:var(--dim);font-size:0.8em}
+.focus-card.filled:hover{border-color:var(--green)}
+.focus-ticker{font-size:1.15em;font-weight:700;color:var(--green)}
+.focus-meta{font-size:0.7em;color:var(--muted);margin-top:3px}
+
+/* ===== STOCK ROW ===== */
+.stock-row{display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid var(--border2)}
+.stock-row:last-child{border-bottom:none}
+.stock-ticker{font-weight:700;min-width:70px;font-size:0.9em}
+.stock-name{color:var(--muted);font-size:0.8em;flex:1}
+.stock-price{font-weight:600;min-width:70px;text-align:right}
+.ma-pill{font-size:0.72em;padding:1px 5px;border-radius:3px;border:1px solid var(--border);background:var(--bg3);color:var(--muted)}
+.ma-pill.near{background:var(--orange-bg);border-color:var(--orange-border);color:var(--orange)}
+
+/* ===== ALERT NOTES ===== */
+.alert-list{list-style:none}
+.alert-list li{padding:6px 0;border-bottom:1px solid var(--border2);font-size:0.85em;display:flex;gap:8px}
+.alert-list li:last-child{border-bottom:none}
+.tv-icon{color:var(--blue);font-size:0.8em}
+
+/* ===== SPINNERS & STATUS ===== */
+.spinner{display:inline-block;width:12px;height:12px;border:2px solid var(--border);border-top-color:var(--blue);border-radius:50%;animation:spin 0.8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.status-dot{width:8px;height:8px;border-radius:50%;display:inline-block}
+.status-dot.live{background:var(--green);box-shadow:0 0 4px var(--green)}
+.status-dot.stale{background:var(--orange)}
+.status-dot.error{background:var(--red)}
+.refresh-btn{background:var(--bg3);border:1px solid var(--border);color:var(--muted);padding:4px 10px;border-radius:4px;cursor:pointer;font-size:0.8em}
+.refresh-btn:hover{color:var(--text);border-color:var(--blue)}
+
+/* ===== MISC ===== */
+.note{font-size:0.78em;color:var(--muted);margin-top:6px}
+.warn{font-size:0.82em;color:var(--orange);margin-top:6px}
+.section-time{font-size:0.75em;color:var(--dim);margin-left:auto}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:800px){.two-col{grid-template-columns:1fr}.main{grid-template-columns:1fr}.sidebar{display:none}.focus-grid{grid-template-columns:repeat(3,1fr)}}
+code{background:var(--bg3);padding:1px 4px;border-radius:3px;font-size:0.85em}
+</style>
+</head>
+<body>
+<div class="app">
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div>
+    <span class="status-dot live" id="dataStatusDot"></span>
+    <strong style="margin-left:6px">Pre-Market Dashboard</strong>
+  </div>
+  <span id="sessionBadge" class="badge n">Detecting session...</span>
+  <button class="refresh-btn" onclick="refreshAll()">↻ Refresh Data</button>
+  <div class="time-display" id="clockDisplay"></div>
+</div>
+
+<div class="main">
+
+<!-- SIDEBAR -->
+<nav class="sidebar">
+  <div class="nav-section">ASX Session</div>
+  <button class="nav-item" onclick="showSection('asx-step1')">① Overnight US Review</button>
+  <button class="nav-item" onclick="showSection('asx-step2')">② ASX Sector Scan</button>
+  <button class="nav-item" onclick="showSection('asx-step3')">③ ASX Leaders</button>
+  <button class="nav-item" onclick="showSection('asx-step4')">④ Alert Setting</button>
+  <button class="nav-item" onclick="showSection('asx-step5')">⑤ Morning Notes</button>
+  <div class="nav-section">US Session</div>
+  <button class="nav-item" onclick="showSection('us-step1')">① Theme ID</button>
+  <button class="nav-item" onclick="showSection('us-step2')">② Finviz Screeners</button>
+  <button class="nav-item" onclick="showSection('us-step3')">③ Focus List</button>
+  <button class="nav-item" onclick="showSection('us-step4')">④ Rules Filter</button>
+  <div class="nav-section">Tools</div>
+  <button class="nav-item" onclick="showSection('pre-entry')">Pre-Entry Checklist</button>
+  <button class="nav-item" onclick="showSection('position-sizing')">Position Sizer</button>
+  <button class="nav-item" onclick="showSection('tv-actions')">TradingView Actions</button>
+</nav>
+
+<!-- MAIN CONTENT -->
+<div class="content" id="mainContent">
+
+  <!-- REGIME BAR (always visible at top of content) -->
+  <div class="regime-bar" id="regimeBar">
+    <div class="regime-item">
+      <div class="regime-label">Session</div>
+      <div class="regime-value" id="rSession">—</div>
+    </div>
+    <div class="regime-item">
+      <div class="regime-label">QQQE Scenario</div>
+      <div class="regime-value" id="rQQQE">—</div>
+    </div>
+    <div class="regime-item">
+      <div class="regime-label">Exposure Phase</div>
+      <div class="regime-value" id="rExposure">—</div>
+    </div>
+    <div class="regime-item">
+      <div class="regime-label">VIX</div>
+      <div class="regime-value" id="rVIX">—</div>
+    </div>
+    <div class="regime-item">
+      <div class="regime-label">MCO Signal</div>
+      <div class="regime-value" id="rMCO">—</div>
+    </div>
+    <div class="regime-item">
+      <div class="regime-label">$MMTW</div>
+      <div class="regime-value" id="rMMTW">—</div>
+    </div>
+    <div class="regime-item">
+      <div class="regime-label">Breadth</div>
+      <div class="regime-value" id="rBreadth">—</div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       ASX STEP 1: Overnight US Review
+       ========================================================= -->
+  <div id="section-asx-step1" class="section-view">
+    <div class="card">
+      <h2><span class="step-number">1</span> Overnight US Review
+        <span class="section-time">ASX Pre-Market · 7:00–7:15 AM AEST</span>
+      </h2>
+      <table id="tblIndexHealth">
+        <thead><tr><th>Index</th><th>Price</th><th>1W</th><th>vs 50MA</th><th>vs 200MA</th><th>ATR×/50MA</th><th>Status</th></tr></thead>
+        <tbody><tr class="loading-row"><td colspan="7"><span class="spinner"></span> Loading...</td></tr></tbody>
+      </table>
+    </div>
+    <div class="two-col">
+      <div class="card">
+        <h2>Commodities</h2>
+        <table id="tblCommodities">
+          <thead><tr><th>Asset</th><th>Price</th><th>1W</th><th>Stage</th></tr></thead>
+          <tbody><tr class="loading-row"><td colspan="4"><span class="spinner"></span></td></tr></tbody>
+        </table>
+      </div>
+      <div class="card">
+        <h2>FX</h2>
+        <table id="tblFX">
+          <thead><tr><th>Pair</th><th>Price</th><th>1W</th><th>200MA</th></tr></thead>
+          <tbody><tr class="loading-row"><td colspan="4"><span class="spinner"></span></td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       ASX STEP 2: ASX Sector Scan
+       ========================================================= -->
+  <div id="section-asx-step2" class="section-view" style="display:none">
+    <div class="card">
+      <h2><span class="step-number">2</span> ASX Sector Scan
+        <span class="section-time">7:15–7:25 AM AEST</span>
+      </h2>
+      <p class="note">Top 2 sectors highlighted. These are today's hunting grounds.</p>
+      <table id="tblASXSectors">
+        <thead><tr><th>Sector</th><th>Index</th><th>1W</th><th>1M</th><th>Rank</th></tr></thead>
+        <tbody><tr class="loading-row"><td colspan="5"><span class="spinner"></span> Loading...</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       ASX STEP 3: ASX Leaders
+       ========================================================= -->
+  <div id="section-asx-step3" class="section-view" style="display:none">
+    <div class="card">
+      <h2><span class="step-number">3</span> ASX Leader Status
+        <span class="section-time">7:25–7:40 AM AEST</span>
+      </h2>
+      <p class="note">Leaders near key MAs (within 3%) are flagged in orange — potential U&R setups.</p>
+      <div id="asxLeadersContent"><span class="spinner"></span> Loading...</div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       ASX STEP 4: Alert Setting
+       ========================================================= -->
+  <div id="section-asx-step4" class="section-view" style="display:none">
+    <div class="card">
+      <h2><span class="step-number">4</span> Set TradingView Alerts
+        <span class="section-time">7:40–7:45 AM AEST</span>
+      </h2>
+      <p class="note">For each stock near a key MA, set alerts at: (a) prior day's low, (b) the EMA level, (c) any range low.</p>
+      <ul class="alert-list" id="alertList">
+        <li><span class="spinner"></span> Loading alert suggestions...</li>
+      </ul>
+      <div style="margin-top:12px">
+        <p class="note"><strong>Alert format:</strong> "[TICKER] approaching [MA] undercut zone — watch for reclaim"</p>
+        <p class="note"><strong>TradingView scripts to have open:</strong> Swing Data (ADR%/RVOL/Float) · ATR% Multiple from 50-MA · VARS Histogram · 21DMA Band</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       ASX STEP 5: Morning Notes
+       ========================================================= -->
+  <div id="section-asx-step5" class="section-view" style="display:none">
+    <div class="card">
+      <h2><span class="step-number">5</span> Morning Briefing Notes
+        <span class="section-time">7:45–7:50 AM AEST</span>
+      </h2>
+      <p class="note">Record key observations before the ASX open. These inform your conviction level.</p>
+      <div style="margin-bottom:12px">
+        <label style="display:block;margin-bottom:6px;font-size:0.85em;color:var(--muted)">Top ASX themes today:</label>
+        <textarea id="noteThemes" rows="2" style="width:100%;background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:8px;border-radius:4px;font-family:inherit;font-size:0.85em;resize:vertical"></textarea>
+      </div>
+      <div style="margin-bottom:12px">
+        <label style="display:block;margin-bottom:6px;font-size:0.85em;color:var(--muted)">Social/news flags (unusual chatter):</label>
+        <textarea id="noteNews" rows="2" style="width:100%;background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:8px;border-radius:4px;font-family:inherit;font-size:0.85em;resize:vertical"></textarea>
+      </div>
+      <div>
+        <label style="display:block;margin-bottom:6px;font-size:0.85em;color:var(--muted)">Market regime assessment:</label>
+        <textarea id="noteRegime" rows="2" style="width:100%;background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:8px;border-radius:4px;font-family:inherit;font-size:0.85em;resize:vertical"></textarea>
+      </div>
+      <button onclick="saveNotes()" style="margin-top:10px;background:var(--green-bg);border:1px solid var(--green-border);color:var(--green);padding:6px 14px;border-radius:4px;cursor:pointer;font-size:0.85em">Save Notes</button>
+      <p class="note" id="notesSaved" style="display:none;color:var(--green)">✓ Notes saved</p>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       US STEP 1: Theme ID
+       ========================================================= -->
+  <div id="section-us-step1" class="section-view" style="display:none">
+    <div class="card">
+      <h2><span class="step-number">1</span> US Theme Identification
+        <span class="section-time">US Pre-Market · 10:30–10:45 PM AEST</span>
+      </h2>
+      <p class="note">Top 3 sectors highlighted. Drill into industry sub-groups within these.</p>
+      <table id="tblUSSectors">
+        <thead><tr><th>Sector</th><th>ETF</th><th>1W</th><th>1M</th><th>3M</th><th>Rank</th></tr></thead>
+        <tbody><tr class="loading-row"><td colspan="6"><span class="spinner"></span> Loading...</td></tr></tbody>
+      </table>
+    </div>
+    <div class="card">
+      <h2>Equal-Weight Divergence Check</h2>
+      <div id="equalWeightDiv"><span class="spinner"></span></div>
+      <p class="note">RSP/SPY diverging downward = narrow leadership (caution). QQQE/QQQ diverging = mega-cap distortion.</p>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       US STEP 2: Finviz Screeners
+       ========================================================= -->
+  <div id="section-us-step2" class="section-view" style="display:none">
+    <div class="card">
+      <h2><span class="step-number">2</span> Jeff Sun's Finviz Screeners
+        <span class="section-time">10:45–11:05 PM AEST</span>
+      </h2>
+      <p class="note">Run <code>python scripts/finviz_screener.py</code> to refresh. Results cross-referenced against today's top sectors.</p>
+      <div id="finvizContent">
+        <p class="note">Loading screener data from <code>../data/finviz_screener.json</code>...</p>
+        <p class="note">If no data: run <code>python scripts/finviz_screener.py</code> first.</p>
+        <table id="tblFinviz">
+          <thead><tr><th>Ticker</th><th>Company</th><th>Sector</th><th>Mkt Cap</th><th>Price</th><th>Screeners</th><th>Top Sector</th></tr></thead>
+          <tbody><tr class="loading-row"><td colspan="7"><span class="spinner"></span> Waiting for data...</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       US STEP 3: Focus List
+       ========================================================= -->
+  <div id="section-us-step3" class="section-view" style="display:none">
+    <div class="card">
+      <h2><span class="step-number">3</span> Focus List Finalisation
+        <span class="section-time">11:05–11:15 PM AEST</span>
+      </h2>
+      <p class="note">Hard cap: 5 names. Each must have: RS ≥ 80 · in top sector · above rising 200-MA · within 1×ATR of 21DMA · no earnings within 7 days.</p>
+      <div class="focus-grid" id="focusGrid">
+        <!-- Populated by JS -->
+      </div>
+      <p class="note">Edit <code>config/watchlist.json</code> → <code>us_focus_list</code> to add/remove names. Max 5.</p>
+    </div>
+    <div class="card">
+      <h2>Focus List Priority Filters (Alex's hierarchy)</h2>
+      <ol style="padding-left:20px;line-height:2;font-size:0.85em">
+        <li>RS rank (highest first)</li>
+        <li>Sector leadership (in today's top 3)</li>
+        <li>Volume profile (ADR% 2.5–10%, average vol &gt;500K)</li>
+        <li>Price tightness (VCP forming, tight recent range)</li>
+        <li>Structure distance (closest to 21DMA structure without undercutting)</li>
+        <li>ADR% (moderate volatility preferred — not extreme)</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       US STEP 4: Jeff Sun's 15 Rules Filter
+       ========================================================= -->
+  <div id="section-us-step4" class="section-view" style="display:none">
+    <div class="card">
+      <h2><span class="step-number">4</span> Jeff Sun's 15-Rules Filter
+        <span class="section-time">11:15–11:20 PM AEST</span>
+      </h2>
+      <p class="note">Apply to each focus list stock. Remove any that violate a rule.</p>
+      <div id="rulesFilterContent">
+        <p class="note">Add stocks to your focus list first (Step 3), then check them here.</p>
+        <table>
+          <thead><tr><th>Rule</th><th>Description</th><th id="ruleCol1">—</th><th id="ruleCol2">—</th><th id="ruleCol3">—</th><th id="ruleCol4">—</th><th id="ruleCol5">—</th></tr></thead>
+          <tbody id="rulesTbody">
+            <!-- Built dynamically -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       PRE-ENTRY CHECKLIST
+       ========================================================= -->
+  <div id="section-pre-entry" class="section-view" style="display:none">
+    <div class="card">
+      <h2>Pre-Entry Checklist</h2>
+      <p class="note">Apply to <strong>every</strong> trade before executing. All 11 must be checked. Reset between each trade.</p>
+      <ul class="checklist" id="preEntryChecklist">
+        <li><label><input type="checkbox" onchange="updateChecklistState(this)"><span class="check-cat">Market</span><span class="check-desc">QQQE in Scenario 1 or 2</span></label></li>
+        <li><label><input type="checkbox" onchange="updateChecklistState(this)"><span class="check-cat">Breadth</span><span class="check-desc">MCO/MCSI supportive — not curling down</span></label></li>
+        <li><label><input type="checkbox" onchange="updateChecklistState(this)"><span class="check-cat">Regime</span><span class="check-desc">Regime dashboard not bearish</span></label></li>
+        <li><label><input type="checkbox" onchange="updateChecklistState(this)"><span class="check-cat">Extension</span><span class="check-desc">Stock within 1×ATR of 21DMA structure (not >1×ATR above)</span></label></li>
+        <li><label><input type="checkbox" onchange="updateChecklistState(this)"><span class="check-cat">JS Rule #1</span><span class="check-desc">LoD has NOT exceeded 60% of ATR</span></label></li>
+        <li><label><input type="checkbox" onchange="updateChecklistState(this)"><span class="check-cat">JS Rule #2</span><span class="check-desc">ATR% from 50-MA is &lt; 4× multiples</span></label></li>
+        <li><label><input type="checkbox" onchange="updateChecklistState(this)"><span class="check-cat">JS Rule #4</span><span class="check-desc">RVOL is present (significant above average)</span></label></li>
+        <li><label><input type="checkbox" onchange="updateChecklistState(this)"><span class="check-cat">JS Rule #5</span><span class="check-desc">30 minutes post-open have elapsed</span></label></li>
+        <li><label><input type="checkbox" onchange="updateChecklistState(this)"><span class="check-cat">JS Rule #6</span><span class="check-desc">No earnings or major data release within 7 days</span></label></li>
+        <li><label><input type="checkbox" onchange="updateChecklistState(this)"><span class="check-cat">JS Rule #7</span><span class="check-desc">Not entering against a declining 200-MA</span></label></li>
+        <li><label><input type="checkbox" onchange="updateChecklistState(this)"><span class="check-cat">JS Rule #9</span><span class="check-desc">Fewer than 3 new positions this session</span></label></li>
+      </ul>
+      <div id="checklistProgress" style="margin-top:10px;font-size:0.85em;color:var(--muted)">0 / 11 checked</div>
+      <button onclick="resetChecklist()" style="margin-top:8px;background:var(--bg3);border:1px solid var(--border);color:var(--muted);padding:5px 12px;border-radius:4px;cursor:pointer;font-size:0.8em">Reset for next trade</button>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       POSITION SIZER
+       ========================================================= -->
+  <div id="section-position-sizing" class="section-view" style="display:none">
+    <div class="card">
+      <h2>Position Sizer — Jeff Sun 3-Stop Framework</h2>
+      <p class="note">Formula: Shares = (Account Equity × Risk%) ÷ (Entry − Stop)</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-bottom:16px">
+        <div>
+          <label style="display:block;font-size:0.78em;color:var(--muted);margin-bottom:4px">Account Equity ($)</label>
+          <input type="number" id="psEquity" value="100000" style="width:100%;background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:6px 8px;border-radius:4px;font-size:0.9em">
+        </div>
+        <div>
+          <label style="display:block;font-size:0.78em;color:var(--muted);margin-bottom:4px">Entry Price ($)</label>
+          <input type="number" id="psEntry" placeholder="e.g. 50.00" style="width:100%;background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:6px 8px;border-radius:4px;font-size:0.9em">
+        </div>
+        <div>
+          <label style="display:block;font-size:0.78em;color:var(--muted);margin-bottom:4px">Stop Price ($)</label>
+          <input type="number" id="psStop" placeholder="e.g. 47.50" style="width:100%;background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:6px 8px;border-radius:4px;font-size:0.9em">
+        </div>
+        <div>
+          <label style="display:block;font-size:0.78em;color:var(--muted);margin-bottom:4px">Risk % per Trade</label>
+          <select id="psRisk" style="width:100%;background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:6px 8px;border-radius:4px;font-size:0.9em">
+            <option value="0.5">0.5% — Choppy market</option>
+            <option value="0.75" selected>0.75% — Standard</option>
+            <option value="1.0">1.0% — A+ setup</option>
+          </select>
+        </div>
+      </div>
+      <button onclick="calcPositionSize()" style="background:var(--blue-bg);border:1px solid var(--blue-border);color:var(--blue);padding:7px 16px;border-radius:4px;cursor:pointer;font-weight:600">Calculate</button>
+      <div id="psResult" style="margin-top:14px;display:none">
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px">
+          <div class="card" style="margin:0"><div class="regime-label">Total Shares</div><div style="font-size:1.4em;font-weight:700;color:var(--green)" id="psShares">—</div></div>
+          <div class="card" style="margin:0"><div class="regime-label">Dollar Risk</div><div style="font-size:1.1em;font-weight:600" id="psDollarRisk">—</div></div>
+          <div class="card" style="margin:0"><div class="regime-label">Position Value</div><div style="font-size:1.1em;font-weight:600" id="psPosValue">—</div></div>
+          <div class="card" style="margin:0"><div class="regime-label">% of Portfolio</div><div style="font-size:1.1em;font-weight:600" id="psPctPortfolio">—</div></div>
+        </div>
+        <div style="margin-top:12px">
+          <h3>3-Stop Layers</h3>
+          <table style="margin-top:6px">
+            <thead><tr><th>Layer</th><th>Shares</th><th>Stop Level</th><th>Max Loss</th></tr></thead>
+            <tbody id="psLayerTable"></tbody>
+          </table>
+          <p class="note">Layer 1: tightest stop (5-min ORL). Layer 2: 15-min entry candle low. Layer 3: full stop (undercut low).</p>
+        </div>
+        <p id="psWarning" class="warn" style="display:none"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       TRADINGVIEW ACTIONS
+       ========================================================= -->
+  <div id="section-tv-actions" class="section-view" style="display:none">
+    <div class="card">
+      <h2>TradingView Actions</h2>
+      <p class="note">Open TradingView and complete each item below before the session starts.</p>
+
+      <h3>Mandatory Chart Setup</h3>
+      <ul class="alert-list">
+        <li><span class="tv-icon">📊</span> Install/confirm: 21DMA Structure Band (EMA of High/Low/Close)</li>
+        <li><span class="tv-icon">📊</span> Install/confirm: Swing Data script (ADR%/RVOL/Float)</li>
+        <li><span class="tv-icon">📊</span> Install/confirm: ATR% Multiple from 50-MA script</li>
+        <li><span class="tv-icon">📊</span> Install/confirm: Volatility Adjusted Relative Strength (VARS) histogram</li>
+        <li><span class="tv-icon">📊</span> Install/confirm: Industry Group Strength (@amphtrading)</li>
+      </ul>
+
+      <h3>Session-Specific Actions</h3>
+      <ul class="alert-list" id="tvActionList">
+        <li><span class="spinner"></span> Loading from data...</li>
+      </ul>
+
+      <h3>Watchlist Structure (maintain these tiers)</h3>
+      <table>
+        <thead><tr><th>List</th><th>Max Size</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Focus</strong></td><td><span class="badge g">5</span></td><td>Actionable setups for today — alerts set</td></tr>
+          <tr><td><strong>Stalk</strong></td><td>15–20</td><td>Approaching setups, watch for next few days</td></tr>
+          <tr><td><strong>Global</strong></td><td>50–100</td><td>Stage 2 leaders in top sectors, full scan</td></tr>
+          <tr><td><strong>Back</strong></td><td>Unlimited</td><td>Disrupted charts — revisit in 2–4 weeks</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div><!-- /content -->
+</div><!-- /main -->
+</div><!-- /app -->
+
+<script>
+// ===== CONFIG & STATE =====
+const DATA_BASE = '../data/';
+let state = {
+  sectorScan: null,
+  breadth: null,
+  finviz: null,
+  rsRankings: null,
+  watchlist: null,
+  activeSection: 'asx-step1',
+  lastRefresh: null,
+};
+
+// ===== CLOCK =====
+function updateClock() {
+  const now = new Date();
+  const aest = new Date(now.toLocaleString('en-US', { timeZone: 'Australia/Sydney' }));
+  const h = String(aest.getHours()).padStart(2,'0');
+  const m = String(aest.getMinutes()).padStart(2,'0');
+  const s = String(aest.getSeconds()).padStart(2,'0');
+  document.getElementById('clockDisplay').textContent =
+    `${aest.toLocaleDateString('en-AU',{weekday:'short',day:'numeric',month:'short'})} ${h}:${m}:${s} AEST`;
+
+  // Auto-detect session
+  const hour = aest.getHours();
+  const sessionBadge = document.getElementById('sessionBadge');
+  const rSession = document.getElementById('rSession');
+  if (hour >= 7 && hour < 10) {
+    sessionBadge.textContent = '🇦🇺 ASX Pre-Market (7:00–9:45 AM)';
+    sessionBadge.className = 'badge g';
+    rSession.textContent = 'ASX Pre-Market';
+  } else if (hour >= 10 && hour < 16) {
+    sessionBadge.textContent = '🇦🇺 ASX Session (10:00 AM–4:00 PM)';
+    sessionBadge.className = 'badge b';
+    rSession.textContent = 'ASX Live';
+  } else if ((hour >= 22 || hour < 1)) {
+    sessionBadge.textContent = '🇺🇸 US Pre-Market (10:30–11:30 PM)';
+    sessionBadge.className = 'badge o';
+    rSession.textContent = 'US Pre-Market';
+  } else if (hour >= 1 && hour < 6) {
+    sessionBadge.textContent = '🇺🇸 US Session (11:30 PM–6:00 AM)';
+    sessionBadge.className = 'badge b';
+    rSession.textContent = 'US Live';
+  } else {
+    sessionBadge.textContent = '⏸ Between Sessions';
+    sessionBadge.className = 'badge n';
+    rSession.textContent = 'Rest';
+  }
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+// ===== NAVIGATION =====
+function showSection(id) {
+  document.querySelectorAll('.section-view').forEach(el => el.style.display = 'none');
+  const el = document.getElementById('section-' + id);
+  if (el) el.style.display = 'block';
+  document.querySelectorAll('.nav-item').forEach(btn => btn.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(btn => {
+    if (btn.getAttribute('onclick') === `showSection('${id}')`) btn.classList.add('active');
+  });
+  state.activeSection = id;
+}
+// Default view
+showSection('asx-step1');
+
+// ===== DATA LOADING =====
+async function loadJSON(filename) {
+  try {
+    const resp = await fetch(DATA_BASE + filename + '?t=' + Date.now());
+    if (!resp.ok) return null;
+    return await resp.json();
+  } catch (e) {
+    return null;
+  }
+}
+
+// Yahoo Finance query API for live prices (no key needed)
+async function fetchYahooPrice(ticker) {
+  try {
+    const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(ticker)}?interval=1d&range=1d`;
+    const resp = await fetch(url);
+    if (!resp.ok) return null;
+    const data = await resp.json();
+    const result = data?.chart?.result?.[0];
+    if (!result) return null;
+    const meta = result.meta;
+    return {
+      price: meta.regularMarketPrice,
+      prevClose: meta.chartPreviousClose,
+      change: ((meta.regularMarketPrice / meta.chartPreviousClose - 1) * 100).toFixed(2),
+    };
+  } catch (e) {
+    return null;
+  }
+}
+
+// ===== HELPERS =====
+function rocBadge(val) {
+  if (val == null) return "<span class='badge n'>N/A</span>";
+  const cls = val > 0 ? 'g' : val < 0 ? 'r' : 'n';
+  const sign = val > 0 ? '+' : '';
+  return `<span class='badge ${cls}'>${sign}${Number(val).toFixed(1)}%</span>`;
+}
+function scenarioBadge(n) {
+  const cls = {1:'g',2:'b',3:'o',4:'r'}[n] || 'n';
+  const labels = {1:'S1: Pullback ↗',2:'S2: Reclaim',3:'S3: Higher Low',4:'S4: NO LONGS'};
+  return `<span class='badge ${cls}'>${labels[n] || 'S'+n}</span>`;
+}
+function exposureBadge(phase) {
+  const cls = {'Confirmed Uptrend Pullback':'g','Out of Correction':'b','Overbought':'o','Breakdown':'r'}[phase] || 'n';
+  return `<span class='badge ${cls}'>${phase || '—'}</span>`;
+}
+function fmt(val, d=2) { return val != null ? Number(val).toFixed(d) : '—'; }
+function bool(val) { return val == null ? '<span class="badge n">?</span>' : val ? '<span class="badge g">✓</span>' : '<span class="badge r">✗</span>'; }
+
+// ===== REGIME BAR =====
+function updateRegimeBar(scan, breadth) {
+  if (!scan) return;
+  const regime = scan.market_regime || {};
+  const qqqe   = scan.qqqe_scenario || {};
+  const mco    = breadth?.mco_mcsi || {};
+  const mmtw   = breadth?.mmtw_proxy || {};
+
+  document.getElementById('rQQQE').innerHTML     = scenarioBadge(qqqe.scenario);
+  document.getElementById('rExposure').innerHTML = exposureBadge(regime.exposure_phase);
+  document.getElementById('rVIX').textContent    = regime.vix ? `${Number(regime.vix).toFixed(1)}` : '—';
+  document.getElementById('rMCO').textContent    = mco.mco_signal?.split('—')[0]?.trim() || '—';
+  document.getElementById('rMMTW').textContent   = mmtw.mmtw_proxy != null ? `${mmtw.mmtw_proxy}%` : '—';
+
+  const bScore = breadth?.breadth_score;
+  const bSum   = breadth?.breadth_summary;
+  const bcls   = bSum === 'BULLISH' ? 'g' : bSum === 'BEARISH' ? 'r' : 'o';
+  document.getElementById('rBreadth').innerHTML = bScore != null
+    ? `${bScore}/100 <span class='badge ${bcls}'>${bSum}</span>`
+    : '—';
+}
+
+// ===== INDEX HEALTH TABLE =====
+function buildIndexHealthTable(scan) {
+  const data = scan?.index_health || [];
+  const tbody = document.querySelector('#tblIndexHealth tbody');
+  if (!data.length) { tbody.innerHTML = '<tr><td colspan="7" class="loading-row">No data — run sector_scan.py</td></tr>'; return; }
+
+  tbody.innerHTML = data.map(idx => {
+    const a50  = idx.price > idx.sma50;
+    const a200 = idx.above_200sma;
+    const atr  = idx.atr_mult_from_50sma;
+    const atrWarn = atr > 4 ? ' ⚠️' : '';
+    let statusBadge = '';
+    if (a200 && a50) statusBadge = "<span class='badge g'>Uptrend</span>";
+    else if (a200) statusBadge = "<span class='badge o'>Pullback</span>";
+    else statusBadge = "<span class='badge r'>Bear</span>";
+    return `<tr>
+      <td><strong>${idx.name}</strong></td>
+      <td>${fmt(idx.price, 2)}</td>
+      <td>${rocBadge(idx['1w_roc'])}</td>
+      <td>${bool(a50)}</td>
+      <td>${bool(a200)}</td>
+      <td>${atr != null ? fmt(atr,1)+'×'+atrWarn : '—'}</td>
+      <td>${statusBadge}</td>
+    </tr>`;
+  }).join('');
+}
+
+// ===== COMMODITIES TABLE =====
+function buildCommoditiesTable(scan) {
+  const data = scan?.commodities || [];
+  const tbody = document.querySelector('#tblCommodities tbody');
+  if (!data.length) { tbody.innerHTML = '<tr><td colspan="4" class="loading-row">No data</td></tr>'; return; }
+  tbody.innerHTML = data.map(c => {
+    const stage = c.above_50sma && c.above_200sma ? "<span class='badge g'>✓ Stage 2</span>"
+      : c.above_50sma ? "<span class='badge o'>~ Above 50</span>"
+      : "<span class='badge r'>✗ Below 50</span>";
+    return `<tr>
+      <td><strong>${c.name}</strong><br><small style='color:var(--dim)'>${c.leveraged_etf || ''}</small></td>
+      <td>${fmt(c.price, 2)}</td>
+      <td>${rocBadge(c['1w_roc'])}</td>
+      <td>${stage}</td>
+    </tr>`;
+  }).join('');
+}
+
+// ===== FX TABLE =====
+function buildFXTable(scan) {
+  const data = scan?.fx || [];
+  const tbody = document.querySelector('#tblFX tbody');
+  if (!data.length) { tbody.innerHTML = '<tr><td colspan="4" class="loading-row">No data</td></tr>'; return; }
+  tbody.innerHTML = data.map(f => `<tr>
+    <td>${f.name}</td>
+    <td>${fmt(f.price, 4)}</td>
+    <td>${rocBadge(f['1w_roc'])}</td>
+    <td>${bool(f.above_200sma)}</td>
+  </tr>`).join('');
+}
+
+// ===== ASX SECTORS =====
+function buildASXSectorTable(scan) {
+  const data = scan?.asx_sectors || [];
+  const tbody = document.querySelector('#tblASXSectors tbody');
+  if (!data.length) { tbody.innerHTML = '<tr><td colspan="5" class="loading-row">No data</td></tr>'; return; }
+  tbody.innerHTML = data.map(s => {
+    const topCls = s.top ? ' class="top-row"' : '';
+    return `<tr${topCls}>
+      <td>${s.top ? '⭐ ' : ''}<strong>${s.name || s.ticker}</strong></td>
+      <td>${s.ticker}</td>
+      <td>${rocBadge(s['1w_roc'])}</td>
+      <td>${rocBadge(s['1m_roc'])}</td>
+      <td><span class='badge ${s.rank <= 2 ? "g" : "n"}'>#${s.rank}</span></td>
+    </tr>`;
+  }).join('');
+}
+
+// ===== US SECTORS =====
+function buildUSSectorTable(scan) {
+  const data = scan?.us_sectors || [];
+  const tbody = document.querySelector('#tblUSSectors tbody');
+  if (!data.length) { tbody.innerHTML = '<tr><td colspan="6" class="loading-row">No data</td></tr>'; return; }
+  tbody.innerHTML = data.map(s => {
+    const topCls = s.top ? ' class="top-row"' : '';
+    return `<tr${topCls}>
+      <td>${s.top ? '⭐ ' : ''}<strong>${s.name || s.ticker}</strong></td>
+      <td>${s.ticker}</td>
+      <td>${rocBadge(s['1w_roc'])}</td>
+      <td>${rocBadge(s['1m_roc'])}</td>
+      <td>${rocBadge(s['3m_roc'])}</td>
+      <td><span class='badge ${s.rank <= 3 ? "g" : "n"}'>#${s.rank}</span></td>
+    </tr>`;
+  }).join('');
+}
+
+// ===== EQUAL WEIGHT =====
+function buildEqualWeight(scan) {
+  const eq = scan?.equal_weight_ratios || {};
+  const el = document.getElementById('equalWeightDiv');
+  el.innerHTML = `
+    <div style="display:flex;gap:20px;flex-wrap:wrap;margin-top:8px">
+      <div><div class="regime-label">RSP/SPY Ratio</div><div style="font-size:1.1em;font-weight:600">${fmt(eq.rsp_spy_ratio, 4)}</div></div>
+      <div><div class="regime-label">QQQE/QQQ Ratio</div><div style="font-size:1.1em;font-weight:600">${fmt(eq.qqqe_qqq_ratio, 4)}</div></div>
+    </div>
+  `;
+}
+
+// ===== ASX LEADERS =====
+function buildASXLeaders(scan) {
+  const leaders = scan?.asx_leaders || {};
+  const el = document.getElementById('asxLeadersContent');
+  if (!Object.keys(leaders).length) { el.innerHTML = '<p class="note">No data — run sector_scan.py</p>'; return; }
+
+  let html = '';
+  for (const [group, stocks] of Object.entries(leaders)) {
+    const groupLabel = group.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+    html += `<h3>${groupLabel}</h3>
+    <div style="margin-bottom:8px">`;
+    for (const s of stocks) {
+      const nearMAs = [];
+      if (s.near_10ema) nearMAs.push('10EMA');
+      if (s.near_21ema) nearMAs.push('21EMA');
+      if (s.near_50sma) nearMAs.push('50SMA');
+      const nearHtml = nearMAs.length
+        ? nearMAs.map(m => `<span class='ma-pill near'>${m}</span>`).join(' ')
+        : '<span class="ma-pill">—</span>';
+
+      html += `<div class="stock-row">
+        <span class="stock-ticker">${s.ticker}</span>
+        <span class="stock-name">${s.name || ''}</span>
+        <span class="stock-price">${fmt(s.price, 2)}</span>
+        ${nearHtml}
+        ${bool(s.above_200sma)}
+        ${rocBadge(s['1w_roc'])}
+      </div>`;
+    }
+    html += '</div>';
+  }
+  el.innerHTML = html;
+}
+
+// ===== ALERT LIST =====
+function buildAlertList(scan) {
+  const leaders = scan?.asx_leaders || {};
+  const el = document.getElementById('alertList');
+  const items = [];
+
+  const topSectors = (scan?.asx_sectors || []).filter(s => s.top).map(s => s.name || s.ticker);
+  if (topSectors.length) items.push(`<li><span class="tv-icon">📌</span> Top ASX sectors: <strong>${topSectors.join(', ')}</strong></li>`);
+
+  for (const stocks of Object.values(leaders)) {
+    for (const s of stocks) {
+      const nearMAs = [];
+      if (s.near_10ema) nearMAs.push(`10EMA: ${fmt(s.ema10,2)}`);
+      if (s.near_21ema) nearMAs.push(`21EMA: ${fmt(s.ema21,2)}`);
+      if (s.near_50sma) nearMAs.push(`50SMA: ${fmt(s.sma50,2)}`);
+      if (nearMAs.length) {
+        items.push(`<li><span class="tv-icon">🔔</span> <strong>${s.ticker}</strong> — Set alerts at: ${nearMAs.join(' · ')} <span class='badge o'>Near MA</span></li>`);
+      }
+    }
+  }
+
+  if (!items.length) items.push('<li>No stocks near key MAs today — no urgent alerts needed</li>');
+  el.innerHTML = items.join('');
+}
+
+// ===== FINVIZ TABLE =====
+function buildFinvizTable(finviz) {
+  const data = finviz?.combined_candidates || [];
+  const tbody = document.querySelector('#tblFinviz tbody');
+  if (!data.length) {
+    tbody.innerHTML = '<tr class="loading-row"><td colspan="7">No data — run <code>python scripts/finviz_screener.py</code></td></tr>';
+    return;
+  }
+  tbody.innerHTML = data.slice(0,30).map(c => {
+    if (c.error) return '';
+    const screeners = (c.screeners || []).map((s,i) =>
+      `<span class='badge ${i===0?"g":"b"}'>${s.replace(/Movers|Jeff Sun/g,'').trim().slice(0,12)}</span>`
+    ).join(' ');
+    const topCls = c.in_top_sector ? ' class="top-row"' : '';
+    return `<tr${topCls}>
+      <td><strong>${c.ticker||''}</strong></td>
+      <td>${(c.company||'').slice(0,22)}</td>
+      <td>${(c.sector||'').slice(0,20)}</td>
+      <td style="white-space:nowrap">${c.market_cap||''}</td>
+      <td>${c.price||''}</td>
+      <td>${screeners}</td>
+      <td>${c.in_top_sector ? '<span class="badge g">✓</span>' : ''}</td>
+    </tr>`;
+  }).join('');
+}
+
+// ===== FOCUS GRID =====
+function buildFocusGrid(watchlist) {
+  const grid = document.getElementById('focusGrid');
+  const list = watchlist?.us_focus_list || [];
+  let html = '';
+  for (let i = 0; i < 5; i++) {
+    if (i < list.length) {
+      const item = list[i];
+      html += `<div class="focus-card filled">
+        <div class="focus-ticker">${item.ticker||'?'}</div>
+        <div class="focus-meta">${item.notes||''}</div>
+      </div>`;
+    } else {
+      html += `<div class="focus-card empty">Slot ${i+1}<br>Empty</div>`;
+    }
+  }
+  grid.innerHTML = html;
+}
+
+// ===== RULES FILTER TABLE =====
+const JEFF_SUN_RULES = [
+  {n:1,  desc:'LoD has NOT exceeded 60% of ATR (spring coil not spent)'},
+  {n:2,  desc:'ATR% from 50-MA extension < 4× multiples'},
+  {n:3,  desc:'No biotechs in post-market scan positions'},
+  {n:4,  desc:'Substantial RVOL present (outside mega-cap names)'},
+  {n:5,  desc:'30 min post-open elapsed before entry'},
+  {n:6,  desc:'No major earnings or economic data imminent'},
+  {n:7,  desc:'Not entering against declining 200-MA'},
+  {n:8,  desc:'Not entering into immediate gap resistance zone'},
+  {n:9,  desc:'Max 3 new positions this session'},
+  {n:10, desc:'Not chasing — only most optimal entry even if a day late'},
+  {n:11, desc:'More cautious after 3+ consecutive up market days'},
+];
+
+function buildRulesFilter(watchlist) {
+  const focus = watchlist?.us_focus_list || [];
+  // Update column headers
+  for (let i = 1; i <= 5; i++) {
+    const el = document.getElementById(`ruleCol${i}`);
+    if (el) el.textContent = i <= focus.length ? focus[i-1].ticker : '—';
+  }
+  const tbody = document.getElementById('rulesTbody');
+  tbody.innerHTML = JEFF_SUN_RULES.map(r => {
+    const cells = Array.from({length:5}, (_,i) =>
+      i < focus.length
+        ? `<td><input type='checkbox' style='accent-color:var(--green)'></td>`
+        : `<td style='color:var(--dim)'>—</td>`
+    ).join('');
+    return `<tr>
+      <td><span class='badge n'>Rule #${r.n}</span></td>
+      <td style='font-size:0.82em'>${r.desc}</td>
+      ${cells}
+    </tr>`;
+  }).join('');
+}
+
+// ===== TV ACTIONS =====
+function buildTVActions(scan, breadth) {
+  const el = document.getElementById('tvActionList');
+  const items = [];
+  const topUS = (scan?.us_sectors||[]).filter(s=>s.top).map(s=>s.name||s.ticker);
+  const topASX = (scan?.asx_sectors||[]).filter(s=>s.top).map(s=>s.name||s.ticker);
+
+  if (topUS.length) items.push(`<li><span class='tv-icon'>📊</span> US top sectors: <strong>${topUS.join(', ')}</strong> — open sector ETF charts</li>`);
+  if (topASX.length) items.push(`<li><span class='tv-icon'>📊</span> ASX top sectors: <strong>${topASX.join(', ')}</strong></li>`);
+
+  const q = scan?.qqqe_scenario || {};
+  if (q.scenario) items.push(`<li><span class='tv-icon'>📈</span> QQQE currently: <strong>Scenario ${q.scenario}</strong> — ${q.description}</li>`);
+
+  const mco = breadth?.mco_mcsi || {};
+  if (mco.mco_signal) items.push(`<li><span class='tv-icon'>📉</span> MCO: ${mco.mco_signal}</li>`);
+  if (mco.mcsi_signal) items.push(`<li><span class='tv-icon'>📉</span> MCSI: ${mco.mcsi_signal}</li>`);
+
+  items.push('<li><span class="tv-icon">🔔</span> Set alerts on focus list names at PDL, 21EMA, and key range lows</li>');
+  items.push('<li><span class="tv-icon">📊</span> Check Industry Group Strength (@amphtrading) — confirm top groups align with top sectors</li>');
+
+  el.innerHTML = items.length ? items.join('') : '<li>No data available</li>';
+}
+
+// ===== CHECKLIST =====
+function updateChecklistState(checkbox) {
+  const li = checkbox.closest('li');
+  li.classList.toggle('checked', checkbox.checked);
+  const checked = document.querySelectorAll('#preEntryChecklist input:checked').length;
+  const total   = document.querySelectorAll('#preEntryChecklist input').length;
+  const el = document.getElementById('checklistProgress');
+  el.textContent = `${checked} / ${total} checked`;
+  el.style.color = checked === total ? 'var(--green)' : 'var(--muted)';
+}
+function resetChecklist() {
+  document.querySelectorAll('#preEntryChecklist input').forEach(cb => {
+    cb.checked = false;
+    cb.closest('li').classList.remove('checked');
+  });
+  document.getElementById('checklistProgress').textContent = '0 / 11 checked';
+  document.getElementById('checklistProgress').style.color = 'var(--muted)';
+}
+
+// ===== POSITION SIZER =====
+function calcPositionSize() {
+  const equity  = parseFloat(document.getElementById('psEquity').value) || 0;
+  const entry   = parseFloat(document.getElementById('psEntry').value)  || 0;
+  const stop    = parseFloat(document.getElementById('psStop').value)   || 0;
+  const riskPct = parseFloat(document.getElementById('psRisk').value)   || 0.75;
+
+  if (!equity || !entry || !stop || stop >= entry) {
+    alert('Please enter valid equity, entry, and stop prices (stop must be below entry).');
+    return;
+  }
+
+  const riskDollars  = equity * (riskPct / 100);
+  const riskPerShare = entry - stop;
+  const totalShares  = Math.floor(riskDollars / riskPerShare);
+  const posValue     = totalShares * entry;
+  const pctPort      = (posValue / equity) * 100;
+
+  document.getElementById('psShares').textContent     = totalShares.toLocaleString();
+  document.getElementById('psDollarRisk').textContent  = `$${riskDollars.toFixed(0)}`;
+  document.getElementById('psPosValue').textContent    = `$${posValue.toFixed(0)}`;
+  document.getElementById('psPctPortfolio').textContent = `${pctPort.toFixed(1)}%`;
+
+  // 3-Stop layers
+  const layer  = Math.floor(totalShares / 3);
+  const remain = totalShares - (layer * 2);
+
+  // Layer stop estimates (approximations — set manually based on chart)
+  const l1Stop = entry - (riskPerShare * 0.33);
+  const l2Stop = entry - (riskPerShare * 0.66);
+  const l3Stop = stop;
+
+  document.getElementById('psLayerTable').innerHTML = [
+    {n:1, shares:layer,  stop:l1Stop, desc:'5-min ORL (tightest)'},
+    {n:2, shares:layer,  stop:l2Stop, desc:'15-min entry candle low'},
+    {n:3, shares:remain, stop:l3Stop, desc:'Undercut low (full stop)'},
+  ].map(l => `<tr>
+    <td>Layer ${l.n} — <small>${l.desc}</small></td>
+    <td><strong>${l.shares}</strong></td>
+    <td>$${l.stop.toFixed(2)}</td>
+    <td>$${((entry - l.stop) * l.shares).toFixed(0)}</td>
+  </tr>`).join('');
+
+  const warnEl = document.getElementById('psWarning');
+  if (pctPort > 20) {
+    warnEl.style.display = 'block';
+    warnEl.textContent = `⚠️ Position is ${pctPort.toFixed(1)}% of portfolio — exceeds 20% max (Jeff Sun + Qullamaggie rule). Consider reducing size.`;
+  } else {
+    warnEl.style.display = 'none';
+  }
+
+  document.getElementById('psResult').style.display = 'block';
+}
+
+// ===== NOTES =====
+function saveNotes() {
+  const notes = {
+    themes: document.getElementById('noteThemes').value,
+    news:   document.getElementById('noteNews').value,
+    regime: document.getElementById('noteRegime').value,
+    saved_at: new Date().toISOString(),
+  };
+  localStorage.setItem('premarket_notes_' + new Date().toDateString(), JSON.stringify(notes));
+  document.getElementById('notesSaved').style.display = 'block';
+  setTimeout(() => document.getElementById('notesSaved').style.display = 'none', 2000);
+}
+
+// ===== MAIN REFRESH =====
+async function refreshAll() {
+  console.log('Refreshing data...');
+  document.getElementById('dataStatusDot').style.background = 'var(--orange)';
+  document.getElementById('dataStatusDot').style.boxShadow = '';
+
+  const [scan, breadth, finviz, watchlist] = await Promise.all([
+    loadJSON('sector_scan.json'),
+    loadJSON('breadth.json'),
+    loadJSON('finviz_screener.json'),
+    loadWatchlist(),
+  ]);
+
+  state.sectorScan = scan;
+  state.breadth    = breadth;
+  state.finviz     = finviz;
+  state.watchlist  = watchlist;
+  state.lastRefresh = new Date();
+
+  // Update all views
+  if (scan || breadth) {
+    updateRegimeBar(scan || {}, breadth || {});
+  }
+  if (scan) {
+    buildIndexHealthTable(scan);
+    buildCommoditiesTable(scan);
+    buildFXTable(scan);
+    buildASXSectorTable(scan);
+    buildUSSectorTable(scan);
+    buildEqualWeight(scan);
+    buildASXLeaders(scan);
+    buildAlertList(scan);
+    buildTVActions(scan, breadth || {});
+  }
+  if (finviz) buildFinvizTable(finviz);
+  if (watchlist) {
+    buildFocusGrid(watchlist);
+    buildRulesFilter(watchlist);
+  }
+
+  if (scan || breadth) {
+    document.getElementById('dataStatusDot').style.background = 'var(--green)';
+    document.getElementById('dataStatusDot').style.boxShadow = '0 0 4px var(--green)';
+    document.getElementById('dataStatusDot').className = 'status-dot live';
+  } else {
+    document.getElementById('dataStatusDot').className = 'status-dot error';
+    document.getElementById('dataStatusDot').style.background = 'var(--red)';
+  }
+}
+
+async function loadWatchlist() {
+  try {
+    const resp = await fetch('../config/watchlist.json?t=' + Date.now());
+    if (!resp.ok) return null;
+    return await resp.json();
+  } catch (e) {
+    return null;
+  }
+}
+
+// ===== INIT =====
+refreshAll();
+// Auto-refresh every 5 minutes
+setInterval(refreshAll, 5 * 60 * 1000);
+</script>
+</body>
+</html>

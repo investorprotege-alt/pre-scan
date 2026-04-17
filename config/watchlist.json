@@ -1,0 +1,88 @@
+{
+  "asx_leaders": {
+    "tech_software": [
+      {"ticker": "PME.AX",  "name": "Pro Medicus",      "sector": "Tech"},
+      {"ticker": "WTC.AX",  "name": "WiseTech Global",  "sector": "Tech"},
+      {"ticker": "XRO.AX",  "name": "Xero",             "sector": "Tech"},
+      {"ticker": "TNE.AX",  "name": "Technology One",   "sector": "Tech"}
+    ],
+    "resources": [
+      {"ticker": "PLS.AX",  "name": "Pilbara Minerals", "sector": "Resources"},
+      {"ticker": "MIN.AX",  "name": "Mineral Resources","sector": "Resources"},
+      {"ticker": "FMG.AX",  "name": "Fortescue",        "sector": "Resources"},
+      {"ticker": "BHP.AX",  "name": "BHP Group",        "sector": "Resources"}
+    ],
+    "financials": [
+      {"ticker": "MQG.AX",  "name": "Macquarie Group",  "sector": "Financials"},
+      {"ticker": "CBA.AX",  "name": "Commonwealth Bank","sector": "Financials"},
+      {"ticker": "NAB.AX",  "name": "NAB",              "sector": "Financials"}
+    ],
+    "property": [
+      {"ticker": "GMG.AX",  "name": "Goodman Group",    "sector": "Property"},
+      {"ticker": "SGP.AX",  "name": "Stockland",        "sector": "Property"}
+    ]
+  },
+
+  "asx_sector_etfs": [
+    {"ticker": "^AXIJ",  "name": "ASX IT",            "sector": "Technology"},
+    {"ticker": "^AXMJ",  "name": "ASX Materials",     "sector": "Materials"},
+    {"ticker": "^AXEJ",  "name": "ASX Energy",        "sector": "Energy"},
+    {"ticker": "^AXFJ",  "name": "ASX Financials",    "sector": "Financials"},
+    {"ticker": "^AXHJ",  "name": "ASX Healthcare",    "sector": "Healthcare"},
+    {"ticker": "^AXNJ",  "name": "ASX Industrials",   "sector": "Industrials"},
+    {"ticker": "^AXDJ",  "name": "ASX Discretionary", "sector": "Discretionary"}
+  ],
+
+  "us_sector_etfs": [
+    {"ticker": "XLK",  "name": "Technology"},
+    {"ticker": "XLC",  "name": "Communication Services"},
+    {"ticker": "XLY",  "name": "Consumer Discretionary"},
+    {"ticker": "XLF",  "name": "Financials"},
+    {"ticker": "XLV",  "name": "Healthcare"},
+    {"ticker": "XLI",  "name": "Industrials"},
+    {"ticker": "XLB",  "name": "Materials"},
+    {"ticker": "XLE",  "name": "Energy"},
+    {"ticker": "XLRE", "name": "Real Estate"},
+    {"ticker": "XLP",  "name": "Consumer Staples"},
+    {"ticker": "XLU",  "name": "Utilities"}
+  ],
+
+  "indices": [
+    {"ticker": "SPY",   "name": "S&P 500"},
+    {"ticker": "QQQ",   "name": "Nasdaq 100"},
+    {"ticker": "QQQE",  "name": "Equal-Weight Nasdaq 100"},
+    {"ticker": "RSP",   "name": "Equal-Weight S&P 500"},
+    {"ticker": "^VIX",  "name": "VIX"}
+  ],
+
+  "commodities": [
+    {"ticker": "GC=F",  "name": "Gold",          "leveraged_etf": "NUGT"},
+    {"ticker": "CL=F",  "name": "Crude Oil",     "leveraged_etf": "UCO"},
+    {"ticker": "SI=F",  "name": "Silver",        "leveraged_etf": "AGQ"},
+    {"ticker": "NG=F",  "name": "Natural Gas",   "leveraged_etf": "BOIL"}
+  ],
+
+  "fx": [
+    {"ticker": "AUDUSD=X", "name": "AUD/USD"},
+    {"ticker": "DX-Y.NYB", "name": "DXY (US Dollar Index)"},
+    {"ticker": "EURUSD=X", "name": "EUR/USD"},
+    {"ticker": "GBPUSD=X", "name": "GBP/USD"},
+    {"ticker": "JPY=X",    "name": "USD/JPY"}
+  ],
+
+  "us_focus_list": [],
+
+  "asx_focus_list": [],
+
+  "settings": {
+    "user_email": "beeblegums@gmail.com",
+    "timezone": "Australia/Sydney",
+    "asx_premarket_time": "07:00",
+    "us_premarket_time": "22:30",
+    "rs_refresh_day": "sunday",
+    "max_focus_list_size": 5,
+    "risk_per_trade_pct": 0.75,
+    "max_position_pct": 20.0,
+    "max_new_positions_per_session": 3
+  }
+}

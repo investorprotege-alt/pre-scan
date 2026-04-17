@@ -1,0 +1,21 @@
+# Generated data files (rebuilt by scripts on each run)
+data/
+
+# Email config contains Gmail App Password — never commit this
+config/email_config.json
+
+# Claude Code local settings
+.claude/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+venv/
+.venv/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
