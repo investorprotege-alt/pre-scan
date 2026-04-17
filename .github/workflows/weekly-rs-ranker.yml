@@ -11,6 +11,10 @@ jobs:
   rs-ranker:
     runs-on: ubuntu-latest
     timeout-minutes: 30     # downloads 700+ tickers, takes 5–15 min
+    permissions:
+      contents: write        # needed for git push back to repo
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
       - name: Checkout repo

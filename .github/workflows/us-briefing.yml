@@ -12,6 +12,10 @@ jobs:
   us-briefing:
     runs-on: ubuntu-latest
     timeout-minutes: 20             # finviz_screener takes 2–3 min, allow headroom
+    permissions:
+      contents: write        # needed for git push back to repo
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
       - name: Checkout repo
