@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-17T21:03:50.788647+10:00",
+  "generated_at": "2026-04-17T21:17:38.144204+10:00",
   "market_regime": {
     "regime": "BEAR / BREAKDOWN \u2014 Preserve capital",
     "exposure_phase": "Breakdown",
-    "vix": 18.09,
+    "vix": 18.02,
     "vix_regime": "NORMAL",
     "spy_above_200sma": false,
     "spy_above_50sma": true
@@ -276,14 +276,14 @@
     {
       "ticker": "^VIX",
       "name": "VIX",
-      "price": 18.09,
-      "sma50": 22.51,
+      "price": 18.02,
+      "sma50": 22.5086,
       "sma200": null,
       "above_50sma": false,
       "above_200sma": null,
-      "1w_roc": -5.93,
-      "1m_roc": -27.9,
-      "atr_mult_from_50sma": 1.77
+      "1w_roc": -6.29,
+      "1m_roc": -28.18,
+      "atr_mult_from_50sma": 1.79
     }
   ],
   "commodities": [
@@ -291,88 +291,88 @@
       "ticker": "GC=F",
       "name": "Gold",
       "leveraged_etf": "NUGT",
-      "price": 4808.2998,
-      "1w_roc": 0.97,
-      "1m_roc": -1.67,
+      "price": 4807.6001,
+      "1w_roc": 0.96,
+      "1m_roc": -1.68,
       "above_50sma": false,
       "above_200sma": null,
-      "ema21": 4757.2777,
-      "sma50": 4892.34
+      "ema21": 4757.2141,
+      "sma50": 4892.326
     },
     {
       "ticker": "CL=F",
       "name": "Crude Oil",
       "leveraged_etf": "UCO",
-      "price": 87.9,
-      "1w_roc": -8.98,
-      "1m_roc": -8.74,
+      "price": 87.74,
+      "1w_roc": -9.14,
+      "1m_roc": -8.91,
       "above_50sma": true,
       "above_200sma": null,
-      "ema21": 95.0788,
-      "sma50": 84.55
+      "ema21": 95.0642,
+      "sma50": 84.5468
     },
     {
       "ticker": "SI=F",
       "name": "Silver",
       "leveraged_etf": "AGQ",
-      "price": 79.42,
-      "1w_roc": 4.06,
-      "1m_roc": 2.83,
+      "price": 79.255,
+      "1w_roc": 3.84,
+      "1m_roc": 2.61,
       "above_50sma": true,
       "above_200sma": null,
-      "ema21": 76.5182,
-      "sma50": 78.6952
+      "ema21": 76.5032,
+      "sma50": 78.6919
     },
     {
       "ticker": "NG=F",
       "name": "Natural Gas",
       "leveraged_etf": "BOIL",
-      "price": 2.672,
-      "1w_roc": 0.91,
-      "1m_roc": -12.82,
+      "price": 2.678,
+      "1w_roc": 1.13,
+      "1m_roc": -12.63,
       "above_50sma": false,
       "above_200sma": null,
-      "ema21": 2.8017,
-      "sma50": 2.9761
+      "ema21": 2.8022,
+      "sma50": 2.9762
     }
   ],
   "fx": [
     {
       "ticker": "AUDUSD=X",
       "name": "AUD/USD",
-      "price": 0.7172,
-      "1w_roc": 1.36,
-      "1m_roc": 2.02,
+      "price": 0.7169,
+      "1w_roc": 1.32,
+      "1m_roc": 1.99,
       "above_200sma": null
     },
     {
       "ticker": "DX-Y.NYB",
       "name": "DXY (US Dollar Index)",
-      "price": 98.106,
-      "1w_roc": -0.55,
-      "1m_roc": -1.98,
+      "price": 98.122,
+      "1w_roc": -0.54,
+      "1m_roc": -1.97,
       "above_200sma": null
     },
     {
       "ticker": "EURUSD=X",
       "name": "EUR/USD",
-      "price": 1.1798,
-      "1w_roc": 0.91,
-      "1m_roc": 2.91,
+      "price": 1.1801,
+      "1w_roc": 0.94,
+      "1m_roc": 2.93,
       "above_200sma": null
     },
     {
       "ticker": "GBPUSD=X",
       "name": "GBP/USD",
-      "price": 1.3525,
-      "1w_roc": 0.71,
-      "1m_roc": 1.96,
+      "price": 1.3528,
+      "1w_roc": 0.73,
+      "1m_roc": 1.98,
       "above_200sma": null
     },
     {
       "ticker": "JPY=X",
       "name": "USD/JPY",
-      "price": 159.147,
+      "price": 159.14,
       "1w_roc": 0.02,
       "1m_roc": -0.41,
       "above_200sma": null
