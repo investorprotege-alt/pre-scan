@@ -331,11 +331,10 @@ code{background:var(--bg3);padding:1px 4px;border-radius:3px;font-size:0.85em}
       </h2>
       <p class="note">Run <code>python scripts/finviz_screener.py</code> to refresh. Results cross-referenced against today's top sectors.</p>
       <div id="finvizContent">
-        <p class="note">Loading screener data from <code>../data/finviz_screener.json</code>...</p>
-        <p class="note">If no data: run <code>python scripts/finviz_screener.py</code> first.</p>
+        <p class="note" id="finvizMeta">Loading...</p>
         <table id="tblFinviz">
-          <thead><tr><th>Ticker</th><th>Company</th><th>Sector</th><th>Mkt Cap</th><th>Price</th><th>Screeners</th><th>Top Sector</th></tr></thead>
-          <tbody><tr class="loading-row"><td colspan="7"><span class="spinner"></span> Waiting for data...</td></tr></tbody>
+          <thead><tr><th>Ticker</th><th>Company</th><th>Sector</th><th>Price</th><th>1W</th><th>1M</th><th>Screeners</th><th>Top Sector</th></tr></thead>
+          <tbody><tr class="loading-row"><td colspan="8"><span class="spinner"></span> Waiting for data...</td></tr></tbody>
         </table>
       </div>
     </div>
@@ -809,24 +808,36 @@ function buildAlertList(scan) {
 function buildFinvizTable(finviz) {
   const data = finviz?.combined_candidates || [];
   const tbody = document.querySelector('#tblFinviz tbody');
+
+  const meta = document.getElementById('finvizMeta');
+  if (meta && finviz) {
+    const src = finviz.source || 'yfinance';
+    const ts  = finviz.generated_at ? new Date(finviz.generated_at).toLocaleString('en-AU',{timeZone:'Australia/Sydney',hour12:false}) : '—';
+    meta.textContent = `${finviz.universe_size||'?'} tickers scanned · ${finviz.high_confluence_count||0} high-confluence · ${finviz.in_top_sector_count||0} in top sectors · ${src} · ${ts}`;
+  }
+
   if (!data.length) {
-    tbody.innerHTML = '<tr class="loading-row"><td colspan="7">No data — run <code>python scripts/finviz_screener.py</code></td></tr>';
+    tbody.innerHTML = '<tr class="loading-row"><td colspan="8">No momentum movers found in current market conditions</td></tr>';
     return;
   }
-  tbody.innerHTML = data.slice(0,30).map(c => {
+  tbody.innerHTML = data.slice(0,40).map(c => {
     if (c.error) return '';
-    const screeners = (c.screeners || []).map((s,i) =>
-      `<span class='badge ${i===0?"g":"b"}'>${s.replace(/Movers|Jeff Sun/g,'').trim().slice(0,12)}</span>`
-    ).join(' ');
+    const screeners = (c.screeners || []).map(s => {
+      const short = s.replace('Movers','').replace('Daily Pullback-to-MA','Pullback').trim();
+      const cls   = s.includes('6-Month') ? 'r' : s.includes('3-Month') ? 'o' : s.includes('1-Month') ? 'b' : s.includes('Pullback') ? 'n' : 'g';
+      return `<span class='badge ${cls}'>${short.slice(0,10)}</span>`;
+    }).join(' ');
     const topCls = c.in_top_sector ? ' class="top-row"' : '';
+    const conf   = c.high_confluence ? '<span class="badge g">&#9889;</span>' : '';
     return `<tr${topCls}>
-      <td><strong>${c.ticker||''}</strong></td>
-      <td>${(c.company||'').slice(0,22)}</td>
-      <td>${(c.sector||'').slice(0,20)}</td>
-      <td style="white-space:nowrap">${c.market_cap||''}</td>
-      <td>${c.price||''}</td>
+      <td><strong>${c.ticker||''}</strong> ${conf}</td>
+      <td style="font-size:0.78em">${(c.company||'').slice(0,24)}</td>
+      <td style="font-size:0.78em">${(c.sector||'').slice(0,18)}</td>
+      <td>${c.price != null ? '$'+Number(c.price).toFixed(2) : '—'}</td>
+      <td>${c.ret_1w  != null ? rocBadge(c.ret_1w)  : '—'}</td>
+      <td>${c.ret_1m  != null ? rocBadge(c.ret_1m)  : '—'}</td>
       <td>${screeners}</td>
-      <td>${c.in_top_sector ? '<span class="badge g">✓</span>' : ''}</td>
+      <td>${c.in_top_sector ? '<span class="badge g">&#10003; Top</span>' : ''}</td>
     </tr>`;
   }).join('');
 }
