@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-19T23:35:54.485243+10:00",
+  "generated_at": "2026-04-20T07:22:23.190234+10:00",
   "market_regime": {
     "regime": "BEAR / BREAKDOWN \u2014 Preserve capital",
     "exposure_phase": "Breakdown",
@@ -340,9 +340,9 @@
     {
       "ticker": "AUDUSD=X",
       "name": "AUD/USD",
-      "price": 0.7168,
-      "1w_roc": 2.11,
-      "1m_roc": 1.23,
+      "price": 0.713,
+      "1w_roc": 1.56,
+      "1m_roc": 0.68,
       "above_200sma": null
     },
     {
@@ -356,25 +356,25 @@
     {
       "ticker": "EURUSD=X",
       "name": "EUR/USD",
-      "price": 1.1767,
-      "1w_roc": 0.65,
-      "1m_roc": 2.64,
+      "price": 1.1744,
+      "1w_roc": 0.59,
+      "1m_roc": 1.44,
       "above_200sma": null
     },
     {
       "ticker": "GBPUSD=X",
       "name": "GBP/USD",
-      "price": 1.3517,
-      "1w_roc": 0.91,
-      "1m_roc": 0.68,
+      "price": 1.3491,
+      "1w_roc": 0.72,
+      "1m_roc": 0.49,
       "above_200sma": null
     },
     {
       "ticker": "JPY=X",
       "name": "USD/JPY",
-      "price": 158.584,
-      "1w_roc": -0.33,
-      "1m_roc": -0.76,
+      "price": 158.768,
+      "1w_roc": -0.57,
+      "1m_roc": 0.53,
       "above_200sma": null
     }
   ],
