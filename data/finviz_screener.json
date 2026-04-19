@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-18T09:08:15.637866+10:00",
+  "generated_at": "2026-04-19T23:36:37.102434+10:00",
   "screener_breakdown": {
     "1-Week Movers >20%": 7,
     "1-Month Movers >30%": 10,
@@ -18,7 +18,7 @@
       "ret_1m": 34.14,
       "ret_3m": 76.07,
       "ret_6m": 212.49,
-      "avg_vol": 8422425,
+      "avg_vol": 8471905,
       "screeners": [
         "1-Month Movers >30%",
         "3-Month Movers >50%",
@@ -38,7 +38,7 @@
       "ret_1m": 34.89,
       "ret_3m": 71.3,
       "ret_6m": 150.77,
-      "avg_vol": 3898027,
+      "avg_vol": 3898160,
       "screeners": [
         "1-Month Movers >30%",
         "3-Month Movers >50%",
@@ -58,7 +58,7 @@
       "ret_1m": 31.71,
       "ret_3m": 108.14,
       "ret_6m": 200.77,
-      "avg_vol": 3100583,
+      "avg_vol": 3100665,
       "screeners": [
         "1-Month Movers >30%",
         "3-Month Movers >50%",
@@ -78,7 +78,7 @@
       "ret_1m": 37.3,
       "ret_3m": 37.71,
       "ret_6m": 64.83,
-      "avg_vol": 8421150,
+      "avg_vol": 8434770,
       "screeners": [
         "1-Week Movers >20%",
         "1-Month Movers >30%"
@@ -97,7 +97,7 @@
       "ret_1m": 31.73,
       "ret_3m": 64.98,
       "ret_6m": 28.9,
-      "avg_vol": 9224688,
+      "avg_vol": 9224925,
       "screeners": [
         "1-Month Movers >30%",
         "3-Month Movers >50%"
@@ -116,7 +116,7 @@
       "ret_1m": 22.18,
       "ret_3m": 67.81,
       "ret_6m": 209.7,
-      "avg_vol": 7927748,
+      "avg_vol": 7939345,
       "screeners": [
         "3-Month Movers >50%",
         "6-Month Movers >100%"
@@ -135,7 +135,7 @@
       "ret_1m": 22.2,
       "ret_3m": 125.05,
       "ret_6m": 538.25,
-      "avg_vol": 18432957,
+      "avg_vol": 18434490,
       "screeners": [
         "3-Month Movers >50%",
         "6-Month Movers >100%"
@@ -154,7 +154,7 @@
       "ret_1m": 26.76,
       "ret_3m": 67.12,
       "ret_6m": 170.03,
-      "avg_vol": 3082382,
+      "avg_vol": 3082430,
       "screeners": [
         "3-Month Movers >50%",
         "6-Month Movers >100%"
@@ -173,7 +173,7 @@
       "ret_1m": 17.68,
       "ret_3m": 55.87,
       "ret_6m": 102.83,
-      "avg_vol": 1255981,
+      "avg_vol": 1270370,
       "screeners": [
         "3-Month Movers >50%",
         "6-Month Movers >100%"
@@ -192,7 +192,7 @@
       "ret_1m": 27.58,
       "ret_3m": 160.46,
       "ret_6m": 471.04,
-      "avg_vol": 7151022,
+      "avg_vol": 7153675,
       "screeners": [
         "3-Month Movers >50%",
         "6-Month Movers >100%"
@@ -211,7 +211,7 @@
       "ret_1m": 21.16,
       "ret_3m": -17.76,
       "ret_6m": -32.35,
-      "avg_vol": 32350003,
+      "avg_vol": 32461715,
       "screeners": [
         "1-Week Movers >20%"
       ],
@@ -229,7 +229,7 @@
       "ret_1m": 14.89,
       "ret_3m": -7.47,
       "ret_6m": -41.99,
-      "avg_vol": 28665386,
+      "avg_vol": 28671485,
       "screeners": [
         "1-Week Movers >20%"
       ],
@@ -247,7 +247,7 @@
       "ret_1m": 2.0,
       "ret_3m": -13.77,
       "ret_6m": -38.65,
-      "avg_vol": 11044429,
+      "avg_vol": 11058815,
       "screeners": [
         "1-Week Movers >20%"
       ],
@@ -265,7 +265,7 @@
       "ret_1m": 7.82,
       "ret_3m": -21.38,
       "ret_6m": -20.77,
-      "avg_vol": 4474978,
+      "avg_vol": 4475895,
       "screeners": [
         "1-Week Movers >20%"
       ],
@@ -283,7 +283,7 @@
       "ret_1m": 11.46,
       "ret_3m": -12.48,
       "ret_6m": -32.54,
-      "avg_vol": 4418001,
+      "avg_vol": 4423310,
       "screeners": [
         "1-Week Movers >20%"
       ],
@@ -301,7 +301,7 @@
       "ret_1m": -3.54,
       "ret_3m": 4.76,
       "ret_6m": -20.88,
-      "avg_vol": 4852728,
+      "avg_vol": 4852805,
       "screeners": [
         "1-Week Movers >20%"
       ],
@@ -319,7 +319,7 @@
       "ret_1m": 33.09,
       "ret_3m": -15.92,
       "ret_6m": 9.03,
-      "avg_vol": 3034208,
+      "avg_vol": 3034925,
       "screeners": [
         "1-Month Movers >30%"
       ],
@@ -337,7 +337,7 @@
       "ret_1m": 19.25,
       "ret_3m": 14.08,
       "ret_6m": 102.57,
-      "avg_vol": 2170475,
+      "avg_vol": 2171220,
       "screeners": [
         "6-Month Movers >100%"
       ],
@@ -355,7 +355,7 @@
       "ret_1m": 39.57,
       "ret_3m": 22.14,
       "ret_6m": 16.68,
-      "avg_vol": 35791755,
+      "avg_vol": 35793105,
       "screeners": [
         "1-Month Movers >30%"
       ],
@@ -373,7 +373,7 @@
       "ret_1m": 30.44,
       "ret_3m": -0.25,
       "ret_6m": -32.04,
-      "avg_vol": 13378832,
+      "avg_vol": 13379750,
       "screeners": [
         "1-Month Movers >30%"
       ],
@@ -391,7 +391,7 @@
       "ret_1m": 52.12,
       "ret_3m": 41.76,
       "ret_6m": 84.39,
-      "avg_vol": 108856227,
+      "avg_vol": 108902080,
       "screeners": [
         "1-Month Movers >30%"
       ],
@@ -409,7 +409,7 @@
       "ret_1m": 36.83,
       "ret_3m": 45.74,
       "ret_6m": 46.22,
-      "avg_vol": 564858,
+      "avg_vol": 564870,
       "screeners": [
         "1-Month Movers >30%"
       ],
@@ -427,7 +427,7 @@
       "ret_1m": -1.4,
       "ret_3m": 35.24,
       "ret_6m": 137.29,
-      "avg_vol": 50003526,
+      "avg_vol": 50007710,
       "screeners": [
         "6-Month Movers >100%"
       ],
@@ -445,7 +445,7 @@
       "ret_1m": 16.1,
       "ret_3m": 78.17,
       "ret_6m": 70.37,
-      "avg_vol": 9531083,
+      "avg_vol": 9585540,
       "screeners": [
         "3-Month Movers >50%"
       ],
@@ -463,7 +463,7 @@
       "ret_1m": 15.99,
       "ret_3m": 51.35,
       "ret_6m": 97.39,
-      "avg_vol": 401961,
+      "avg_vol": 407875,
       "screeners": [
         "3-Month Movers >50%"
       ],
@@ -481,7 +481,7 @@
       "ret_1m": 16.81,
       "ret_3m": 56.23,
       "ret_6m": 63.08,
-      "avg_vol": 2433560,
+      "avg_vol": 2433635,
       "screeners": [
         "3-Month Movers >50%"
       ],
@@ -499,7 +499,7 @@
       "ret_1m": 26.58,
       "ret_3m": 76.15,
       "ret_6m": 90.77,
-      "avg_vol": 12221717,
+      "avg_vol": 12222130,
       "screeners": [
         "3-Month Movers >50%"
       ],
