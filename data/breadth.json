@@ -1,36 +1,35 @@
 {
-  "generated_at": "2026-04-23T07:39:55.027380+10:00",
+  "generated_at": "2026-04-24T00:13:37.793824+10:00",
   "mmtw_proxy": {
-    "mmtw_proxy": 65.0,
-    "above_count": 65,
+    "mmtw_proxy": 64.0,
+    "above_count": 64,
     "valid_count": 100,
     "signal": "HEALTHY \u2014 Uptrend participation broad",
     "note": "Sampled 100 of 503 S&P 500 components"
   },
   "nh_nl": {
-    "new_highs": 4,
+    "new_highs": 6,
     "new_lows": 1,
-    "nh_nl_ratio": 4.0,
+    "nh_nl_ratio": 6.0,
     "total_checked": 100,
     "signal": "STRONG \u2014 NH/NL ratio bullish",
     "note": "Sampled 100 tickers, within 1% of 52-week range",
     "source": "yfinance"
   },
   "mco_mcsi": {
-    "mco": 4.9,
-    "mcsi": 45.46,
-    "mco_1sigma_plus": 3.11,
-    "mco_1sigma_minus": -3.11,
-    "mco_2sigma_plus": 6.23,
-    "mco_2sigma_minus": -6.23,
-    "mcsi_10ma": 22.72,
+    "mco": 3.96,
+    "mcsi": 49.42,
+    "mco_1sigma_plus": 3.12,
+    "mco_1sigma_minus": -3.12,
+    "mco_2sigma_plus": 6.24,
+    "mco_2sigma_minus": -6.24,
+    "mcsi_10ma": 27.24,
     "mcsi_above_10ma": true,
     "mcsi_curling_up": false,
     "mcsi_curling_down": false,
     "mco_signal": "OVERBOUGHT (+1\u03c3) \u2014 Stop adding new positions",
     "mcsi_signal": "ABOVE 10MA \u2014 Participation confirmed",
     "mco_history": [
-      -0.39,
       -2.24,
       -4.96,
       -3.91,
@@ -49,15 +48,16 @@
       6.97,
       6.31,
       4.21,
-      4.9
+      4.9,
+      3.96
     ],
     "universe_size": 100
   },
-  "breadth_score": 82.8,
+  "breadth_score": 80.1,
   "breadth_summary": "BULLISH",
   "breadth_factors": [
-    "$MMTW: 65.0%",
-    "MCO: 4.9",
+    "$MMTW: 64.0%",
+    "MCO: 3.96",
     "MCSI above 10MA"
   ]
 }
