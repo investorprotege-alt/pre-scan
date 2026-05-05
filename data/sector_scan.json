@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-06T07:47:18.388502+10:00",
+  "generated_at": "2026-05-06T08:10:21.708251+10:00",
   "market_regime": {
     "regime": "BEAR / BREAKDOWN \u2014 Preserve capital",
     "exposure_phase": "Breakdown",
@@ -291,13 +291,13 @@
       "ticker": "GC=F",
       "name": "Gold",
       "leveraged_etf": "NUGT",
-      "price": 4567.7998,
-      "1w_roc": -0.52,
-      "1m_roc": -1.91,
+      "price": 4568.7002,
+      "1w_roc": -0.5,
+      "1m_roc": -1.89,
       "above_50sma": false,
       "above_200sma": null,
-      "ema21": 4670.5008,
-      "sma50": 4809.626
+      "ema21": 4670.5826,
+      "sma50": 4809.644
     },
     {
       "ticker": "CL=F",
@@ -315,21 +315,21 @@
       "ticker": "SI=F",
       "name": "Silver",
       "leveraged_etf": "AGQ",
-      "price": 73.265,
-      "1w_roc": 0.08,
-      "1m_roc": 0.83,
+      "price": 73.28,
+      "1w_roc": 0.1,
+      "1m_roc": 0.85,
       "above_50sma": false,
       "above_200sma": null,
-      "ema21": 75.2939,
-      "sma50": 77.7751
+      "ema21": 75.2953,
+      "sma50": 77.7754
     },
     {
       "ticker": "NG=F",
       "name": "Natural Gas",
       "leveraged_etf": "BOIL",
-      "price": 2.781,
-      "1w_roc": 8.68,
-      "1m_roc": -1.07,
+      "price": 2.78,
+      "1w_roc": 8.64,
+      "1m_roc": -1.1,
       "above_50sma": false,
       "above_200sma": null,
       "ema21": 2.7337,
@@ -340,16 +340,16 @@
     {
       "ticker": "AUDUSD=X",
       "name": "AUD/USD",
-      "price": 0.7183,
-      "1w_roc": -0.11,
-      "1m_roc": 4.32,
+      "price": 0.7186,
+      "1w_roc": -0.07,
+      "1m_roc": 4.36,
       "above_200sma": null
     },
     {
       "ticker": "DX-Y.NYB",
       "name": "DXY (US Dollar Index)",
-      "price": 98.486,
-      "1w_roc": -0.14,
+      "price": 98.487,
+      "1w_roc": -0.13,
       "1m_roc": -1.49,
       "above_200sma": null
     },
@@ -364,17 +364,17 @@
     {
       "ticker": "GBPUSD=X",
       "name": "GBP/USD",
-      "price": 1.3548,
-      "1w_roc": 0.07,
-      "1m_roc": 2.74,
+      "price": 1.3543,
+      "1w_roc": 0.04,
+      "1m_roc": 2.71,
       "above_200sma": null
     },
     {
       "ticker": "JPY=X",
       "name": "USD/JPY",
-      "price": 157.86,
-      "1w_roc": -0.94,
-      "1m_roc": -1.2,
+      "price": 157.898,
+      "1w_roc": -0.92,
+      "1m_roc": -1.18,
       "above_200sma": null
     }
   ],

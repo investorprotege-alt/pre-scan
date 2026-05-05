@@ -1,24 +1,24 @@
 {
-  "generated_at": "2026-05-05T00:33:36.622658+10:00",
+  "generated_at": "2026-05-06T08:11:24.907604+10:00",
   "screener_breakdown": {
-    "1-Week Movers >20%": 3,
-    "1-Month Movers >30%": 21,
-    "3-Month Movers >50%": 14,
+    "1-Week Movers >20%": 10,
+    "1-Month Movers >30%": 24,
+    "3-Month Movers >50%": 15,
     "6-Month Movers >100%": 10,
     "Daily Pullback-to-MA": 0
   },
   "combined_candidates": [
     {
-      "ticker": "STX",
-      "company": "Seagate Technology",
+      "ticker": "SNDK",
+      "company": "Sandisk",
       "sector": "Information Technology",
       "industry": "Technology Hardware, Storage & Peripherals",
-      "price": 740.0,
-      "ret_1w": 24.19,
-      "ret_1m": 72.35,
-      "ret_3m": 71.22,
-      "ret_6m": 176.98,
-      "avg_vol": 4214956,
+      "price": 1406.32,
+      "ret_1w": 40.3,
+      "ret_1m": 94.07,
+      "ret_3m": 102.2,
+      "ret_6m": 605.52,
+      "avg_vol": 15922845,
       "screeners": [
         "1-Week Movers >20%",
         "1-Month Movers >30%",
@@ -27,43 +27,126 @@
       ],
       "screener_count": 4,
       "high_confluence": true,
-      "in_top_sector": false
+      "in_top_sector": true
+    },
+    {
+      "ticker": "STX",
+      "company": "Seagate Technology",
+      "sector": "Information Technology",
+      "industry": "Technology Hardware, Storage & Peripherals",
+      "price": 771.01,
+      "ret_1w": 33.16,
+      "ret_1m": 70.09,
+      "ret_3m": 73.78,
+      "ret_6m": 202.63,
+      "avg_vol": 4519945,
+      "screeners": [
+        "1-Week Movers >20%",
+        "1-Month Movers >30%",
+        "3-Month Movers >50%",
+        "6-Month Movers >100%"
+      ],
+      "screener_count": 4,
+      "high_confluence": true,
+      "in_top_sector": true
     },
     {
       "ticker": "INTC",
       "company": "Intel",
       "sector": "Information Technology",
       "industry": "Semiconductors",
-      "price": 98.52,
-      "ret_1w": 15.92,
-      "ret_1m": 95.55,
-      "ret_3m": 101.84,
-      "ret_6m": 145.32,
-      "avg_vol": 137413613,
+      "price": 108.15,
+      "ret_1w": 27.96,
+      "ret_1m": 112.98,
+      "ret_3m": 119.59,
+      "ret_6m": 170.44,
+      "avg_vol": 144370583,
       "screeners": [
+        "1-Week Movers >20%",
         "1-Month Movers >30%",
         "3-Month Movers >50%",
         "6-Month Movers >100%"
+      ],
+      "screener_count": 4,
+      "high_confluence": true,
+      "in_top_sector": true
+    },
+    {
+      "ticker": "MU",
+      "company": "Micron Technology",
+      "sector": "Information Technology",
+      "industry": "Semiconductors",
+      "price": 640.2,
+      "ret_1w": 26.95,
+      "ret_1m": 69.47,
+      "ret_3m": 52.7,
+      "ret_6m": 186.33,
+      "avg_vol": 40604331,
+      "screeners": [
+        "1-Week Movers >20%",
+        "1-Month Movers >30%",
+        "3-Month Movers >50%",
+        "6-Month Movers >100%"
+      ],
+      "screener_count": 4,
+      "high_confluence": true,
+      "in_top_sector": true
+    },
+    {
+      "ticker": "LITE",
+      "company": "Lumentum",
+      "sector": "Information Technology",
+      "industry": "Communications Equipment",
+      "price": 994.56,
+      "ret_1w": 25.68,
+      "ret_1m": 28.78,
+      "ret_3m": 128.58,
+      "ret_6m": 393.43,
+      "avg_vol": 5542272,
+      "screeners": [
+        "1-Week Movers >20%",
+        "3-Month Movers >50%",
+        "6-Month Movers >100%"
+      ],
+      "screener_count": 3,
+      "high_confluence": true,
+      "in_top_sector": true
+    },
+    {
+      "ticker": "PWR",
+      "company": "Quanta Services",
+      "sector": "Industrials",
+      "industry": "Construction & Engineering",
+      "price": 771.61,
+      "ret_1w": 22.3,
+      "ret_1m": 39.18,
+      "ret_3m": 57.95,
+      "ret_6m": 71.88,
+      "avg_vol": 1054865,
+      "screeners": [
+        "1-Week Movers >20%",
+        "1-Month Movers >30%",
+        "3-Month Movers >50%"
       ],
       "screener_count": 3,
       "high_confluence": true,
       "in_top_sector": false
     },
     {
-      "ticker": "SNDK",
-      "company": "Sandisk",
-      "sector": "Information Technology",
-      "industry": "Technology Hardware, Storage & Peripherals",
-      "price": 1236.06,
-      "ret_1w": 15.5,
-      "ret_1m": 76.18,
-      "ret_3m": 85.81,
-      "ret_6m": 531.22,
-      "avg_vol": 15135602,
+      "ticker": "GNRC",
+      "company": "Generac",
+      "sector": "Industrials",
+      "industry": "Electrical Components & Equipment",
+      "price": 263.68,
+      "ret_1w": 21.44,
+      "ret_1m": 34.86,
+      "ret_3m": 52.17,
+      "ret_6m": 56.93,
+      "avg_vol": 832137,
       "screeners": [
+        "1-Week Movers >20%",
         "1-Month Movers >30%",
-        "3-Month Movers >50%",
-        "6-Month Movers >100%"
+        "3-Month Movers >50%"
       ],
       "screener_count": 3,
       "high_confluence": true,
@@ -74,12 +157,32 @@
       "company": "Western Digital",
       "sector": "Information Technology",
       "industry": "Technology Hardware, Storage & Peripherals",
-      "price": 436.51,
-      "ret_1w": 8.93,
-      "ret_1m": 47.98,
-      "ret_3m": 61.61,
-      "ret_6m": 216.42,
-      "avg_vol": 7188513,
+      "price": 465.26,
+      "ret_1w": 19.0,
+      "ret_1m": 52.97,
+      "ret_3m": 60.38,
+      "ret_6m": 210.14,
+      "avg_vol": 7688262,
+      "screeners": [
+        "1-Month Movers >30%",
+        "3-Month Movers >50%",
+        "6-Month Movers >100%"
+      ],
+      "screener_count": 3,
+      "high_confluence": true,
+      "in_top_sector": true
+    },
+    {
+      "ticker": "FIX",
+      "company": "Comfort Systems USA",
+      "sector": "Industrials",
+      "industry": "Construction & Engineering",
+      "price": 1967.24,
+      "ret_1w": 14.43,
+      "ret_1m": 37.18,
+      "ret_3m": 62.67,
+      "ret_6m": 103.97,
+      "avg_vol": 413963,
       "screeners": [
         "1-Month Movers >30%",
         "3-Month Movers >50%",
@@ -94,12 +197,12 @@
       "company": "ON Semiconductor",
       "sector": "Information Technology",
       "industry": "Semiconductors",
-      "price": 103.07,
-      "ret_1w": 5.14,
-      "ret_1m": 65.74,
-      "ret_3m": 67.52,
-      "ret_6m": 102.7,
-      "avg_vol": 10278749,
+      "price": 102.67,
+      "ret_1w": 10.04,
+      "ret_1m": 61.71,
+      "ret_3m": 72.76,
+      "ret_6m": 105.01,
+      "avg_vol": 11818846,
       "screeners": [
         "1-Month Movers >30%",
         "3-Month Movers >50%",
@@ -107,243 +210,168 @@
       ],
       "screener_count": 3,
       "high_confluence": true,
-      "in_top_sector": false
-    },
-    {
-      "ticker": "CNC",
-      "company": "Centene Corporation",
-      "sector": "Health Care",
-      "industry": "Managed Health Care",
-      "price": 53.87,
-      "ret_1w": 23.84,
-      "ret_1m": 53.43,
-      "ret_3m": 25.86,
-      "ret_6m": 53.83,
-      "avg_vol": 6548163,
-      "screeners": [
-        "1-Week Movers >20%",
-        "1-Month Movers >30%"
-      ],
-      "screener_count": 2,
-      "high_confluence": true,
-      "in_top_sector": false
+      "in_top_sector": true
     },
     {
       "ticker": "NXPI",
       "company": "NXP Semiconductors",
       "sector": "Information Technology",
       "industry": "Semiconductors",
-      "price": 292.96,
-      "ret_1w": 23.68,
-      "ret_1m": 50.58,
-      "ret_3m": 27.44,
-      "ret_6m": 43.33,
-      "avg_vol": 3464595,
+      "price": 292.35,
+      "ret_1w": 26.89,
+      "ret_1m": 48.34,
+      "ret_3m": 33.18,
+      "ret_6m": 41.15,
+      "avg_vol": 3654256,
       "screeners": [
         "1-Week Movers >20%",
         "1-Month Movers >30%"
       ],
       "screener_count": 2,
       "high_confluence": true,
-      "in_top_sector": false
-    },
-    {
-      "ticker": "PWR",
-      "company": "Quanta Services",
-      "sector": "Industrials",
-      "industry": "Construction & Engineering",
-      "price": 757.89,
-      "ret_1w": 18.92,
-      "ret_1m": 35.18,
-      "ret_3m": 58.66,
-      "ret_6m": 67.07,
-      "avg_vol": 965225,
-      "screeners": [
-        "1-Month Movers >30%",
-        "3-Month Movers >50%"
-      ],
-      "screener_count": 2,
-      "high_confluence": true,
-      "in_top_sector": false
-    },
-    {
-      "ticker": "LITE",
-      "company": "Lumentum",
-      "sector": "Information Technology",
-      "industry": "Communications Equipment",
-      "price": 961.38,
-      "ret_1w": 11.83,
-      "ret_1m": 16.27,
-      "ret_3m": 127.05,
-      "ret_6m": 380.38,
-      "avg_vol": 5337584,
-      "screeners": [
-        "3-Month Movers >50%",
-        "6-Month Movers >100%"
-      ],
-      "screener_count": 2,
-      "high_confluence": true,
-      "in_top_sector": false
-    },
-    {
-      "ticker": "MU",
-      "company": "Micron Technology",
-      "sector": "Information Technology",
-      "industry": "Semiconductors",
-      "price": 583.51,
-      "ret_1w": 11.24,
-      "ret_1m": 59.33,
-      "ret_3m": 33.34,
-      "ret_6m": 160.7,
-      "avg_vol": 38166015,
-      "screeners": [
-        "1-Month Movers >30%",
-        "6-Month Movers >100%"
-      ],
-      "screener_count": 2,
-      "high_confluence": true,
-      "in_top_sector": false
-    },
-    {
-      "ticker": "FIX",
-      "company": "Comfort Systems USA",
-      "sector": "Industrials",
-      "industry": "Construction & Engineering",
-      "price": 1886.67,
-      "ret_1w": 5.16,
-      "ret_1m": 33.13,
-      "ret_3m": 60.48,
-      "ret_6m": 96.08,
-      "avg_vol": 387618,
-      "screeners": [
-        "1-Month Movers >30%",
-        "3-Month Movers >50%"
-      ],
-      "screener_count": 2,
-      "high_confluence": true,
-      "in_top_sector": false
-    },
-    {
-      "ticker": "CIEN",
-      "company": "Ciena",
-      "sector": "Information Technology",
-      "industry": "Communications Equipment",
-      "price": 531.41,
-      "ret_1w": 4.95,
-      "ret_1m": 18.68,
-      "ret_3m": 97.93,
-      "ret_6m": 181.23,
-      "avg_vol": 2357727,
-      "screeners": [
-        "3-Month Movers >50%",
-        "6-Month Movers >100%"
-      ],
-      "screener_count": 2,
-      "high_confluence": true,
-      "in_top_sector": false
-    },
-    {
-      "ticker": "KEYS",
-      "company": "Keysight Technologies",
-      "sector": "Information Technology",
-      "industry": "Electronic Equipment & Instruments",
-      "price": 353.05,
-      "ret_1w": 3.64,
-      "ret_1m": 21.22,
-      "ret_3m": 58.14,
-      "ret_6m": 101.32,
-      "avg_vol": 1074903,
-      "screeners": [
-        "3-Month Movers >50%",
-        "6-Month Movers >100%"
-      ],
-      "screener_count": 2,
-      "high_confluence": true,
-      "in_top_sector": false
-    },
-    {
-      "ticker": "GNRC",
-      "company": "Generac",
-      "sector": "Industrials",
-      "industry": "Electrical Components & Equipment",
-      "price": 255.65,
-      "ret_1w": 16.05,
-      "ret_1m": 31.72,
-      "ret_3m": 49.54,
-      "ret_6m": 54.21,
-      "avg_vol": 811899,
-      "screeners": [
-        "1-Month Movers >30%"
-      ],
-      "screener_count": 1,
-      "high_confluence": false,
-      "in_top_sector": false
+      "in_top_sector": true
     },
     {
       "ticker": "QCOM",
       "company": "Qualcomm",
       "sector": "Information Technology",
       "industry": "Semiconductors",
-      "price": 169.3,
-      "ret_1w": 12.67,
-      "ret_1m": 33.52,
-      "ret_3m": 11.64,
-      "ret_6m": -3.39,
-      "avg_vol": 17357383,
+      "price": 186.55,
+      "ret_1w": 24.37,
+      "ret_1m": 48.37,
+      "ret_3m": 27.56,
+      "ret_6m": 4.32,
+      "avg_vol": 19178987,
       "screeners": [
+        "1-Week Movers >20%",
         "1-Month Movers >30%"
+      ],
+      "screener_count": 2,
+      "high_confluence": true,
+      "in_top_sector": true
+    },
+    {
+      "ticker": "CIEN",
+      "company": "Ciena",
+      "sector": "Information Technology",
+      "industry": "Communications Equipment",
+      "price": 544.75,
+      "ret_1w": 15.0,
+      "ret_1m": 25.44,
+      "ret_3m": 97.0,
+      "ret_6m": 186.83,
+      "avg_vol": 2385621,
+      "screeners": [
+        "3-Month Movers >50%",
+        "6-Month Movers >100%"
+      ],
+      "screener_count": 2,
+      "high_confluence": true,
+      "in_top_sector": true
+    },
+    {
+      "ticker": "VRT",
+      "company": "Vertiv",
+      "sector": "Industrials",
+      "industry": "Electrical Components & Equipment",
+      "price": 341.02,
+      "ret_1w": 11.8,
+      "ret_1m": 31.81,
+      "ret_3m": 79.39,
+      "ret_6m": 76.93,
+      "avg_vol": 5725642,
+      "screeners": [
+        "1-Month Movers >30%",
+        "3-Month Movers >50%"
+      ],
+      "screener_count": 2,
+      "high_confluence": true,
+      "in_top_sector": false
+    },
+    {
+      "ticker": "COHR",
+      "company": "Coherent Corp.",
+      "sector": "Information Technology",
+      "industry": "Electronic Components",
+      "price": 335.73,
+      "ret_1w": 10.45,
+      "ret_1m": 32.58,
+      "ret_3m": 46.49,
+      "ret_6m": 154.42,
+      "avg_vol": 5789387,
+      "screeners": [
+        "1-Month Movers >30%",
+        "6-Month Movers >100%"
+      ],
+      "screener_count": 2,
+      "high_confluence": true,
+      "in_top_sector": true
+    },
+    {
+      "ticker": "AKAM",
+      "company": "Akamai Technologies",
+      "sector": "Information Technology",
+      "industry": "Internet Services & Infrastructure",
+      "price": 117.94,
+      "ret_1w": 23.59,
+      "ret_1m": 2.91,
+      "ret_3m": 28.49,
+      "ret_6m": 57.04,
+      "avg_vol": 5039644,
+      "screeners": [
+        "1-Week Movers >20%"
       ],
       "screener_count": 1,
       "high_confluence": false,
-      "in_top_sector": false
+      "in_top_sector": true
     },
     {
       "ticker": "MCHP",
       "company": "Microchip Technology",
       "sector": "Information Technology",
       "industry": "Semiconductors",
-      "price": 94.91,
-      "ret_1w": 9.29,
-      "ret_1m": 44.68,
-      "ret_3m": 22.27,
-      "ret_6m": 55.2,
-      "avg_vol": 9409472,
+      "price": 98.48,
+      "ret_1w": 16.88,
+      "ret_1m": 46.5,
+      "ret_3m": 29.22,
+      "ret_6m": 60.13,
+      "avg_vol": 9941063,
       "screeners": [
         "1-Month Movers >30%"
       ],
       "screener_count": 1,
       "high_confluence": false,
-      "in_top_sector": false
+      "in_top_sector": true
     },
     {
-      "ticker": "LYB",
-      "company": "LyondellBasell",
-      "sector": "Materials",
-      "industry": "Specialty Chemicals",
-      "price": 74.94,
-      "ret_1w": 5.53,
-      "ret_1m": -5.85,
-      "ret_3m": 50.96,
-      "ret_6m": 72.65,
-      "avg_vol": 6777693,
+      "ticker": "AMD",
+      "company": "Advanced Micro Devices",
+      "sector": "Information Technology",
+      "industry": "Semiconductors",
+      "price": 355.26,
+      "ret_1w": 9.92,
+      "ret_1m": 61.35,
+      "ret_3m": 46.73,
+      "ret_6m": 38.71,
+      "avg_vol": 41176234,
       "screeners": [
-        "3-Month Movers >50%"
+        "1-Month Movers >30%"
       ],
       "screener_count": 1,
       "high_confluence": false,
-      "in_top_sector": false
+      "in_top_sector": true
     },
     {
       "ticker": "APA",
       "company": "APA Corporation",
       "sector": "Energy",
       "industry": "Oil & Gas Exploration & Production",
-      "price": 40.54,
-      "ret_1w": 5.49,
-      "ret_1m": -2.92,
-      "ret_3m": 57.63,
-      "ret_6m": 83.93,
-      "avg_vol": 6726117,
+      "price": 41.48,
+      "ret_1w": 7.32,
+      "ret_1m": -2.93,
+      "ret_3m": 57.81,
+      "ret_6m": 86.11,
+      "avg_vol": 7086171,
       "screeners": [
         "3-Month Movers >50%"
       ],
@@ -352,34 +380,52 @@
       "in_top_sector": true
     },
     {
-      "ticker": "HUM",
-      "company": "Humana",
-      "sector": "Health Care",
-      "industry": "Managed Health Care",
-      "price": 235.39,
-      "ret_1w": 5.26,
-      "ret_1m": 32.37,
-      "ret_3m": 26.38,
-      "ret_6m": -16.88,
-      "avg_vol": 1910503,
+      "ticker": "KEYS",
+      "company": "Keysight Technologies",
+      "sector": "Information Technology",
+      "industry": "Electronic Equipment & Instruments",
+      "price": 355.93,
+      "ret_1w": 7.11,
+      "ret_1m": 21.51,
+      "ret_3m": 56.69,
+      "ret_6m": 94.54,
+      "avg_vol": 1103467,
+      "screeners": [
+        "3-Month Movers >50%"
+      ],
+      "screener_count": 1,
+      "high_confluence": false,
+      "in_top_sector": true
+    },
+    {
+      "ticker": "AVGO",
+      "company": "Broadcom",
+      "sector": "Information Technology",
+      "industry": "Semiconductors",
+      "price": 427.36,
+      "ret_1w": 6.89,
+      "ret_1m": 35.92,
+      "ret_3m": 33.69,
+      "ret_6m": 16.08,
+      "avg_vol": 21283896,
       "screeners": [
         "1-Month Movers >30%"
       ],
       "screener_count": 1,
       "high_confluence": false,
-      "in_top_sector": false
+      "in_top_sector": true
     },
     {
-      "ticker": "NUE",
-      "company": "Nucor",
-      "sector": "Materials",
-      "industry": "Steel",
-      "price": 226.24,
-      "ret_1w": 5.23,
-      "ret_1m": 31.18,
-      "ret_3m": 25.45,
-      "ret_6m": 52.12,
-      "avg_vol": 1588864,
+      "ticker": "CNC",
+      "company": "Centene Corporation",
+      "sector": "Health Care",
+      "industry": "Managed Health Care",
+      "price": 52.98,
+      "ret_1w": 6.88,
+      "ret_1m": 49.66,
+      "ret_3m": 24.63,
+      "ret_6m": 49.79,
+      "avg_vol": 6667764,
       "screeners": [
         "1-Month Movers >30%"
       ],
@@ -392,48 +438,120 @@
       "company": "Texas Instruments",
       "sector": "Information Technology",
       "industry": "Semiconductors",
-      "price": 279.89,
-      "ret_1w": 3.86,
-      "ret_1m": 43.63,
-      "ret_3m": 24.39,
-      "ret_6m": 77.08,
-      "avg_vol": 7849281,
+      "price": 281.0,
+      "ret_1w": 6.04,
+      "ret_1m": 40.91,
+      "ret_3m": 24.77,
+      "ret_6m": 75.17,
+      "avg_vol": 8202791,
       "screeners": [
         "1-Month Movers >30%"
       ],
       "screener_count": 1,
       "high_confluence": false,
-      "in_top_sector": false
+      "in_top_sector": true
     },
     {
-      "ticker": "UNH",
-      "company": "UnitedHealth Group",
-      "sector": "Health Care",
-      "industry": "Managed Health Care",
-      "price": 367.17,
-      "ret_1w": 3.52,
-      "ret_1m": 32.43,
-      "ret_3m": 29.56,
-      "ret_6m": 8.05,
-      "avg_vol": 8930468,
-      "screeners": [
-        "1-Month Movers >30%"
-      ],
-      "screener_count": 1,
-      "high_confluence": false,
-      "in_top_sector": false
-    },
-    {
-      "ticker": "AMD",
-      "company": "Advanced Micro Devices",
+      "ticker": "MPWR",
+      "company": "Monolithic Power Systems",
       "sector": "Information Technology",
       "industry": "Semiconductors",
-      "price": 344.88,
-      "ret_1w": 3.06,
-      "ret_1m": 58.57,
-      "ret_3m": 40.04,
-      "ret_6m": 35.33,
-      "avg_vol": 38972621,
+      "price": 1588.12,
+      "ret_1w": 5.59,
+      "ret_1m": 34.58,
+      "ret_3m": 36.61,
+      "ret_6m": 58.61,
+      "avg_vol": 626178,
+      "screeners": [
+        "1-Month Movers >30%"
+      ],
+      "screener_count": 1,
+      "high_confluence": false,
+      "in_top_sector": true
+    },
+    {
+      "ticker": "DELL",
+      "company": "Dell Technologies",
+      "sector": "Information Technology",
+      "industry": "Technology Hardware, Storage & Peripherals",
+      "price": 216.32,
+      "ret_1w": 5.05,
+      "ret_1m": 25.3,
+      "ret_3m": 85.22,
+      "ret_6m": 34.52,
+      "avg_vol": 5988618,
+      "screeners": [
+        "3-Month Movers >50%"
+      ],
+      "screener_count": 1,
+      "high_confluence": false,
+      "in_top_sector": true
+    },
+    {
+      "ticker": "STLD",
+      "company": "Steel Dynamics",
+      "sector": "Materials",
+      "industry": "Steel",
+      "price": 237.46,
+      "ret_1w": 4.63,
+      "ret_1m": 34.52,
+      "ret_3m": 23.45,
+      "ret_6m": 52.36,
+      "avg_vol": 1187424,
+      "screeners": [
+        "1-Month Movers >30%"
+      ],
+      "screener_count": 1,
+      "high_confluence": false,
+      "in_top_sector": false
+    },
+    {
+      "ticker": "HUM",
+      "company": "Humana",
+      "sector": "Health Care",
+      "industry": "Managed Health Care",
+      "price": 239.53,
+      "ret_1w": 4.27,
+      "ret_1m": 31.14,
+      "ret_3m": 24.73,
+      "ret_6m": -13.16,
+      "avg_vol": 1735150,
+      "screeners": [
+        "1-Month Movers >30%"
+      ],
+      "screener_count": 1,
+      "high_confluence": false,
+      "in_top_sector": false
+    },
+    {
+      "ticker": "BEN",
+      "company": "Franklin Resources",
+      "sector": "Financials",
+      "industry": "Asset Management & Custody Banks",
+      "price": 30.46,
+      "ret_1w": 3.39,
+      "ret_1m": 30.17,
+      "ret_3m": 14.46,
+      "ret_6m": 38.56,
+      "avg_vol": 5843773,
+      "screeners": [
+        "1-Month Movers >30%"
+      ],
+      "screener_count": 1,
+      "high_confluence": false,
+      "in_top_sector": false
+    },
+    {
+      "ticker": "NUE",
+      "company": "Nucor",
+      "sector": "Materials",
+      "industry": "Steel",
+      "price": 232.07,
+      "ret_1w": 3.09,
+      "ret_1m": 36.84,
+      "ret_3m": 24.86,
+      "ret_6m": 55.72,
+      "avg_vol": 1596963,
       "screeners": [
         "1-Month Movers >30%"
       ],
@@ -446,112 +564,22 @@
       "company": "Arista Networks",
       "sector": "Information Technology",
       "industry": "Communications Equipment",
-      "price": 175.8,
-      "ret_1w": 1.93,
-      "ret_1m": 38.77,
-      "ret_3m": 27.05,
-      "ret_6m": 10.96,
-      "avg_vol": 7123624,
+      "price": 170.22,
+      "ret_1w": 2.98,
+      "ret_1m": 34.83,
+      "ret_3m": 22.12,
+      "ret_6m": 7.95,
+      "avg_vol": 7844764,
       "screeners": [
         "1-Month Movers >30%"
       ],
       "screener_count": 1,
       "high_confluence": false,
-      "in_top_sector": false
-    },
-    {
-      "ticker": "VRT",
-      "company": "Vertiv",
-      "sector": "Industrials",
-      "industry": "Electrical Components & Equipment",
-      "price": 327.35,
-      "ret_1w": 1.53,
-      "ret_1m": 25.28,
-      "ret_3m": 72.32,
-      "ret_6m": 69.05,
-      "avg_vol": 5425436,
-      "screeners": [
-        "3-Month Movers >50%"
-      ],
-      "screener_count": 1,
-      "high_confluence": false,
-      "in_top_sector": false
-    },
-    {
-      "ticker": "COHR",
-      "company": "Coherent Corp.",
-      "sector": "Information Technology",
-      "industry": "Electronic Components",
-      "price": 325.73,
-      "ret_1w": 1.31,
-      "ret_1m": 26.17,
-      "ret_3m": 46.43,
-      "ret_6m": 145.44,
-      "avg_vol": 5525848,
-      "screeners": [
-        "6-Month Movers >100%"
-      ],
-      "screener_count": 1,
-      "high_confluence": false,
-      "in_top_sector": false
-    },
-    {
-      "ticker": "MPWR",
-      "company": "Monolithic Power Systems",
-      "sector": "Information Technology",
-      "industry": "Semiconductors",
-      "price": 1585.56,
-      "ret_1w": -0.13,
-      "ret_1m": 41.76,
-      "ret_3m": 35.42,
-      "ret_6m": 46.33,
-      "avg_vol": 593945,
-      "screeners": [
-        "1-Month Movers >30%"
-      ],
-      "screener_count": 1,
-      "high_confluence": false,
-      "in_top_sector": false
-    },
-    {
-      "ticker": "AVGO",
-      "company": "Broadcom",
-      "sector": "Information Technology",
-      "industry": "Semiconductors",
-      "price": 416.28,
-      "ret_1w": -0.46,
-      "ret_1m": 32.34,
-      "ret_3m": 25.99,
-      "ret_6m": 11.02,
-      "avg_vol": 21386700,
-      "screeners": [
-        "1-Month Movers >30%"
-      ],
-      "screener_count": 1,
-      "high_confluence": false,
-      "in_top_sector": false
-    },
-    {
-      "ticker": "DELL",
-      "company": "Dell Technologies",
-      "sector": "Information Technology",
-      "industry": "Technology Hardware, Storage & Peripherals",
-      "price": 211.1,
-      "ret_1w": -2.25,
-      "ret_1m": 21.44,
-      "ret_3m": 77.7,
-      "ret_6m": 32.09,
-      "avg_vol": 5909028,
-      "screeners": [
-        "3-Month Movers >50%"
-      ],
-      "screener_count": 1,
-      "high_confluence": false,
-      "in_top_sector": false
+      "in_top_sector": true
     }
   ],
-  "high_confluence_count": 13,
-  "in_top_sector_count": 1,
+  "high_confluence_count": 15,
+  "in_top_sector_count": 21,
   "universe_size": 502,
   "source": "yfinance (S&P 500)"
 }
