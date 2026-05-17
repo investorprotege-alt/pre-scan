@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-17T23:58:06.090059+10:00",
+  "generated_at": "2026-05-18T07:41:08.899467+10:00",
   "market_regime": {
     "regime": "BEAR / BREAKDOWN \u2014 Preserve capital",
     "exposure_phase": "Breakdown",
@@ -340,9 +340,9 @@
     {
       "ticker": "AUDUSD=X",
       "name": "AUD/USD",
-      "price": 0.7153,
-      "1w_roc": -1.16,
-      "1m_roc": -0.08,
+      "price": 0.7158,
+      "1w_roc": -1.09,
+      "1m_roc": -0.01,
       "above_200sma": null
     },
     {
@@ -356,25 +356,25 @@
     {
       "ticker": "EURUSD=X",
       "name": "EUR/USD",
-      "price": 1.1631,
-      "1w_roc": -0.86,
-      "1m_roc": -1.51,
+      "price": 1.1621,
+      "1w_roc": -1.26,
+      "1m_roc": -1.37,
       "above_200sma": null
     },
     {
       "ticker": "GBPUSD=X",
       "name": "GBP/USD",
       "price": 1.3326,
-      "1w_roc": -1.98,
+      "1w_roc": -1.97,
       "1m_roc": -1.48,
       "above_200sma": null
     },
     {
       "ticker": "JPY=X",
       "name": "USD/JPY",
-      "price": 158.731,
-      "1w_roc": 1.21,
-      "1m_roc": -0.05,
+      "price": 158.708,
+      "1w_roc": 1.18,
+      "1m_roc": -0.31,
       "above_200sma": null
     }
   ],
@@ -540,10 +540,10 @@
         "ticker": "MQG.AX",
         "name": "Macquarie Group",
         "sector": "Financials",
-        "price": 242.96,
-        "ema10": 239.2348,
-        "ema21": 235.2959,
-        "sma50": 219.544,
+        "price": 238.76,
+        "ema10": 235.0992,
+        "ema21": 231.2284,
+        "sma50": 215.7488,
         "sma200": null,
         "above_200sma": null,
         "1w_roc": 1.56,
