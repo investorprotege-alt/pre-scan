@@ -1,36 +1,35 @@
 {
-  "generated_at": "2026-05-20T08:02:23.985937+10:00",
+  "generated_at": "2026-05-21T01:57:51.446988+10:00",
   "mmtw_proxy": {
-    "mmtw_proxy": 49.0,
-    "above_count": 49,
+    "mmtw_proxy": 54.0,
+    "above_count": 54,
     "valid_count": 100,
-    "signal": "NEUTRAL \u2014 Mixed conditions",
+    "signal": "HEALTHY \u2014 Uptrend participation broad",
     "note": "Sampled 100 of 503 S&P 500 components"
   },
   "nh_nl": {
     "new_highs": 6,
-    "new_lows": 3,
-    "nh_nl_ratio": 2.0,
+    "new_lows": 0,
+    "nh_nl_ratio": 6.0,
     "total_checked": 100,
-    "signal": "NEUTRAL \u2014 Mixed highs/lows",
+    "signal": "STRONG \u2014 NH/NL ratio bullish",
     "note": "Sampled 100 tickers, within 1% of 52-week range",
     "source": "yfinance"
   },
   "mco_mcsi": {
-    "mco": -2.8,
-    "mcsi": 43.93,
-    "mco_1sigma_plus": 3.25,
-    "mco_1sigma_minus": -3.25,
-    "mco_2sigma_plus": 6.5,
-    "mco_2sigma_minus": -6.5,
-    "mcsi_10ma": 53.23,
+    "mco": -0.86,
+    "mcsi": 43.06,
+    "mco_1sigma_plus": 3.24,
+    "mco_1sigma_minus": -3.24,
+    "mco_2sigma_plus": 6.48,
+    "mco_2sigma_minus": -6.48,
+    "mcsi_10ma": 51.76,
     "mcsi_above_10ma": false,
     "mcsi_curling_up": false,
     "mcsi_curling_down": false,
     "mco_signal": "NEUTRAL \u2014 Normal conditions",
     "mcsi_signal": "BELOW 10MA \u2014 Caution",
     "mco_history": [
-      4.85,
       3.41,
       3.17,
       1.25,
@@ -49,14 +48,15 @@
       -1.83,
       -3.22,
       -1.6,
-      -2.8
+      -2.8,
+      -0.86
     ],
     "universe_size": 100
   },
-  "breadth_score": 28.1,
+  "breadth_score": 34.6,
   "breadth_summary": "BEARISH",
   "breadth_factors": [
-    "$MMTW: 49.0%",
-    "MCO: -2.8"
+    "$MMTW: 54.0%",
+    "MCO: -0.86"
   ]
 }
