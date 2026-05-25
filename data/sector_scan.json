@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-05-26T01:29:09.987921+10:00",
+  "generated_at": "2026-05-26T07:56:34.657670+10:00",
   "market_regime": {
     "regime": "BEAR / BREAKDOWN \u2014 Preserve capital",
     "exposure_phase": "Breakdown",
-    "vix": 16.57,
+    "vix": 16.59,
     "vix_regime": "NORMAL",
     "spy_above_200sma": false,
     "spy_above_50sma": true
@@ -276,14 +276,14 @@
     {
       "ticker": "^VIX",
       "name": "VIX",
-      "price": 16.57,
-      "sma50": 20.5648,
+      "price": 16.59,
+      "sma50": 20.5652,
       "sma200": null,
       "above_50sma": false,
       "above_200sma": null,
-      "1w_roc": -7.01,
-      "1m_roc": -11.44,
-      "atr_mult_from_50sma": 3.79
+      "1w_roc": -6.9,
+      "1m_roc": -11.33,
+      "atr_mult_from_50sma": 3.77
     }
   ],
   "commodities": [
@@ -340,41 +340,41 @@
     {
       "ticker": "AUDUSD=X",
       "name": "AUD/USD",
-      "price": 0.7179,
-      "1w_roc": 0.69,
-      "1m_roc": 0.7,
+      "price": 0.7173,
+      "1w_roc": 0.6,
+      "1m_roc": 0.61,
       "above_200sma": null
     },
     {
       "ticker": "DX-Y.NYB",
       "name": "DXY (US Dollar Index)",
-      "price": 98.972,
-      "1w_roc": 0.0,
-      "1m_roc": 0.47,
+      "price": 99.239,
+      "1w_roc": 0.27,
+      "1m_roc": 0.74,
       "above_200sma": null
     },
     {
       "ticker": "EURUSD=X",
       "name": "EUR/USD",
-      "price": 1.165,
-      "1w_roc": 0.3,
-      "1m_roc": -0.29,
+      "price": 1.1644,
+      "1w_roc": 0.26,
+      "1m_roc": -0.34,
       "above_200sma": null
     },
     {
       "ticker": "GBPUSD=X",
       "name": "GBP/USD",
-      "price": 1.3502,
-      "1w_roc": 1.45,
-      "1m_roc": 0.26,
+      "price": 1.3503,
+      "1w_roc": 1.46,
+      "1m_roc": 0.27,
       "above_200sma": null
     },
     {
       "ticker": "JPY=X",
       "name": "USD/JPY",
-      "price": 158.901,
-      "1w_roc": 0.04,
-      "1m_roc": -0.53,
+      "price": 158.878,
+      "1w_roc": 0.02,
+      "1m_roc": -0.54,
       "above_200sma": null
     }
   ],
