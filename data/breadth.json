@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-03T08:52:51.526726+10:00",
+  "generated_at": "2026-06-04T03:18:47.844541+10:00",
   "mmtw_proxy": {
     "mmtw_proxy": 52.0,
     "above_count": 52,
@@ -9,28 +9,27 @@
   },
   "nh_nl": {
     "new_highs": 2,
-    "new_lows": 1,
-    "nh_nl_ratio": 2.0,
+    "new_lows": 3,
+    "nh_nl_ratio": 0.67,
     "total_checked": 100,
-    "signal": "NEUTRAL \u2014 Mixed highs/lows",
+    "signal": "WEAK \u2014 More new lows than highs",
     "note": "Sampled 100 tickers, within 1% of 52-week range",
     "source": "yfinance"
   },
   "mco_mcsi": {
-    "mco": -0.92,
-    "mcsi": 45.41,
+    "mco": -1.22,
+    "mcsi": 44.2,
     "mco_1sigma_plus": 2.4,
     "mco_1sigma_minus": -2.4,
-    "mco_2sigma_plus": 4.81,
-    "mco_2sigma_minus": -4.81,
-    "mcsi_10ma": 46.36,
+    "mco_2sigma_plus": 4.8,
+    "mco_2sigma_minus": -4.8,
+    "mcsi_10ma": 46.17,
     "mcsi_above_10ma": false,
     "mcsi_curling_up": false,
     "mcsi_curling_down": false,
     "mco_signal": "NEUTRAL \u2014 Normal conditions",
     "mcsi_signal": "BELOW 10MA \u2014 Caution",
     "mco_history": [
-      0.94,
       1.81,
       0.55,
       0.47,
@@ -49,14 +48,15 @@
       0.25,
       -0.32,
       -0.11,
-      -0.92
+      -0.92,
+      -1.22
     ],
     "universe_size": 100
   },
-  "breadth_score": 32.9,
+  "breadth_score": 32.0,
   "breadth_summary": "BEARISH",
   "breadth_factors": [
     "$MMTW: 52.0%",
-    "MCO: -0.92"
+    "MCO: -1.22"
   ]
 }
