@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-11T08:44:10.605161+10:00",
+  "generated_at": "2026-06-12T02:23:37.523558+10:00",
   "mmtw_proxy": {
     "mmtw_proxy": 61.0,
     "above_count": 61,
@@ -8,29 +8,28 @@
     "note": "Sampled 100 of 503 S&P 500 components"
   },
   "nh_nl": {
-    "new_highs": 1,
-    "new_lows": 2,
-    "nh_nl_ratio": 0.5,
+    "new_highs": 5,
+    "new_lows": 0,
+    "nh_nl_ratio": 5.0,
     "total_checked": 100,
-    "signal": "WEAK \u2014 More new lows than highs",
+    "signal": "STRONG \u2014 NH/NL ratio bullish",
     "note": "Sampled 100 tickers, within 1% of 52-week range",
     "source": "yfinance"
   },
   "mco_mcsi": {
-    "mco": -3.87,
-    "mcsi": 33.4,
+    "mco": -2.28,
+    "mcsi": 31.12,
     "mco_1sigma_plus": 2.45,
     "mco_1sigma_minus": -2.45,
     "mco_2sigma_plus": 4.9,
     "mco_2sigma_minus": -4.9,
-    "mcsi_10ma": 42.37,
+    "mcsi_10ma": 40.81,
     "mcsi_above_10ma": false,
     "mcsi_curling_up": false,
     "mcsi_curling_down": false,
-    "mco_signal": "OVERSOLD (-1\u03c3) \u2014 Timing window open for pullback entries",
+    "mco_signal": "NEUTRAL \u2014 Normal conditions",
     "mcsi_signal": "BELOW 10MA \u2014 Caution",
     "mco_history": [
-      -2.49,
       -1.81,
       -3.32,
       -1.79,
@@ -49,14 +48,15 @@
       -2.27,
       -2.2,
       -1.97,
-      -3.87
+      -3.87,
+      -2.28
     ],
     "universe_size": 100
   },
-  "breadth_score": 27.6,
+  "breadth_score": 32.4,
   "breadth_summary": "BEARISH",
   "breadth_factors": [
     "$MMTW: 61.0%",
-    "MCO: -3.87"
+    "MCO: -2.28"
   ]
 }
