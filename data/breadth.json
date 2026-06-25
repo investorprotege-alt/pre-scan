@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-26T01:16:02.843824+10:00",
+  "generated_at": "2026-06-26T08:12:36.332496+10:00",
   "mmtw_proxy": {
-    "mmtw_proxy": 61.0,
-    "above_count": 61,
+    "mmtw_proxy": 60.0,
+    "above_count": 60,
     "valid_count": 100,
     "signal": "HEALTHY \u2014 Uptrend participation broad",
     "note": "Sampled 100 of 503 S&P 500 components"
@@ -17,13 +17,13 @@
     "source": "yfinance"
   },
   "mco_mcsi": {
-    "mco": -1.83,
-    "mcsi": 19.89,
-    "mco_1sigma_plus": 2.58,
-    "mco_1sigma_minus": -2.58,
+    "mco": -2.13,
+    "mcsi": 19.59,
+    "mco_1sigma_plus": 2.59,
+    "mco_1sigma_minus": -2.59,
     "mco_2sigma_plus": 5.17,
     "mco_2sigma_minus": -5.17,
-    "mcsi_10ma": 28.29,
+    "mcsi_10ma": 28.26,
     "mcsi_above_10ma": false,
     "mcsi_curling_up": false,
     "mcsi_curling_down": false,
@@ -49,14 +49,14 @@
       -2.36,
       -2.7,
       -2.13,
-      -1.83
+      -2.13
     ],
     "universe_size": 100
   },
-  "breadth_score": 34.1,
+  "breadth_score": 32.8,
   "breadth_summary": "BEARISH",
   "breadth_factors": [
-    "$MMTW: 61.0%",
-    "MCO: -1.83"
+    "$MMTW: 60.0%",
+    "MCO: -2.13"
   ]
 }
