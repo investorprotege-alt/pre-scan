@@ -1,29 +1,29 @@
 {
-  "generated_at": "2026-07-02T01:13:17.678942+10:00",
+  "generated_at": "2026-07-02T08:09:23.474060+10:00",
   "mmtw_proxy": {
-    "mmtw_proxy": 66.7,
-    "above_count": 66,
+    "mmtw_proxy": 62.6,
+    "above_count": 62,
     "valid_count": 99,
     "signal": "HEALTHY \u2014 Uptrend participation broad",
     "note": "Sampled 100 of 503 S&P 500 components"
   },
   "nh_nl": {
-    "new_highs": 11,
+    "new_highs": 6,
     "new_lows": 0,
-    "nh_nl_ratio": 11.0,
+    "nh_nl_ratio": 6.0,
     "total_checked": 100,
     "signal": "STRONG \u2014 NH/NL ratio bullish",
     "note": "Sampled 100 tickers, within 1% of 52-week range",
     "source": "yfinance"
   },
   "mco_mcsi": {
-    "mco": 0.46,
-    "mcsi": 22.82,
+    "mco": 0.06,
+    "mcsi": 22.42,
     "mco_1sigma_plus": 2.5,
     "mco_1sigma_minus": -2.5,
     "mco_2sigma_plus": 4.99,
     "mco_2sigma_minus": -4.99,
-    "mcsi_10ma": 28.48,
+    "mcsi_10ma": 28.44,
     "mcsi_above_10ma": false,
     "mcsi_curling_up": false,
     "mcsi_curling_down": false,
@@ -49,14 +49,14 @@
       -1.85,
       -0.85,
       -0.8,
-      0.46
+      0.06
     ],
     "universe_size": 100
   },
-  "breadth_score": 43.1,
+  "breadth_score": 40.2,
   "breadth_summary": "BEARISH",
   "breadth_factors": [
-    "$MMTW: 66.7%",
-    "MCO: 0.46"
+    "$MMTW: 62.6%",
+    "MCO: 0.06"
   ]
 }
