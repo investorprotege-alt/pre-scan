@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-07-03T07:54:21.495045+10:00",
+  "generated_at": "2026-07-06T00:09:58.096723+10:00",
   "mmtw_proxy": {
-    "mmtw_proxy": 70.4,
-    "above_count": 69,
-    "valid_count": 98,
+    "mmtw_proxy": 70.7,
+    "above_count": 70,
+    "valid_count": 99,
     "signal": "OVERBOUGHT \u2014 Caution, stop adding",
     "note": "Sampled 100 of 503 S&P 500 components"
   },
@@ -53,10 +53,10 @@
     ],
     "universe_size": 100
   },
-  "breadth_score": 44.8,
-  "breadth_summary": "BEARISH",
+  "breadth_score": 45.0,
+  "breadth_summary": "NEUTRAL",
   "breadth_factors": [
-    "$MMTW: 70.4%",
+    "$MMTW: 70.7%",
     "MCO: 0.55"
   ]
 }
