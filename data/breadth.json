@@ -1,36 +1,35 @@
 {
-  "generated_at": "2026-08-12T07:31:13.213545+10:00",
+  "generated_at": "2026-08-12T23:48:17.063816+10:00",
   "mmtw_proxy": {
-    "mmtw_proxy": 61.0,
-    "above_count": 61,
-    "valid_count": 100,
+    "mmtw_proxy": 59.3,
+    "above_count": 48,
+    "valid_count": 81,
     "signal": "HEALTHY \u2014 Uptrend participation broad",
     "note": "Sampled 100 of 503 S&P 500 components"
   },
   "nh_nl": {
-    "new_highs": 5,
+    "new_highs": 4,
     "new_lows": 0,
-    "nh_nl_ratio": 5.0,
+    "nh_nl_ratio": 4.0,
     "total_checked": 100,
     "signal": "STRONG \u2014 NH/NL ratio bullish",
     "note": "Sampled 100 tickers, within 1% of 52-week range",
     "source": "yfinance"
   },
   "mco_mcsi": {
-    "mco": 2.59,
-    "mcsi": 17.89,
-    "mco_1sigma_plus": 2.67,
-    "mco_1sigma_minus": -2.67,
-    "mco_2sigma_plus": 5.33,
-    "mco_2sigma_minus": -5.33,
-    "mcsi_10ma": 7.53,
+    "mco": 1.12,
+    "mcsi": 19.06,
+    "mco_1sigma_plus": 2.66,
+    "mco_1sigma_minus": -2.66,
+    "mco_2sigma_plus": 5.32,
+    "mco_2sigma_minus": -5.32,
+    "mcsi_10ma": 9.23,
     "mcsi_above_10ma": true,
     "mcsi_curling_up": false,
     "mcsi_curling_down": false,
     "mco_signal": "NEUTRAL \u2014 Normal conditions",
     "mcsi_signal": "ABOVE 10MA \u2014 Participation confirmed",
     "mco_history": [
-      0.55,
       0.93,
       -2.05,
       -2.98,
@@ -49,15 +48,16 @@
       0.82,
       3.76,
       3.0,
-      2.59
+      2.64,
+      1.12
     ],
     "universe_size": 100
   },
-  "breadth_score": 76.7,
+  "breadth_score": 71.9,
   "breadth_summary": "BULLISH",
   "breadth_factors": [
-    "$MMTW: 61.0%",
-    "MCO: 2.59",
+    "$MMTW: 59.3%",
+    "MCO: 1.12",
     "MCSI above 10MA"
   ]
 }
