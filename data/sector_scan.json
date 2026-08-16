@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-16T23:01:27.075257+10:00",
+  "generated_at": "2026-08-17T07:01:44.006057+10:00",
   "market_regime": {
     "regime": "BEAR / BREAKDOWN \u2014 Preserve capital",
     "exposure_phase": "Breakdown",
@@ -12,9 +12,9 @@
     "scenario": 4,
     "description": "Reject & lower low \u2014 NO longs, preserve capital",
     "price": 124.63,
-    "ema21_high_band": 121.2162,
-    "ema21_mid_band": 120.641,
-    "ema21_low_band": 119.9826,
+    "ema21_high_band": 121.144,
+    "ema21_mid_band": 120.5768,
+    "ema21_low_band": 119.921,
     "above_200sma": true,
     "sma200": null
   },
@@ -50,8 +50,8 @@
       "name": "Communication Services",
       "price": 112.95,
       "1w_roc": 1.53,
-      "1m_roc": 1.35,
-      "3m_roc": -2.26,
+      "1m_roc": 0.27,
+      "3m_roc": -3.3,
       "above_200sma": null,
       "rank": 3,
       "top": true
@@ -105,8 +105,8 @@
       "name": "Industrials",
       "price": 186.51,
       "1w_roc": 0.72,
-      "1m_roc": 3.4,
-      "3m_roc": 6.81,
+      "1m_roc": 3.53,
+      "3m_roc": 7.14,
       "above_200sma": null,
       "rank": 8,
       "top": false
@@ -116,8 +116,8 @@
       "name": "Real Estate",
       "price": 45.27,
       "1w_roc": 0.64,
-      "1m_roc": 1.78,
-      "3m_roc": 2.44,
+      "1m_roc": -0.42,
+      "3m_roc": 4.0,
       "above_200sma": null,
       "rank": 9,
       "top": false
@@ -138,8 +138,8 @@
       "name": "Consumer Discretionary",
       "price": 118.2,
       "1w_roc": -1.38,
-      "1m_roc": 1.98,
-      "3m_roc": 0.12,
+      "1m_roc": 0.73,
+      "3m_roc": -0.2,
       "above_200sma": null,
       "rank": 11,
       "top": false
@@ -151,8 +151,8 @@
       "name": "ASX IT",
       "price": 1987.8,
       "1w_roc": 3.59,
-      "1m_roc": 12.58,
-      "3m_roc": 14.72,
+      "1m_roc": 11.93,
+      "3m_roc": 14.74,
       "above_200sma": null,
       "rank": 1,
       "top": true
@@ -173,8 +173,8 @@
       "name": "ASX Energy",
       "price": 10732.5,
       "1w_roc": 2.84,
-      "1m_roc": 8.53,
-      "3m_roc": 3.68,
+      "1m_roc": 8.7,
+      "3m_roc": 0.26,
       "above_200sma": null,
       "rank": 3,
       "top": false
@@ -184,8 +184,8 @@
       "name": "ASX Discretionary",
       "price": 4045.3999,
       "1w_roc": -1.33,
-      "1m_roc": 0.23,
-      "3m_roc": 21.18,
+      "1m_roc": 1.5,
+      "3m_roc": 19.97,
       "above_200sma": null,
       "rank": 4,
       "top": false
@@ -195,8 +195,8 @@
       "name": "ASX Materials",
       "price": 24495.3008,
       "1w_roc": -1.77,
-      "1m_roc": 6.4,
-      "3m_roc": 2.54,
+      "1m_roc": 7.21,
+      "3m_roc": -3.3,
       "above_200sma": null,
       "rank": 5,
       "top": false
@@ -206,8 +206,8 @@
       "name": "ASX Industrials",
       "price": 8319.5996,
       "1w_roc": -2.99,
-      "1m_roc": 0.13,
-      "3m_roc": 5.89,
+      "1m_roc": -0.19,
+      "3m_roc": 3.11,
       "above_200sma": null,
       "rank": 6,
       "top": false
@@ -217,8 +217,8 @@
       "name": "ASX Financials",
       "price": 9707.0,
       "1w_roc": -3.23,
-      "1m_roc": 0.09,
-      "3m_roc": 6.91,
+      "1m_roc": 0.58,
+      "3m_roc": 8.81,
       "above_200sma": null,
       "rank": 7,
       "top": false
@@ -253,13 +253,13 @@
       "ticker": "QQQE",
       "name": "Equal-Weight Nasdaq 100",
       "price": 124.63,
-      "sma50": 119.5716,
+      "sma50": 119.3427,
       "sma200": null,
       "above_50sma": true,
       "above_200sma": null,
       "1w_roc": 2.19,
-      "1m_roc": 4.6,
-      "atr_mult_from_50sma": 3.2
+      "1m_roc": 5.24,
+      "atr_mult_from_50sma": 3.36
     },
     {
       "ticker": "RSP",
@@ -277,13 +277,13 @@
       "ticker": "^VIX",
       "name": "VIX",
       "price": 14.25,
-      "sma50": 17.1432,
+      "sma50": 17.1792,
       "sma200": null,
       "above_50sma": false,
       "above_200sma": null,
       "1w_roc": -4.36,
-      "1m_roc": -16.96,
-      "atr_mult_from_50sma": 1.89
+      "1m_roc": -14.82,
+      "atr_mult_from_50sma": 1.94
     }
   ],
   "commodities": [
@@ -340,9 +340,9 @@
     {
       "ticker": "AUDUSD=X",
       "name": "AUD/USD",
-      "price": 0.7087,
-      "1w_roc": 0.33,
-      "1m_roc": 1.25,
+      "price": 0.7089,
+      "1w_roc": 0.79,
+      "1m_roc": 1.15,
       "above_200sma": null
     },
     {
@@ -372,9 +372,9 @@
     {
       "ticker": "JPY=X",
       "name": "USD/JPY",
-      "price": 159.305,
-      "1w_roc": 0.9,
-      "1m_roc": -1.89,
+      "price": 159.263,
+      "1w_roc": 0.87,
+      "1m_roc": -1.92,
       "above_200sma": null
     }
   ],
