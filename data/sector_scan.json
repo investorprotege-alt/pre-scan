@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-23T23:03:01.726087+10:00",
+  "generated_at": "2026-08-24T07:03:23.937165+10:00",
   "market_regime": {
     "regime": "BEAR / BREAKDOWN \u2014 Preserve capital",
     "exposure_phase": "Breakdown",
@@ -303,13 +303,13 @@
       "ticker": "CL=F",
       "name": "Crude Oil",
       "leveraged_etf": "UCO",
-      "price": null,
-      "1w_roc": null,
-      "1m_roc": null,
-      "above_50sma": null,
+      "price": 87.06,
+      "1w_roc": 5.66,
+      "1m_roc": -5.56,
+      "above_50sma": true,
       "above_200sma": null,
-      "ema21": null,
-      "sma50": null
+      "ema21": 82.9594,
+      "sma50": 79.0922
     },
     {
       "ticker": "SI=F",
@@ -340,9 +340,9 @@
     {
       "ticker": "AUDUSD=X",
       "name": "AUD/USD",
-      "price": 0.7175,
-      "1w_roc": 1.26,
-      "1m_roc": 2.98,
+      "price": 0.7164,
+      "1w_roc": 1.11,
+      "1m_roc": 2.82,
       "above_200sma": null
     },
     {
@@ -356,25 +356,25 @@
     {
       "ticker": "EURUSD=X",
       "name": "EUR/USD",
-      "price": 1.1678,
-      "1w_roc": 1.24,
-      "1m_roc": 2.33,
+      "price": 1.168,
+      "1w_roc": 0.91,
+      "1m_roc": 2.66,
       "above_200sma": null
     },
     {
       "ticker": "GBPUSD=X",
       "name": "GBP/USD",
-      "price": 1.3648,
-      "1w_roc": 0.75,
-      "1m_roc": 2.52,
+      "price": 1.3634,
+      "1w_roc": 0.64,
+      "1m_roc": 2.41,
       "above_200sma": null
     },
     {
       "ticker": "JPY=X",
       "name": "USD/JPY",
-      "price": 158.94,
-      "1w_roc": -0.3,
-      "1m_roc": -2.54,
+      "price": 158.975,
+      "1w_roc": -0.16,
+      "1m_roc": -2.96,
       "above_200sma": null
     }
   ],
