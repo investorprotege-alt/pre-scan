@@ -1,36 +1,35 @@
 {
-  "generated_at": "2026-08-21T07:13:36.100759+10:00",
+  "generated_at": "2026-08-23T23:03:16.474122+10:00",
   "mmtw_proxy": {
-    "mmtw_proxy": 50.5,
-    "above_count": 47,
-    "valid_count": 93,
+    "mmtw_proxy": 53.0,
+    "above_count": 53,
+    "valid_count": 100,
     "signal": "HEALTHY \u2014 Uptrend participation broad",
     "note": "Sampled 100 of 503 S&P 500 components"
   },
   "nh_nl": {
-    "new_highs": 0,
+    "new_highs": 3,
     "new_lows": 1,
-    "nh_nl_ratio": 0.0,
+    "nh_nl_ratio": 3.0,
     "total_checked": 100,
-    "signal": "WEAK \u2014 More new lows than highs",
+    "signal": "STRONG \u2014 NH/NL ratio bullish",
     "note": "Sampled 100 tickers, within 1% of 52-week range",
     "source": "yfinance"
   },
   "mco_mcsi": {
-    "mco": -2.15,
-    "mcsi": 19.88,
-    "mco_1sigma_plus": 2.66,
-    "mco_1sigma_minus": -2.66,
-    "mco_2sigma_plus": 5.31,
-    "mco_2sigma_minus": -5.31,
-    "mcsi_10ma": 19.87,
-    "mcsi_above_10ma": true,
+    "mco": -0.3,
+    "mcsi": 18.22,
+    "mco_1sigma_plus": 2.64,
+    "mco_1sigma_minus": -2.64,
+    "mco_2sigma_plus": 5.29,
+    "mco_2sigma_minus": -5.29,
+    "mcsi_10ma": 19.77,
+    "mcsi_above_10ma": false,
     "mcsi_curling_up": false,
     "mcsi_curling_down": false,
     "mco_signal": "NEUTRAL \u2014 Normal conditions",
-    "mcsi_signal": "ABOVE 10MA \u2014 Participation confirmed",
+    "mcsi_signal": "BELOW 10MA \u2014 Caution",
     "mco_history": [
-      -4.72,
       -2.36,
       -0.34,
       -0.6,
@@ -42,22 +41,22 @@
       0.82,
       3.76,
       3.0,
-      2.74,
-      1.7,
-      2.91,
-      1.27,
-      -0.88,
-      -1.07,
-      0.08,
-      -2.15
+      2.59,
+      1.42,
+      2.67,
+      1.07,
+      -1.05,
+      -1.21,
+      -0.03,
+      -2.23,
+      -0.3
     ],
     "universe_size": 100
   },
-  "breadth_score": 59.1,
-  "breadth_summary": "NEUTRAL",
+  "breadth_score": 35.3,
+  "breadth_summary": "BEARISH",
   "breadth_factors": [
-    "$MMTW: 50.5%",
-    "MCO: -2.15",
-    "MCSI above 10MA"
+    "$MMTW: 53.0%",
+    "MCO: -0.3"
   ]
 }
