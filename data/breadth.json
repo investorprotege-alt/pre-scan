@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-02T02:41:29.947677+10:00",
+  "generated_at": "2026-09-02T08:51:32.663477+10:00",
   "mmtw_proxy": {
     "mmtw_proxy": 50.0,
     "above_count": 5,
@@ -8,9 +8,9 @@
     "note": "Sampled 100 of 503 S&P 500 components"
   },
   "nh_nl": {
-    "new_highs": 0,
-    "new_lows": 3,
-    "nh_nl_ratio": 0.0,
+    "new_highs": 1,
+    "new_lows": 4,
+    "nh_nl_ratio": 0.25,
     "total_checked": 100,
     "signal": "WEAK \u2014 More new lows than highs",
     "note": "Sampled 100 tickers, within 1% of 52-week range",
