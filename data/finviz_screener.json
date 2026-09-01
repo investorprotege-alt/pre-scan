@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-01T05:09:40.965688+10:00",
+  "generated_at": "2026-09-02T02:42:03.570336+10:00",
   "screener_breakdown": {
     "1-Week Movers >20%": 1,
-    "1-Month Movers >30%": 8,
-    "3-Month Movers >50%": 3,
-    "6-Month Movers >100%": 13,
+    "1-Month Movers >30%": 6,
+    "3-Month Movers >50%": 2,
+    "6-Month Movers >100%": 14,
     "Daily Pullback-to-MA": 0
   },
   "combined_candidates": [
@@ -13,12 +13,12 @@
       "company": "Moderna",
       "sector": "Health Care",
       "industry": "Biotechnology",
-      "price": 136.91,
-      "ret_1w": -1.43,
-      "ret_1m": 149.74,
-      "ret_3m": 197.24,
-      "ret_6m": 159.08,
-      "avg_vol": 30787944,
+      "price": 147.7,
+      "ret_1w": -7.01,
+      "ret_1m": 167.86,
+      "ret_3m": 223.62,
+      "ret_6m": 196.41,
+      "avg_vol": 31510272,
       "screeners": [
         "1-Month Movers >30%",
         "3-Month Movers >50%",
@@ -33,12 +33,12 @@
       "company": "Salesforce",
       "sector": "Information Technology",
       "industry": "Application Software",
-      "price": 260.88,
-      "ret_1w": 24.78,
-      "ret_1m": 41.76,
-      "ret_3m": 24.78,
-      "ret_6m": 35.89,
-      "avg_vol": 15248107,
+      "price": 254.71,
+      "ret_1w": 23.83,
+      "ret_1m": 36.98,
+      "ret_3m": 27.15,
+      "ret_6m": 30.58,
+      "avg_vol": 15730747,
       "screeners": [
         "1-Week Movers >20%",
         "1-Month Movers >30%"
@@ -48,35 +48,16 @@
       "in_top_sector": true
     },
     {
-      "ticker": "VEEV",
-      "company": "Veeva Systems",
-      "sector": "Health Care",
-      "industry": "Health Care Technology",
-      "price": 288.15,
-      "ret_1w": 16.24,
-      "ret_1m": 42.96,
-      "ret_3m": 65.28,
-      "ret_6m": 58.32,
-      "avg_vol": 1940467,
-      "screeners": [
-        "1-Month Movers >30%",
-        "3-Month Movers >50%"
-      ],
-      "screener_count": 2,
-      "high_confluence": true,
-      "in_top_sector": false
-    },
-    {
       "ticker": "CRWD",
       "company": "CrowdStrike",
       "sector": "Information Technology",
       "industry": "Systems Software",
-      "price": 229.39,
-      "ret_1w": 19.51,
-      "ret_1m": 23.85,
-      "ret_3m": 25.52,
-      "ret_6m": 146.67,
-      "avg_vol": 8798684,
+      "price": 214.07,
+      "ret_1w": 15.48,
+      "ret_1m": 5.7,
+      "ret_3m": 11.36,
+      "ret_6m": 118.77,
+      "avg_vol": 9394348,
       "screeners": [
         "6-Month Movers >100%"
       ],
@@ -85,268 +66,16 @@
       "in_top_sector": true
     },
     {
-      "ticker": "NOW",
-      "company": "ServiceNow",
-      "sector": "Information Technology",
-      "industry": "Systems Software",
-      "price": 148.61,
-      "ret_1w": 15.67,
-      "ret_1m": 35.01,
-      "ret_3m": 19.49,
-      "ret_6m": 37.59,
-      "avg_vol": 17614375,
-      "screeners": [
-        "1-Month Movers >30%"
-      ],
-      "screener_count": 1,
-      "high_confluence": false,
-      "in_top_sector": true
-    },
-    {
-      "ticker": "FTNT",
-      "company": "Fortinet",
-      "sector": "Information Technology",
-      "industry": "Systems Software",
-      "price": 171.26,
-      "ret_1w": 12.68,
-      "ret_1m": 5.75,
-      "ret_3m": 16.39,
-      "ret_6m": 116.29,
-      "avg_vol": 4321346,
-      "screeners": [
-        "6-Month Movers >100%"
-      ],
-      "screener_count": 1,
-      "high_confluence": false,
-      "in_top_sector": true
-    },
-    {
-      "ticker": "PANW",
-      "company": "Palo Alto Networks",
-      "sector": "Information Technology",
-      "industry": "Systems Software",
-      "price": 380.48,
-      "ret_1w": 8.43,
-      "ret_1m": 14.66,
-      "ret_3m": 26.62,
-      "ret_6m": 153.4,
-      "avg_vol": 5351999,
-      "screeners": [
-        "6-Month Movers >100%"
-      ],
-      "screener_count": 1,
-      "high_confluence": false,
-      "in_top_sector": true
-    },
-    {
-      "ticker": "PLTR",
-      "company": "Palantir Technologies",
-      "sector": "Information Technology",
-      "industry": "Application Software",
-      "price": 187.43,
-      "ret_1w": 6.56,
-      "ret_1m": 52.31,
-      "ret_3m": 16.67,
-      "ret_6m": 29.11,
-      "avg_vol": 44056492,
-      "screeners": [
-        "1-Month Movers >30%"
-      ],
-      "screener_count": 1,
-      "high_confluence": false,
-      "in_top_sector": true
-    },
-    {
-      "ticker": "PSKY",
-      "company": "Paramount Skydance Corporation",
-      "sector": "Communication Services",
-      "industry": "Movies & Entertainment",
-      "price": 10.95,
-      "ret_1w": 5.85,
-      "ret_1m": 37.63,
-      "ret_3m": 0.25,
-      "ret_6m": -17.06,
-      "avg_vol": 10771411,
-      "screeners": [
-        "1-Month Movers >30%"
-      ],
-      "screener_count": 1,
-      "high_confluence": false,
-      "in_top_sector": true
-    },
-    {
-      "ticker": "SMCI",
-      "company": "Supermicro",
-      "sector": "Information Technology",
-      "industry": "Technology Hardware, Storage & Peripherals",
-      "price": 37.19,
-      "ret_1w": 5.76,
-      "ret_1m": 30.97,
-      "ret_3m": -20.66,
-      "ret_6m": 16.86,
-      "avg_vol": 54656120,
-      "screeners": [
-        "1-Month Movers >30%"
-      ],
-      "screener_count": 1,
-      "high_confluence": false,
-      "in_top_sector": true
-    },
-    {
-      "ticker": "DDOG",
-      "company": "Datadog",
-      "sector": "Information Technology",
-      "industry": "Application Software",
-      "price": 237.16,
-      "ret_1w": 5.04,
-      "ret_1m": -11.5,
-      "ret_3m": -14.53,
-      "ret_6m": 113.45,
-      "avg_vol": 4863867,
-      "screeners": [
-        "6-Month Movers >100%"
-      ],
-      "screener_count": 1,
-      "high_confluence": false,
-      "in_top_sector": true
-    },
-    {
-      "ticker": "DELL",
-      "company": "Dell Technologies",
-      "sector": "Information Technology",
-      "industry": "Technology Hardware, Storage & Peripherals",
-      "price": 460.41,
-      "ret_1w": 4.15,
-      "ret_1m": 13.73,
-      "ret_3m": 9.57,
-      "ret_6m": 212.4,
-      "avg_vol": 5267643,
-      "screeners": [
-        "6-Month Movers >100%"
-      ],
-      "screener_count": 1,
-      "high_confluence": false,
-      "in_top_sector": true
-    },
-    {
-      "ticker": "MU",
-      "company": "Micron Technology",
-      "sector": "Information Technology",
-      "industry": "Semiconductors",
-      "price": 940.15,
-      "ret_1w": 3.26,
-      "ret_1m": 14.23,
-      "ret_3m": -9.19,
-      "ret_6m": 127.95,
-      "avg_vol": 29053796,
-      "screeners": [
-        "6-Month Movers >100%"
-      ],
-      "screener_count": 1,
-      "high_confluence": false,
-      "in_top_sector": true
-    },
-    {
-      "ticker": "STX",
-      "company": "Seagate Technology",
-      "sector": "Information Technology",
-      "industry": "Technology Hardware, Storage & Peripherals",
-      "price": 819.49,
-      "ret_1w": 3.13,
-      "ret_1m": -4.28,
-      "ret_3m": -10.98,
-      "ret_6m": 116.46,
-      "avg_vol": 4070696,
-      "screeners": [
-        "6-Month Movers >100%"
-      ],
-      "screener_count": 1,
-      "high_confluence": false,
-      "in_top_sector": true
-    },
-    {
-      "ticker": "AMD",
-      "company": "Advanced Micro Devices",
-      "sector": "Information Technology",
-      "industry": "Semiconductors",
-      "price": 467.78,
-      "ret_1w": 2.41,
-      "ret_1m": -1.76,
-      "ret_3m": -8.3,
-      "ret_6m": 135.51,
-      "avg_vol": 21621559,
-      "screeners": [
-        "6-Month Movers >100%"
-      ],
-      "screener_count": 1,
-      "high_confluence": false,
-      "in_top_sector": true
-    },
-    {
-      "ticker": "HPE",
-      "company": "Hewlett Packard Enterprise",
-      "sector": "Information Technology",
-      "industry": "Technology Hardware, Storage & Peripherals",
-      "price": 52.42,
-      "ret_1w": -0.02,
-      "ret_1m": 9.44,
-      "ret_3m": 11.86,
-      "ret_6m": 139.1,
-      "avg_vol": 14880313,
-      "screeners": [
-        "6-Month Movers >100%"
-      ],
-      "screener_count": 1,
-      "high_confluence": false,
-      "in_top_sector": true
-    },
-    {
-      "ticker": "HUM",
-      "company": "Humana",
+      "ticker": "VEEV",
+      "company": "Veeva Systems",
       "sector": "Health Care",
-      "industry": "Managed Health Care",
-      "price": 383.53,
-      "ret_1w": -0.8,
-      "ret_1m": 5.41,
-      "ret_3m": 17.1,
-      "ret_6m": 106.32,
-      "avg_vol": 1042180,
-      "screeners": [
-        "6-Month Movers >100%"
-      ],
-      "screener_count": 1,
-      "high_confluence": false,
-      "in_top_sector": false
-    },
-    {
-      "ticker": "CRL",
-      "company": "Charles River Laboratories",
-      "sector": "Health Care",
-      "industry": "Life Sciences Tools & Services",
-      "price": 284.75,
-      "ret_1w": -3.54,
-      "ret_1m": 21.37,
-      "ret_3m": 57.57,
-      "ret_6m": 59.53,
-      "avg_vol": 972161,
-      "screeners": [
-        "3-Month Movers >50%"
-      ],
-      "screener_count": 1,
-      "high_confluence": false,
-      "in_top_sector": false
-    },
-    {
-      "ticker": "NEM",
-      "company": "Newmont",
-      "sector": "Materials",
-      "industry": "Gold",
-      "price": 125.72,
-      "ret_1w": -4.64,
-      "ret_1m": 34.16,
-      "ret_3m": 16.2,
-      "ret_6m": -1.91,
-      "avg_vol": 7770623,
+      "industry": "Health Care Technology",
+      "price": 279.23,
+      "ret_1w": 12.38,
+      "ret_1m": 37.03,
+      "ret_3m": 48.01,
+      "ret_6m": 53.89,
+      "avg_vol": 1906063,
       "screeners": [
         "1-Month Movers >30%"
       ],
@@ -359,12 +88,12 @@
       "company": "Sandisk",
       "sector": "Information Technology",
       "industry": "Technology Hardware, Storage & Peripherals",
-      "price": 1467.14,
-      "ret_1w": -8.08,
-      "ret_1m": 14.62,
-      "ret_3m": -13.44,
-      "ret_6m": 130.91,
-      "avg_vol": 13731411,
+      "price": 1569.59,
+      "ret_1w": 6.0,
+      "ret_1m": 21.86,
+      "ret_3m": -8.55,
+      "ret_6m": 177.6,
+      "avg_vol": 13847585,
       "screeners": [
         "6-Month Movers >100%"
       ],
@@ -373,16 +102,268 @@
       "in_top_sector": true
     },
     {
+      "ticker": "FTNT",
+      "company": "Fortinet",
+      "sector": "Information Technology",
+      "industry": "Systems Software",
+      "price": 161.07,
+      "ret_1w": 5.97,
+      "ret_1m": -0.54,
+      "ret_3m": 9.47,
+      "ret_6m": 103.42,
+      "avg_vol": 4388995,
+      "screeners": [
+        "6-Month Movers >100%"
+      ],
+      "screener_count": 1,
+      "high_confluence": false,
+      "in_top_sector": true
+    },
+    {
+      "ticker": "PLTR",
+      "company": "Palantir Technologies",
+      "sector": "Information Technology",
+      "industry": "Application Software",
+      "price": 182.16,
+      "ret_1w": 5.46,
+      "ret_1m": 44.97,
+      "ret_3m": 19.71,
+      "ret_6m": 23.73,
+      "avg_vol": 36418327,
+      "screeners": [
+        "1-Month Movers >30%"
+      ],
+      "screener_count": 1,
+      "high_confluence": false,
+      "in_top_sector": true
+    },
+    {
+      "ticker": "STX",
+      "company": "Seagate Technology",
+      "sector": "Information Technology",
+      "industry": "Technology Hardware, Storage & Peripherals",
+      "price": 812.09,
+      "ret_1w": 2.19,
+      "ret_1m": -5.14,
+      "ret_3m": -11.79,
+      "ret_6m": 114.5,
+      "avg_vol": 4048605,
+      "screeners": [
+        "6-Month Movers >100%"
+      ],
+      "screener_count": 1,
+      "high_confluence": false,
+      "in_top_sector": true
+    },
+    {
+      "ticker": "PANW",
+      "company": "Palo Alto Networks",
+      "sector": "Information Technology",
+      "industry": "Systems Software",
+      "price": 357.95,
+      "ret_1w": 2.01,
+      "ret_1m": 7.87,
+      "ret_3m": 19.12,
+      "ret_6m": 138.39,
+      "avg_vol": 5506533,
+      "screeners": [
+        "6-Month Movers >100%"
+      ],
+      "screener_count": 1,
+      "high_confluence": false,
+      "in_top_sector": true
+    },
+    {
+      "ticker": "PSKY",
+      "company": "Paramount Skydance Corporation",
+      "sector": "Communication Services",
+      "industry": "Movies & Entertainment",
+      "price": 10.51,
+      "ret_1w": 1.55,
+      "ret_1m": 32.04,
+      "ret_3m": -3.82,
+      "ret_6m": -20.43,
+      "avg_vol": 10652167,
+      "screeners": [
+        "1-Month Movers >30%"
+      ],
+      "screener_count": 1,
+      "high_confluence": false,
+      "in_top_sector": true
+    },
+    {
+      "ticker": "INTC",
+      "company": "Intel",
+      "sector": "Information Technology",
+      "industry": "Semiconductors",
+      "price": 88.75,
+      "ret_1w": 1.46,
+      "ret_1m": -2.47,
+      "ret_3m": -17.77,
+      "ret_6m": 105.93,
+      "avg_vol": 96407443,
+      "screeners": [
+        "6-Month Movers >100%"
+      ],
+      "screener_count": 1,
+      "high_confluence": false,
+      "in_top_sector": true
+    },
+    {
+      "ticker": "HUM",
+      "company": "Humana",
+      "sector": "Health Care",
+      "industry": "Managed Health Care",
+      "price": 390.42,
+      "ret_1w": 0.99,
+      "ret_1m": 7.3,
+      "ret_3m": 19.2,
+      "ret_6m": 110.02,
+      "avg_vol": 1062811,
+      "screeners": [
+        "6-Month Movers >100%"
+      ],
+      "screener_count": 1,
+      "high_confluence": false,
+      "in_top_sector": false
+    },
+    {
+      "ticker": "MU",
+      "company": "Micron Technology",
+      "sector": "Information Technology",
+      "industry": "Semiconductors",
+      "price": 940.35,
+      "ret_1w": 0.79,
+      "ret_1m": 13.36,
+      "ret_3m": -11.62,
+      "ret_6m": 147.81,
+      "avg_vol": 28297609,
+      "screeners": [
+        "6-Month Movers >100%"
+      ],
+      "screener_count": 1,
+      "high_confluence": false,
+      "in_top_sector": true
+    },
+    {
+      "ticker": "DDOG",
+      "company": "Datadog",
+      "sector": "Information Technology",
+      "industry": "Application Software",
+      "price": 225.05,
+      "ret_1w": -0.32,
+      "ret_1m": -16.02,
+      "ret_3m": -18.9,
+      "ret_6m": 102.55,
+      "avg_vol": 4965177,
+      "screeners": [
+        "6-Month Movers >100%"
+      ],
+      "screener_count": 1,
+      "high_confluence": false,
+      "in_top_sector": true
+    },
+    {
+      "ticker": "DELL",
+      "company": "Dell Technologies",
+      "sector": "Information Technology",
+      "industry": "Technology Hardware, Storage & Peripherals",
+      "price": 435.1,
+      "ret_1w": -3.63,
+      "ret_1m": 1.42,
+      "ret_3m": 0.12,
+      "ret_6m": 201.12,
+      "avg_vol": 5251981,
+      "screeners": [
+        "6-Month Movers >100%"
+      ],
+      "screener_count": 1,
+      "high_confluence": false,
+      "in_top_sector": true
+    },
+    {
+      "ticker": "AMD",
+      "company": "Advanced Micro Devices",
+      "sector": "Information Technology",
+      "industry": "Semiconductors",
+      "price": 457.19,
+      "ret_1w": -4.59,
+      "ret_1m": -5.66,
+      "ret_3m": -12.34,
+      "ret_6m": 139.43,
+      "avg_vol": 19847029,
+      "screeners": [
+        "6-Month Movers >100%"
+      ],
+      "screener_count": 1,
+      "high_confluence": false,
+      "in_top_sector": true
+    },
+    {
+      "ticker": "HPE",
+      "company": "Hewlett Packard Enterprise",
+      "sector": "Information Technology",
+      "industry": "Technology Hardware, Storage & Peripherals",
+      "price": 50.81,
+      "ret_1w": -4.91,
+      "ret_1m": 1.14,
+      "ret_3m": -9.24,
+      "ret_6m": 137.03,
+      "avg_vol": 15034936,
+      "screeners": [
+        "6-Month Movers >100%"
+      ],
+      "screener_count": 1,
+      "high_confluence": false,
+      "in_top_sector": true
+    },
+    {
+      "ticker": "CRL",
+      "company": "Charles River Laboratories",
+      "sector": "Health Care",
+      "industry": "Life Sciences Tools & Services",
+      "price": 283.55,
+      "ret_1w": -5.04,
+      "ret_1m": 21.95,
+      "ret_3m": 55.73,
+      "ret_6m": 58.75,
+      "avg_vol": 978169,
+      "screeners": [
+        "3-Month Movers >50%"
+      ],
+      "screener_count": 1,
+      "high_confluence": false,
+      "in_top_sector": false
+    },
+    {
+      "ticker": "NEM",
+      "company": "Newmont",
+      "sector": "Materials",
+      "industry": "Gold",
+      "price": 124.3,
+      "ret_1w": -5.72,
+      "ret_1m": 32.64,
+      "ret_3m": 14.89,
+      "ret_6m": -3.02,
+      "avg_vol": 8165260,
+      "screeners": [
+        "1-Month Movers >30%"
+      ],
+      "screener_count": 1,
+      "high_confluence": false,
+      "in_top_sector": false
+    },
+    {
       "ticker": "MRVL",
       "company": "Marvell Technology",
       "sector": "Information Technology",
       "industry": "Semiconductors",
-      "price": 210.4,
-      "ret_1w": -8.24,
-      "ret_1m": 12.18,
-      "ret_3m": -4.09,
-      "ret_6m": 160.4,
-      "avg_vol": 24618498,
+      "price": 208.76,
+      "ret_1w": -13.16,
+      "ret_1m": 7.73,
+      "ret_3m": -28.19,
+      "ret_6m": 169.53,
+      "avg_vol": 23919446,
       "screeners": [
         "6-Month Movers >100%"
       ],
@@ -391,8 +372,8 @@
       "in_top_sector": true
     }
   ],
-  "high_confluence_count": 3,
-  "in_top_sector_count": 16,
-  "universe_size": 500,
+  "high_confluence_count": 2,
+  "in_top_sector_count": 15,
+  "universe_size": 499,
   "source": "yfinance (S&P 500)"
 }
