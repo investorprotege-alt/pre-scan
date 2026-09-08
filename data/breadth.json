@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-09T02:39:57.348253+10:00",
+  "generated_at": "2026-09-09T09:01:25.927497+10:00",
   "mmtw_proxy": {
-    "mmtw_proxy": 28.0,
-    "above_count": 28,
+    "mmtw_proxy": 24.0,
+    "above_count": 24,
     "valid_count": 100,
     "signal": "WASHED OUT \u2014 Watch for reversal opportunity",
     "note": "Sampled 100 of 503 S&P 500 components"
@@ -17,13 +17,13 @@
     "source": "yfinance"
   },
   "mco_mcsi": {
-    "mco": -3.17,
-    "mcsi": -6.44,
+    "mco": -2.97,
+    "mcsi": -6.24,
     "mco_1sigma_plus": 2.72,
     "mco_1sigma_minus": -2.72,
-    "mco_2sigma_plus": 5.45,
-    "mco_2sigma_minus": -5.45,
-    "mcsi_10ma": 5.31,
+    "mco_2sigma_plus": 5.44,
+    "mco_2sigma_minus": -5.44,
+    "mcsi_10ma": 5.33,
     "mcsi_above_10ma": false,
     "mcsi_curling_up": false,
     "mcsi_curling_down": false,
@@ -49,14 +49,14 @@
       -3.13,
       -1.58,
       -1.74,
-      -3.17
+      -2.97
     ],
     "universe_size": 100
   },
-  "breadth_score": 17.5,
+  "breadth_score": 16.4,
   "breadth_summary": "BEARISH",
   "breadth_factors": [
-    "$MMTW: 28.0%",
-    "MCO: -3.17"
+    "$MMTW: 24.0%",
+    "MCO: -2.97"
   ]
 }
