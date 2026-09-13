@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-14T02:19:01.023852+10:00",
+  "generated_at": "2026-09-14T08:40:47.742656+10:00",
   "market_regime": {
     "regime": "BEAR / BREAKDOWN \u2014 Preserve capital",
     "exposure_phase": "Breakdown",
@@ -291,90 +291,90 @@
       "ticker": "GC=F",
       "name": "Gold",
       "leveraged_etf": "NUGT",
-      "price": 4408.8999,
-      "1w_roc": -1.84,
-      "1m_roc": 0.0,
+      "price": 4377.0,
+      "1w_roc": -1.19,
+      "1m_roc": 0.31,
       "above_50sma": true,
       "above_200sma": null,
-      "ema21": 4413.3225,
-      "sma50": 4266.806
+      "ema21": 4406.4915,
+      "sma50": 4271.238
     },
     {
       "ticker": "CL=F",
       "name": "Crude Oil",
       "leveraged_etf": "UCO",
-      "price": 100.05,
-      "1w_roc": 9.58,
-      "1m_roc": 20.15,
+      "price": 102.78,
+      "1w_roc": 12.35,
+      "1m_roc": 26.5,
       "above_50sma": true,
       "above_200sma": null,
-      "ema21": 89.7187,
-      "sma50": 83.2278
+      "ema21": 90.9061,
+      "sma50": 83.9096
     },
     {
       "ticker": "SI=F",
       "name": "Silver",
       "leveraged_etf": "AGQ",
-      "price": 65.188,
-      "1w_roc": -2.67,
-      "1m_roc": -0.56,
+      "price": 64.555,
+      "1w_roc": -2.26,
+      "1m_roc": -0.49,
       "above_50sma": true,
       "above_200sma": null,
-      "ema21": 65.6628,
-      "sma50": 62.53
+      "ema21": 65.5097,
+      "sma50": 62.5956
     },
     {
       "ticker": "NG=F",
       "name": "Natural Gas",
       "leveraged_etf": "BOIL",
-      "price": 2.831,
-      "1w_roc": -2.81,
-      "1m_roc": 0.96,
-      "above_50sma": false,
+      "price": 2.856,
+      "1w_roc": -4.0,
+      "1m_roc": 4.73,
+      "above_50sma": true,
       "above_200sma": null,
-      "ema21": 2.8534,
-      "sma50": 2.856
+      "ema21": 2.8536,
+      "sma50": 2.8492
     }
   ],
   "fx": [
     {
       "ticker": "AUDUSD=X",
       "name": "AUD/USD",
-      "price": 0.7173,
-      "1w_roc": -0.47,
-      "1m_roc": 1.54,
+      "price": 0.7162,
+      "1w_roc": -0.61,
+      "1m_roc": 1.4,
       "above_200sma": null
     },
     {
       "ticker": "DX-Y.NYB",
       "name": "DXY (US Dollar Index)",
-      "price": 99.12,
-      "1w_roc": 0.12,
-      "1m_roc": -0.89,
+      "price": 99.145,
+      "1w_roc": -0.02,
+      "1m_roc": -0.82,
       "above_200sma": null
     },
     {
       "ticker": "EURUSD=X",
       "name": "EUR/USD",
-      "price": 1.1601,
-      "1w_roc": -0.24,
-      "1m_roc": 0.61,
+      "price": 1.1593,
+      "1w_roc": -0.18,
+      "1m_roc": 0.5,
       "above_200sma": null
     },
     {
       "ticker": "GBPUSD=X",
       "name": "GBP/USD",
-      "price": 1.353,
-      "1w_roc": -0.01,
-      "1m_roc": 0.24,
+      "price": 1.3521,
+      "1w_roc": 0.03,
+      "1m_roc": 0.22,
       "above_200sma": null
     },
     {
       "ticker": "JPY=X",
       "name": "USD/JPY",
-      "price": 153.554,
-      "1w_roc": -1.35,
-      "1m_roc": -3.62,
+      "price": 153.78,
+      "1w_roc": -1.55,
+      "1m_roc": -3.54,
       "above_200sma": null
     }
   ],
