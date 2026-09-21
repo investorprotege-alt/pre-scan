@@ -1,29 +1,29 @@
 {
-  "generated_at": "2026-09-22T04:13:32.169059+10:00",
+  "generated_at": "2026-09-22T09:41:49.990133+10:00",
   "mmtw_proxy": {
-    "mmtw_proxy": 30.0,
-    "above_count": 30,
+    "mmtw_proxy": 28.0,
+    "above_count": 28,
     "valid_count": 100,
     "signal": "WASHED OUT \u2014 Watch for reversal opportunity",
     "note": "Sampled 100 of 503 S&P 500 components"
   },
   "nh_nl": {
-    "new_highs": 2,
-    "new_lows": 2,
-    "nh_nl_ratio": 1.0,
+    "new_highs": 1,
+    "new_lows": 3,
+    "nh_nl_ratio": 0.33,
     "total_checked": 100,
-    "signal": "NEUTRAL \u2014 Mixed highs/lows",
+    "signal": "WEAK \u2014 More new lows than highs",
     "note": "Sampled 100 tickers, within 1% of 52-week range",
     "source": "yfinance"
   },
   "mco_mcsi": {
-    "mco": 1.16,
-    "mcsi": -22.95,
+    "mco": 1.26,
+    "mcsi": -22.85,
     "mco_1sigma_plus": 2.6,
     "mco_1sigma_minus": -2.6,
     "mco_2sigma_plus": 5.2,
     "mco_2sigma_minus": -5.2,
-    "mcsi_10ma": -18.18,
+    "mcsi_10ma": -18.17,
     "mcsi_above_10ma": false,
     "mcsi_curling_up": false,
     "mcsi_curling_down": false,
@@ -49,14 +49,14 @@
       -2.48,
       0.25,
       -1.48,
-      1.16
+      1.26
     ],
     "universe_size": 100
   },
-  "breadth_score": 30.3,
+  "breadth_score": 29.8,
   "breadth_summary": "BEARISH",
   "breadth_factors": [
-    "$MMTW: 30.0%",
-    "MCO: 1.16"
+    "$MMTW: 28.0%",
+    "MCO: 1.26"
   ]
 }
