@@ -1,0 +1,98 @@
+{
+  "_readme": "Bilbo Box parameters. Provenance tags: [SATY] = verbatim from the published Saty Phase Oscillator source; [RULE] = a published Bilbo Box rule; [MINE] = an engineering choice this repo had to make because the published rules do not pin it down. See docs/BILBO_BOX_MANUAL.md section 9 for what happens when you move each number.",
+  "_universe_note": "The published study uses '20 liquid large-caps' but does not publish the list. This is a stand-in: the 20 most liquid optionable US large-caps. Swap freely \u2014 the only hard requirement is a penny-wide, deep option chain.",
+  "universe": [
+    {"ticker": "AAPL", "name": "Apple", "sector": "Technology"},
+    {"ticker": "MSFT", "name": "Microsoft", "sector": "Technology"},
+    {"ticker": "NVDA", "name": "NVIDIA", "sector": "Technology"},
+    {"ticker": "AMZN", "name": "Amazon", "sector": "Discretionary"},
+    {"ticker": "META", "name": "Meta Platforms", "sector": "Communications"},
+    {"ticker": "GOOGL", "name": "Alphabet", "sector": "Communications"},
+    {"ticker": "TSLA", "name": "Tesla", "sector": "Discretionary"},
+    {"ticker": "AVGO", "name": "Broadcom", "sector": "Technology"},
+    {"ticker": "AMD", "name": "AMD", "sector": "Technology"},
+    {"ticker": "NFLX", "name": "Netflix", "sector": "Communications"},
+    {"ticker": "CRM", "name": "Salesforce", "sector": "Technology"},
+    {"ticker": "MU", "name": "Micron", "sector": "Technology"},
+    {"ticker": "JPM", "name": "JPMorgan Chase", "sector": "Financials"},
+    {"ticker": "GS", "name": "Goldman Sachs", "sector": "Financials"},
+    {"ticker": "V", "name": "Visa", "sector": "Financials"},
+    {"ticker": "UNH", "name": "UnitedHealth", "sector": "Healthcare"},
+    {"ticker": "LLY", "name": "Eli Lilly", "sector": "Healthcare"},
+    {"ticker": "XOM", "name": "Exxon Mobil", "sector": "Energy"},
+    {"ticker": "COST", "name": "Costco", "sector": "Staples"},
+    {"ticker": "WMT", "name": "Walmart", "sector": "Staples"}
+  ],
+  "oscillator": {
+    "pivot_ema_length": 21,
+    "atr_length": 14,
+    "atr_method": "wilder",
+    "oscillator_smoothing": 3,
+    "oscillator_atr_multiple": 3.0,
+    "bband_length": 21,
+    "bband_stdev_mult": 2.0,
+    "stdev_ddof": 0,
+    "compression_atr_mult": 2.0,
+    "expansion_atr_mult": 1.854
+  },
+  "box": {
+    "bar_interval": "60m",
+    "max_box_bars": 5,
+    "min_box_bars": 2,
+    "box_expiry_bars": 30,
+    "kill_on_close_below_low": true,
+    "new_compression_supersedes": true
+  },
+  "entry": {
+    "session_timezone": "America/New_York",
+    "window_start": "10:00",
+    "window_end": "15:00",
+    "require_close_out_of_compression": true,
+    "require_above_daily_ema": true,
+    "daily_ema_length": 21,
+    "daily_ema_uses_prior_close": true,
+    "max_spread_pct_of_mid": 5.0,
+    "one_position_per_ticker": true,
+    "max_new_positions_per_day": 3
+  },
+  "option": {
+    "target_dte": 28,
+    "min_dte": 21,
+    "max_dte": 37,
+    "strikes_otm": 1,
+    "premium_pct_min": 3.0,
+    "premium_pct_target": 4.0,
+    "premium_pct_max": 5.0,
+    "contract_multiplier": 100,
+    "risk_free_rate": 0.042
+  },
+  "exit": {
+    "stop_bar_interval": "5m",
+    "trail_arm_atr_multiple": 1.0,
+    "trail_giveback_pct": 75.0,
+    "time_stop_trading_days": 10,
+    "daily_atr_length": 14
+  },
+  "account": {
+    "equity": 100000,
+    "currency": "USD"
+  },
+  "data": {
+    "hourly_lookback_days": 90,
+    "daily_lookback_days": 400,
+    "intraday_lookback_days": 5,
+    "max_hourly_lookback_days": 720,
+    "max_intraday_lookback_days": 59,
+    "index_is_bar_open": true,
+    "session_close_et": "16:00"
+  },
+  "backtest": {
+    "iv_mode": "realized",
+    "fixed_iv": 0.32,
+    "realized_vol_days": 30,
+    "iv_premium_multiple": 1.15,
+    "iv_crush_on_exit": 0.0,
+    "round_trip_spread_pct": 2.0,
+    "exit_bar_interval": "60m"
+  }
+}

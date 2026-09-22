@@ -154,6 +154,10 @@ code{background:var(--bg3);padding:1px 4px;border-radius:3px;font-size:0.85em}
   <button class="nav-item" onclick="showSection('us-step2')">② Finviz Screeners</button>
   <button class="nav-item" onclick="showSection('us-step3')">③ Focus List</button>
   <button class="nav-item" onclick="showSection('us-step4')">④ Rules Filter</button>
+  <div class="nav-section">Bilbo Box</div>
+  <button class="nav-item" onclick="showSection('bilbo-radar')">Compression Radar</button>
+  <button class="nav-item" onclick="showSection('bilbo-book')">Signals &amp; Positions</button>
+  <button class="nav-item" onclick="showSection('bilbo-rules')">The Rules</button>
   <div class="nav-section">Tools</div>
   <button class="nav-item" onclick="showSection('pre-entry')">Pre-Entry Checklist</button>
   <button class="nav-item" onclick="showSection('position-sizing')">Position Sizer</button>
@@ -391,6 +395,115 @@ code{background:var(--bg3);padding:1px 4px;border-radius:3px;font-size:0.85em}
   <!-- =========================================================
        PRE-ENTRY CHECKLIST
        ========================================================= -->
+  <!-- =========================================================
+       BILBO BOX: compression radar
+       ========================================================= -->
+  <div id="section-bilbo-radar" class="section-view" style="display:none">
+    <div class="card">
+      <h2>Bilbo Box — Compression Radar</h2>
+      <p class="note" id="bilboMeta">Loading…</p>
+      <table id="tblBilboRadar">
+        <thead><tr>
+          <th>Ticker</th><th>State</th><th>Last</th><th>Box low</th><th>Box high</th>
+          <th>To trigger</th><th>Grey run</th><th>Phase</th><th>&gt; 21 EMA</th><th>What it means</th>
+        </tr></thead>
+        <tbody id="bilboRadarBody"><tr><td colspan="10"><span class="spinner"></span> Loading…</td></tr></tbody>
+      </table>
+      <p class="note">
+        <b>armed</b> = box frozen, waiting on an hourly close above the box high ·
+        <b>building</b> = grey candles accumulating into a box ·
+        <b>compressing</b> = quiet, box not started ·
+        <b>idle</b> = nothing to do. Entries are only valid on an hourly close between
+        10:00 and 15:00 ET with the stock above its daily 21 EMA.
+      </p>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       BILBO BOX: signals and positions
+       ========================================================= -->
+  <div id="section-bilbo-book" class="section-view" style="display:none">
+    <div class="card">
+      <h2>Live Signals</h2>
+      <table id="tblBilboSignals">
+        <thead><tr>
+          <th>When (ET)</th><th>Ticker</th><th>Status</th><th>Stock</th><th>Box high</th>
+          <th>Contract</th><th>Mid</th><th>Spread</th><th>Size</th><th>Stop / trail</th>
+        </tr></thead>
+        <tbody id="bilboSignalsBody"><tr><td colspan="10">No signals in the current window.</td></tr></tbody>
+      </table>
+      <p class="note" id="bilboSignalsNote"></p>
+    </div>
+
+    <div class="card">
+      <h2>Missed Breakouts <span class="badge n">audit trail</span></h2>
+      <table>
+        <thead><tr><th>When (ET)</th><th>Ticker</th><th>Stock</th><th>Box high</th><th>Blocked by</th></tr></thead>
+        <tbody id="bilboMissedBody"><tr><td colspan="5">None.</td></tr></tbody>
+      </table>
+      <p class="note">Breakouts the rules rejected. Watch this list: if the gates are
+        throwing away most of the winners, the gates are the problem, not the market.</p>
+    </div>
+
+    <div class="card">
+      <h2>Open Paper Positions</h2>
+      <table>
+        <thead><tr>
+          <th>Ticker</th><th>Entered</th><th>Entry</th><th>Now</th><th>Peak</th>
+          <th>Stop (box low)</th><th>Trail</th><th>Days</th><th>Contract</th>
+        </tr></thead>
+        <tbody id="bilboOpenBody"><tr><td colspan="9">Flat.</td></tr></tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>Closed Trades</h2>
+      <p class="note" id="bilboStats"></p>
+      <table>
+        <thead><tr>
+          <th>Ticker</th><th>Entered</th><th>Exited</th><th>Reason</th>
+          <th>Stock move</th><th>Days held</th>
+        </tr></thead>
+        <tbody id="bilboClosedBody"><tr><td colspan="6">None yet.</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       BILBO BOX: the rules, on one card
+       ========================================================= -->
+  <div id="section-bilbo-rules" class="section-view" style="display:none">
+    <div class="card">
+      <h2>The Bilbo Box — Rules On One Card</h2>
+      <table>
+        <tbody>
+          <tr><td><b>Universe</b></td><td id="bruleUniverse">20 liquid large-caps with penny-wide option chains.</td></tr>
+          <tr><td><b>Setup</b></td><td>Hourly chart. Saty Phase Oscillator paints compression (grey). The box is the high/low of the first 5 grey candles, then frozen.</td></tr>
+          <tr><td><b>Entry</b></td><td id="bruleEntry">Hourly candle closes out of compression AND above the box high, 10:00–15:00 ET, stock above its daily 21 EMA, call spread ≤ 5% of mid. Long only.</td></tr>
+          <tr><td><b>Instrument</b></td><td id="bruleOption">~1 strike OTM call, ~28 DTE (21–37 day window).</td></tr>
+          <tr><td><b>Size</b></td><td id="bruleSize">Premium = 3–5% of the account. That premium is the entire risk.</td></tr>
+          <tr><td><b>Exit 1 — invalidation</b></td><td>5-minute close below the box low.</td></tr>
+          <tr><td><b>Exit 2 — trail</b></td><td>After +1 daily ATR in your favour, exit on a 5-minute close that gives back more than 75% of the peak gain.</td></tr>
+          <tr><td><b>Exit 3 — time</b></td><td>Close after 10 trading days regardless.</td></tr>
+          <tr><td><b>Never</b></td><td>No exit is keyed to the option price. Every exit is judged on the stock.</td></tr>
+        </tbody>
+      </table>
+      <p class="note">Full derivation, provenance of every number, and the failure modes:
+        <code>docs/BILBO_BOX_MANUAL.md</code>. Parameters live in <code>config/bilbo_config.json</code>.</p>
+    </div>
+    <div class="card">
+      <h2>Run It</h2>
+      <table>
+        <tbody>
+          <tr><td><code>python scripts/bilbo_scan.py</code></td><td>scan the universe, write signals, mark the paper book</td></tr>
+          <tr><td><code>python scripts/bilbo_scan.py --offline</code></td><td>same pipeline on synthetic bars, no network</td></tr>
+          <tr><td><code>python scripts/bilbo_backtest.py --days 720</code></td><td>replay the rules (stock leg real, option leg modelled)</td></tr>
+          <tr><td><code>python -m pytest tests/test_bilbo.py</code></td><td>prove the engine still does what it says</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
   <div id="section-pre-entry" class="section-view" style="display:none">
     <div class="card">
       <h2>Pre-Entry Checklist</h2>
@@ -1007,22 +1120,179 @@ function saveNotes() {
   setTimeout(() => document.getElementById('notesSaved').style.display = 'none', 2000);
 }
 
+
+// ===== BILBO BOX =====
+const BILBO_STATE_CLS = {armed:'g', building:'b', compressing:'o', idle:'n', 'no data':'n'};
+
+function bilboTime(iso) {
+  if (!iso) return '—';
+  try {
+    return new Date(iso).toLocaleString('en-US', {timeZone:'America/New_York', month:'short',
+      day:'2-digit', hour:'2-digit', minute:'2-digit', hour12:false});
+  } catch (e) { return iso; }
+}
+
+function num(v, dp = 2) { return v == null ? '—' : Number(v).toFixed(dp); }
+
+function buildBilboRadar(st) {
+  const tbody = document.getElementById('bilboRadarBody');
+  const meta  = document.getElementById('bilboMeta');
+  if (!st) {
+    if (meta) meta.textContent = 'No bilbo_state.json yet — run scripts/bilbo_scan.py.';
+    tbody.innerHTML = '<tr><td colspan="10">No scan data.</td></tr>';
+    return;
+  }
+  const c = st.counts || {};
+  if (meta) {
+    const mode = st.data_mode === 'live' ? '' : ` · <span class="badge o">${st.data_mode}</span>`;
+    meta.innerHTML = `${st.universe_size} tickers · <b>${c.armed||0} armed</b> · ${c.building||0} building · ` +
+      `${c.compressing||0} compressing · ${c.idle||0} idle · last bar ${st.generated_at_et||'—'}${mode}`;
+  }
+  const rows = (st.tickers || []);
+  if (!rows.length) { tbody.innerHTML = '<tr><td colspan="10">No scan data.</td></tr>'; return; }
+  tbody.innerHTML = rows.map(v => {
+    const cls  = BILBO_STATE_CLS[v.status] || 'n';
+    const box  = v.box || {};
+    const dist = v.distance_to_trigger_pct;
+    const distTxt = dist == null ? '—'
+      : `<span class="badge ${dist <= 0 ? 'g' : dist < 1 ? 'o' : 'n'}">${dist > 0 ? '+' : ''}${num(dist)}%</span>`;
+    const ema = v.above_daily_ema == null ? '—'
+      : v.above_daily_ema ? '<span class="badge g">yes</span>' : '<span class="badge r">no</span>';
+    return `<tr${v.status === 'armed' ? ' class="top-row"' : ''}>
+      <td><strong>${v.ticker}</strong></td>
+      <td><span class="badge ${cls}">${v.status}</span></td>
+      <td>${num(v.last_price)}</td>
+      <td>${box.low != null ? num(box.low) : '—'}</td>
+      <td>${box.high != null ? num(box.high) : '—'}</td>
+      <td>${distTxt}</td>
+      <td>${v.compression_run || 0}</td>
+      <td style="font-size:0.78em">${v.phase || '—'} (${num(v.oscillator, 1)})</td>
+      <td>${ema}</td>
+      <td style="font-size:0.78em">${v.note || ''}</td>
+    </tr>`;
+  }).join('');
+}
+
+function buildBilboSignals(sig) {
+  const body   = document.getElementById('bilboSignalsBody');
+  const missed = document.getElementById('bilboMissedBody');
+  const note   = document.getElementById('bilboSignalsNote');
+  if (!sig) return;
+
+  const all = [...(sig.actionable || []), ...(sig.blocked || [])]
+    .sort((a, b) => (a.ts < b.ts ? 1 : -1));
+  if (!all.length) {
+    body.innerHTML = '<tr><td colspan="10">No signals in the current window.</td></tr>';
+  } else {
+    body.innerHTML = all.map(s => {
+      const o = s.option || {}, z = s.sizing || {}, x = s.exit_plan || {};
+      const cls = s.status === 'actionable' ? (s.fresh ? 'g' : 'n') : 'r';
+      const label = s.status === 'actionable' ? (s.fresh ? 'ACT NOW' : 'stale') : 'blocked';
+      return `<tr${s.fresh && s.status === 'actionable' ? ' class="top-row"' : ''}>
+        <td>${s.ts_et || bilboTime(s.ts)}</td>
+        <td><strong>${s.ticker}</strong></td>
+        <td><span class="badge ${cls}">${label}</span>${s.block_reason ? `<div class="note">${s.block_reason}</div>` : ''}</td>
+        <td>${num(s.stock_price)}</td>
+        <td>${num(s.box_high)}</td>
+        <td style="font-size:0.78em">${o.symbol || '—'}</td>
+        <td>${o.mid != null ? num(o.mid) : '—'}</td>
+        <td>${o.spread_pct != null ? num(o.spread_pct, 1) + '%' : '—'}</td>
+        <td>${z.contracts ? `${z.contracts} × (${num(z.pct_of_account, 1)}%)` : '—'}</td>
+        <td style="font-size:0.78em">${x.hard_stop != null ? `stop ${num(x.hard_stop)} · trail arms ${num(x.trail_arms_at)}` : '—'}</td>
+      </tr>`;
+    }).join('');
+  }
+
+  const miss = sig.missed || [];
+  missed.innerHTML = miss.length ? miss.map(m => `<tr>
+      <td>${m.ts_et || bilboTime(m.ts)}</td>
+      <td><strong>${m.ticker}</strong></td>
+      <td>${num(m.stock_price)}</td>
+      <td>${num(m.box_high)}</td>
+      <td><span class="badge r">${m.block_reason || 'gate failed'}</span></td>
+    </tr>`).join('') : '<tr><td colspan="5">None.</td></tr>';
+
+  if (note) note.textContent = `Looking back ${sig.lookback_bars} hourly bars. ` +
+    `Generated ${sig.generated_at ? new Date(sig.generated_at).toLocaleString('en-AU',{timeZone:'Australia/Sydney',hour12:false}) : '—'}.`;
+}
+
+function buildBilboPositions(pos) {
+  const openBody   = document.getElementById('bilboOpenBody');
+  const closedBody = document.getElementById('bilboClosedBody');
+  const stats      = document.getElementById('bilboStats');
+  if (!pos) return;
+
+  const open = pos.open || [];
+  openBody.innerHTML = open.length ? open.map(p => {
+    const live = p.live || {};
+    const up = p.unrealised_stock_pct;
+    const upCls = up == null ? 'n' : up >= 0 ? 'g' : 'r';
+    return `<tr>
+      <td><strong>${p.ticker}</strong></td>
+      <td>${bilboTime(p.entry_ts)}</td>
+      <td>${num(p.entry_stock)}</td>
+      <td><span class="badge ${upCls}">${num(live.price)} (${up >= 0 ? '+' : ''}${num(up)}%)</span></td>
+      <td>${num(p.peak_stock)}</td>
+      <td>${num(p.box_low)}</td>
+      <td>${live.trail_armed ? `<span class="badge g">${num(live.trail_level)}</span>`
+                             : `<span class="badge n">arms at ${num(live.arm_level)}</span>`}</td>
+      <td>${live.trading_days_held != null ? live.trading_days_held : '—'}</td>
+      <td style="font-size:0.78em">${(p.contract || {}).symbol || '—'}${(p.contract||{}).contracts ? ` × ${p.contract.contracts}` : ''}</td>
+    </tr>`;
+  }).join('') : '<tr><td colspan="9">Flat.</td></tr>';
+
+  const closed = (pos.closed || []).slice().reverse();
+  closedBody.innerHTML = closed.length ? closed.slice(0, 40).map(c => {
+    const r = c.stock_return_pct;
+    return `<tr>
+      <td><strong>${c.ticker}</strong></td>
+      <td>${bilboTime(c.entry_ts)}</td>
+      <td>${bilboTime(c.exit_ts)}</td>
+      <td><span class="badge ${c.exit_reason === 'box_low_invalidation' ? 'r' : c.exit_reason === 'time_stop' ? 'o' : 'b'}">${(c.exit_reason||'').replace(/_/g,' ')}</span></td>
+      <td><span class="badge ${r >= 0 ? 'g' : 'r'}">${r >= 0 ? '+' : ''}${num(r)}%</span></td>
+      <td>${c.trading_days_held != null ? c.trading_days_held : '—'}</td>
+    </tr>`;
+  }).join('') : '<tr><td colspan="6">None yet.</td></tr>';
+
+  const st = pos.stats || {};
+  if (stats) stats.textContent = st.trades
+    ? `${st.trades} closed · ${st.win_rate_pct}% of stock legs positive · avg ${st.avg_stock_return_pct >= 0 ? '+' : ''}${st.avg_stock_return_pct}% on the stock · best ${st.best_stock_return_pct}% / worst ${st.worst_stock_return_pct}%`
+    : 'No closed trades yet.';
+}
+
+function buildBilboRules(st) {
+  if (!st || !st.params) return;
+  const p = st.params;
+  const u = document.getElementById('bruleUniverse');
+  if (u) u.textContent = `${st.universe_size} tickers (config/bilbo_config.json), liquid enough that the call spread stays inside ${p.max_spread_pct_of_mid}% of mid.`;
+  const e = document.getElementById('bruleEntry');
+  if (e) e.textContent = `Hourly candle closes out of compression AND above the box high, ${p.entry_window}, stock above its daily ${p.daily_ema} EMA, call spread ≤ ${p.max_spread_pct_of_mid}% of mid. Long only.`;
+  const o = document.getElementById('bruleOption');
+  if (o) o.textContent = `~1 strike OTM call, ${p.dte_window} days to expiry.`;
+  const z = document.getElementById('bruleSize');
+  if (z) z.textContent = `Premium = ${p.premium_band_pct[0]}–${p.premium_band_pct[1]}% of the account (${Number(st.equity).toLocaleString()}). That premium is the entire risk.`;
+}
+
 // ===== MAIN REFRESH =====
 async function refreshAll() {
   console.log('Refreshing data...');
   document.getElementById('dataStatusDot').style.background = 'var(--orange)';
   document.getElementById('dataStatusDot').style.boxShadow = '';
 
-  const [scan, breadth, finviz, watchlist] = await Promise.all([
+  const [scan, breadth, finviz, watchlist, bilboState, bilboSignals, bilboPositions] = await Promise.all([
     loadJSON('sector_scan.json'),
     loadJSON('breadth.json'),
     loadJSON('finviz_screener.json'),
     loadWatchlist(),
+    loadJSON('bilbo_state.json'),
+    loadJSON('bilbo_signals.json'),
+    loadJSON('bilbo_positions.json'),
   ]);
 
   state.sectorScan = scan;
   state.breadth    = breadth;
   state.finviz     = finviz;
+  state.bilbo      = {state: bilboState, signals: bilboSignals, positions: bilboPositions};
   state.watchlist  = watchlist;
   state.lastRefresh = new Date();
 
@@ -1042,6 +1312,10 @@ async function refreshAll() {
     buildTVActions(scan, breadth || {});
   }
   if (finviz) buildFinvizTable(finviz);
+  buildBilboRadar(bilboState);
+  buildBilboSignals(bilboSignals);
+  buildBilboPositions(bilboPositions);
+  buildBilboRules(bilboState);
   if (watchlist) {
     buildFocusGrid(watchlist);
     buildRulesFilter(watchlist);

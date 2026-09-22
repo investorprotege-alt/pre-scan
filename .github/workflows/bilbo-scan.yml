@@ -1,0 +1,66 @@
+name: Bilbo Box Scan
+
+# Hourly bars close at :30 past the hour ET (09:30-10:30, 10:30-11:30, ...), so
+# the scan runs at :35 to catch a just-closed bar. Hours 13-21 UTC cover the US
+# session under both EDT (13:30-20:00 UTC) and EST (14:30-21:00 UTC).
+on:
+  schedule:
+    - cron: '35 13-21 * * 1-5'
+  workflow_dispatch:
+    inputs:
+      run_backtest:
+        description: 'Also run the backtest (stock leg real, option leg modelled)'
+        type: boolean
+        default: false
+      equity:
+        description: 'Account equity to size against'
+        default: '100000'
+
+concurrency:
+  group: bilbo-scan
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run engine tests
+        run: |
+          pip install pytest
+          python -m pytest tests/test_bilbo.py -q
+
+      - name: Scan the universe
+        run: python scripts/bilbo_scan.py --equity "${{ github.event.inputs.equity || '100000' }}"
+
+      - name: Backtest
+        if: ${{ github.event.inputs.run_backtest == 'true' }}
+        run: python scripts/bilbo_backtest.py --days 720
+        continue-on-error: true
+
+      - name: Commit data files for the dashboard
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
+          git add data/bilbo_*.json
+          git diff --staged --quiet || git commit -m "chore: bilbo box scan [skip ci]"
+          git pull --rebase -X theirs origin ${{ github.ref_name }}
+          git push origin HEAD:${{ github.ref_name }}
