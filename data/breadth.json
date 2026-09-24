@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T03:13:48.092696+10:00",
+  "generated_at": "2026-09-25T09:33:51.778325+10:00",
   "mmtw_proxy": {
     "mmtw_proxy": 50.0,
     "above_count": 5,
@@ -8,55 +8,55 @@
     "note": "Sampled 100 of 503 S&P 500 components"
   },
   "nh_nl": {
-    "new_highs": 1,
-    "new_lows": 4,
-    "nh_nl_ratio": 0.25,
+    "new_highs": 2,
+    "new_lows": 5,
+    "nh_nl_ratio": 0.4,
     "total_checked": 100,
     "signal": "WEAK \u2014 More new lows than highs",
     "note": "Sampled 100 tickers, within 1% of 52-week range",
     "source": "yfinance"
   },
   "mco_mcsi": {
-    "mco": -0.79,
-    "mcsi": -21.61,
-    "mco_1sigma_plus": 2.59,
-    "mco_1sigma_minus": -2.59,
-    "mco_2sigma_plus": 5.18,
-    "mco_2sigma_minus": -5.18,
-    "mcsi_10ma": -21.27,
+    "mco": -0.49,
+    "mcsi": -21.37,
+    "mco_1sigma_plus": 2.6,
+    "mco_1sigma_minus": -2.6,
+    "mco_2sigma_plus": 5.2,
+    "mco_2sigma_minus": -5.2,
+    "mcsi_10ma": -21.31,
     "mcsi_above_10ma": false,
     "mcsi_curling_up": false,
     "mcsi_curling_down": false,
     "mco_signal": "NEUTRAL \u2014 Normal conditions",
     "mcsi_signal": "BELOW 10MA \u2014 Caution",
     "mco_history": [
-      -1.5,
-      -2.15,
-      -2.44,
-      -4.83,
+      -1.49,
+      -2.14,
+      -2.43,
+      -4.82,
       -3.14,
-      -1.59,
+      -1.58,
       -1.75,
       -2.98,
-      -4.72,
+      -4.71,
       -4.78,
       -2.21,
       -0.7,
-      -1.91,
-      -2.48,
-      0.24,
-      -1.48,
+      -1.9,
+      -2.47,
+      0.25,
+      -1.47,
       1.26,
       1.54,
-      0.47,
-      -0.79
+      0.48,
+      -0.49
     ],
     "universe_size": 100
   },
-  "breadth_score": 32.7,
+  "breadth_score": 33.6,
   "breadth_summary": "BEARISH",
   "breadth_factors": [
     "$MMTW: 50.0%",
-    "MCO: -0.79"
+    "MCO: -0.49"
   ]
 }
