@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-09-30T04:05:55.048819+10:00",
+  "generated_at": "2026-09-30T09:58:37.128402+10:00",
   "market_regime": {
     "regime": "BEAR / BREAKDOWN \u2014 Preserve capital",
     "exposure_phase": "Breakdown",
-    "vix": 16.28,
+    "vix": 16.04,
     "vix_regime": "NORMAL",
     "spy_above_200sma": false,
     "spy_above_50sma": true
@@ -11,25 +11,25 @@
   "qqqe_scenario": {
     "scenario": 1,
     "description": "Pullback in uptrend \u2014 aggressive, full Focus List execution",
-    "price": 120.065,
+    "price": 120.31,
     "ema21_high_band": 120.3244,
-    "ema21_mid_band": 119.8529,
+    "ema21_mid_band": 119.8752,
     "ema21_low_band": 119.2666,
     "above_200sma": true,
     "sma200": null
   },
   "equal_weight_ratios": {
-    "rsp_spy_ratio": 0.2737,
-    "qqqe_qqq_ratio": 0.1628
+    "rsp_spy_ratio": 0.2741,
+    "qqqe_qqq_ratio": 0.163
   },
   "us_sectors": [
     {
       "ticker": "XLV",
       "name": "Healthcare",
-      "price": 170.19,
-      "1w_roc": 0.18,
-      "1m_roc": -0.19,
-      "3m_roc": 7.68,
+      "price": 170.73,
+      "1w_roc": 0.49,
+      "1m_roc": 0.13,
+      "3m_roc": 8.02,
       "above_200sma": null,
       "rank": 1,
       "top": true
@@ -48,10 +48,10 @@
     {
       "ticker": "XLI",
       "name": "Industrials",
-      "price": 169.025,
-      "1w_roc": -0.73,
-      "1m_roc": -4.32,
-      "3m_roc": -8.5,
+      "price": 169.13,
+      "1w_roc": -0.67,
+      "1m_roc": -4.27,
+      "3m_roc": -8.45,
       "above_200sma": null,
       "rank": 3,
       "top": true
@@ -59,10 +59,10 @@
     {
       "ticker": "XLK",
       "name": "Technology",
-      "price": 194.37,
-      "1w_roc": -0.97,
-      "1m_roc": 4.8,
-      "3m_roc": 2.14,
+      "price": 194.5,
+      "1w_roc": -0.9,
+      "1m_roc": 4.87,
+      "3m_roc": 2.21,
       "above_200sma": null,
       "rank": 4,
       "top": false
@@ -70,10 +70,10 @@
     {
       "ticker": "XLP",
       "name": "Consumer Staples",
-      "price": 81.79,
-      "1w_roc": -1.14,
-      "1m_roc": -3.65,
-      "3m_roc": -0.89,
+      "price": 81.85,
+      "1w_roc": -1.06,
+      "1m_roc": -3.58,
+      "3m_roc": -0.82,
       "above_200sma": null,
       "rank": 5,
       "top": false
@@ -81,10 +81,10 @@
     {
       "ticker": "XLF",
       "name": "Financials",
-      "price": 53.975,
-      "1w_roc": -1.51,
-      "1m_roc": -6.77,
-      "3m_roc": 1.04,
+      "price": 54.01,
+      "1w_roc": -1.44,
+      "1m_roc": -6.71,
+      "3m_roc": 1.1,
       "above_200sma": null,
       "rank": 6,
       "top": false
@@ -92,10 +92,10 @@
     {
       "ticker": "XLC",
       "name": "Communication Services",
-      "price": 111.24,
-      "1w_roc": -2.02,
-      "1m_roc": -1.22,
-      "3m_roc": 4.18,
+      "price": 111.47,
+      "1w_roc": -1.81,
+      "1m_roc": -1.02,
+      "3m_roc": 4.39,
       "above_200sma": null,
       "rank": 7,
       "top": false
@@ -103,43 +103,43 @@
     {
       "ticker": "XLU",
       "name": "Utilities",
-      "price": 39.64,
-      "1w_roc": -2.2,
-      "1m_roc": -6.55,
-      "3m_roc": -11.93,
+      "price": 39.71,
+      "1w_roc": -2.02,
+      "1m_roc": -6.38,
+      "3m_roc": -11.77,
       "above_200sma": null,
       "rank": 8,
       "top": false
     },
     {
-      "ticker": "XLY",
-      "name": "Consumer Discretionary",
-      "price": 109.28,
-      "1w_roc": -2.72,
-      "1m_roc": -6.56,
-      "3m_roc": -6.62,
+      "ticker": "XLRE",
+      "name": "Real Estate",
+      "price": 41.34,
+      "1w_roc": -2.73,
+      "1m_roc": -6.28,
+      "3m_roc": -5.32,
       "above_200sma": null,
       "rank": 9,
       "top": false
     },
     {
-      "ticker": "XLB",
-      "name": "Materials",
-      "price": 49.095,
-      "1w_roc": -2.84,
-      "1m_roc": -7.26,
-      "3m_roc": -2.97,
+      "ticker": "XLY",
+      "name": "Consumer Discretionary",
+      "price": 109.15,
+      "1w_roc": -2.83,
+      "1m_roc": -6.67,
+      "3m_roc": -6.73,
       "above_200sma": null,
       "rank": 10,
       "top": false
     },
     {
-      "ticker": "XLRE",
-      "name": "Real Estate",
-      "price": 41.235,
-      "1w_roc": -2.98,
-      "1m_roc": -6.52,
-      "3m_roc": -5.56,
+      "ticker": "XLB",
+      "name": "Materials",
+      "price": 49.1,
+      "1w_roc": -2.83,
+      "1m_roc": -7.25,
+      "3m_roc": -2.96,
       "above_200sma": null,
       "rank": 11,
       "top": false
@@ -228,62 +228,62 @@
     {
       "ticker": "SPY",
       "name": "S&P 500",
-      "price": 763.78,
-      "sma50": 760.8618,
+      "price": 764.2,
+      "sma50": 760.8702,
       "sma200": null,
       "above_50sma": true,
       "above_200sma": null,
-      "1w_roc": -1.24,
-      "1m_roc": -0.48,
-      "atr_mult_from_50sma": 0.42
+      "1w_roc": -1.19,
+      "1m_roc": -0.42,
+      "atr_mult_from_50sma": 0.48
     },
     {
       "ticker": "QQQ",
       "name": "Nasdaq 100",
-      "price": 737.36,
-      "sma50": 713.6681,
+      "price": 737.93,
+      "sma50": 713.6795,
       "sma200": null,
       "above_50sma": true,
       "above_200sma": null,
-      "1w_roc": -1.35,
-      "1m_roc": 3.03,
-      "atr_mult_from_50sma": 2.37
+      "1w_roc": -1.27,
+      "1m_roc": 3.11,
+      "atr_mult_from_50sma": 2.43
     },
     {
       "ticker": "QQQE",
       "name": "Equal-Weight Nasdaq 100",
-      "price": 120.065,
-      "sma50": 119.9706,
+      "price": 120.31,
+      "sma50": 119.9755,
       "sma200": null,
       "above_50sma": true,
       "above_200sma": null,
-      "1w_roc": -1.35,
-      "1m_roc": -1.67,
-      "atr_mult_from_50sma": 0.07
+      "1w_roc": -1.15,
+      "1m_roc": -1.47,
+      "atr_mult_from_50sma": 0.24
     },
     {
       "ticker": "RSP",
       "name": "Equal-Weight S&P 500",
-      "price": 209.035,
-      "sma50": 216.1694,
+      "price": 209.5,
+      "sma50": 216.1787,
       "sma200": null,
       "above_50sma": false,
       "above_200sma": null,
-      "1w_roc": -1.77,
-      "1m_roc": -4.93,
-      "atr_mult_from_50sma": 3.9
+      "1w_roc": -1.55,
+      "1m_roc": -4.71,
+      "atr_mult_from_50sma": 3.65
     },
     {
       "ticker": "^VIX",
       "name": "VIX",
-      "price": 16.28,
-      "sma50": 15.9064,
+      "price": 16.04,
+      "sma50": 15.9016,
       "sma200": null,
       "above_50sma": true,
       "above_200sma": null,
-      "1w_roc": 14.57,
-      "1m_roc": 9.12,
-      "atr_mult_from_50sma": 0.25
+      "1w_roc": 12.88,
+      "1m_roc": 7.51,
+      "atr_mult_from_50sma": 0.09
     }
   ],
   "commodities": [
@@ -291,90 +291,90 @@
       "ticker": "GC=F",
       "name": "Gold",
       "leveraged_etf": "NUGT",
-      "price": 4175.0,
-      "1w_roc": -4.77,
-      "1m_roc": -10.48,
+      "price": 4216.2002,
+      "1w_roc": -3.83,
+      "1m_roc": -9.6,
       "above_50sma": false,
       "above_200sma": null,
-      "ema21": 4373.7425,
-      "sma50": 4357.672
+      "ema21": 4377.488,
+      "sma50": 4358.496
     },
     {
       "ticker": "CL=F",
       "name": "Crude Oil",
       "leveraged_etf": "UCO",
-      "price": 90.1,
-      "1w_roc": -4.75,
-      "1m_roc": 8.03,
+      "price": 89.19,
+      "1w_roc": -5.71,
+      "1m_roc": 6.94,
       "above_50sma": true,
       "above_200sma": null,
-      "ema21": 93.7027,
-      "sma50": 88.3812
+      "ema21": 93.62,
+      "sma50": 88.363
     },
     {
       "ticker": "SI=F",
       "name": "Silver",
       "leveraged_etf": "AGQ",
-      "price": 61.095,
-      "1w_roc": -7.34,
-      "1m_roc": -8.81,
+      "price": 61.945,
+      "1w_roc": -6.05,
+      "1m_roc": -7.54,
       "above_50sma": false,
       "above_200sma": null,
-      "ema21": 64.3757,
-      "sma50": 63.8197
+      "ema21": 64.453,
+      "sma50": 63.8367
     },
     {
       "ticker": "NG=F",
       "name": "Natural Gas",
       "leveraged_etf": "BOIL",
-      "price": 3.046,
-      "1w_roc": 2.73,
-      "1m_roc": 5.47,
+      "price": 3.023,
+      "1w_roc": 1.96,
+      "1m_roc": 4.67,
       "above_50sma": true,
       "above_200sma": null,
-      "ema21": 2.9649,
-      "sma50": 2.8491
+      "ema21": 2.9628,
+      "sma50": 2.8487
     }
   ],
   "fx": [
     {
       "ticker": "AUDUSD=X",
       "name": "AUD/USD",
-      "price": 0.6978,
-      "1w_roc": -1.98,
-      "1m_roc": -2.58,
+      "price": 0.6991,
+      "1w_roc": -1.7,
+      "1m_roc": -2.54,
       "above_200sma": null
     },
     {
       "ticker": "DX-Y.NYB",
       "name": "DXY (US Dollar Index)",
-      "price": 101.599,
-      "1w_roc": 0.99,
-      "1m_roc": 1.9,
+      "price": 101.418,
+      "1w_roc": 0.81,
+      "1m_roc": 1.72,
       "above_200sma": null
     },
     {
       "ticker": "EURUSD=X",
       "name": "EUR/USD",
-      "price": 1.1333,
-      "1w_roc": -1.15,
-      "1m_roc": -2.21,
+      "price": 1.1344,
+      "1w_roc": -0.91,
+      "1m_roc": -2.35,
       "above_200sma": null
     },
     {
       "ticker": "GBPUSD=X",
       "name": "GBP/USD",
-      "price": 1.3221,
-      "1w_roc": -1.12,
+      "price": 1.323,
+      "1w_roc": -0.85,
       "1m_roc": -2.36,
       "above_200sma": null
     },
     {
       "ticker": "JPY=X",
       "name": "USD/JPY",
-      "price": 157.301,
+      "price": 157.405,
       "1w_roc": -0.04,
-      "1m_roc": -1.76,
+      "1m_roc": -1.47,
       "above_200sma": null
     }
   ],
