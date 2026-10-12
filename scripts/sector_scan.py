@@ -56,7 +56,7 @@ def get_atr(hist: pd.DataFrame, period: int = 14) -> float:
     return round(float(tr.rolling(period).mean().iloc[-1]), 4)
 
 
-def fetch_ticker_data(ticker: str, period: str = "6mo") -> dict:
+def fetch_ticker_data(ticker: str, period: str = "14mo") -> dict:
     """Download OHLCV and compute key metrics for a single ticker."""
     try:
         t = yf.Ticker(ticker)
@@ -93,8 +93,8 @@ def fetch_ticker_data(ticker: str, period: str = "6mo") -> dict:
             dist_from_50 = abs(price - result["sma50"])
             result["atr_mult_from_50sma"] = round(dist_from_50 / result["atr14"], 2)
 
-        # 52-week high/low
-        hist_1y = t.history(period="1y", auto_adjust=True)
+        # 52-week high/low (last 252 sessions of the already-downloaded history)
+        hist_1y = hist.iloc[-252:]
         if not hist_1y.empty:
             result["52w_high"] = round(float(hist_1y["High"].max()), 4)
             result["52w_low"]  = round(float(hist_1y["Low"].min()), 4)
@@ -122,7 +122,7 @@ def compute_qqqe_scenario(data: dict) -> dict:
     """
     try:
         t = yf.Ticker("QQQE")
-        hist = t.history(period="6mo", auto_adjust=True)
+        hist = t.history(period="14mo", auto_adjust=True)   # 200SMA needs 200+ bars
         if len(hist) < 30:
             return {"scenario": None, "description": "insufficient data"}
 
@@ -143,10 +143,13 @@ def compute_qqqe_scenario(data: dict) -> dict:
         recent_recovery  = (recent_closes[-1] > close_ema21) and (recent_closes[0] < low_ema21)
         making_higher_lows = recent_lows[-1] > recent_lows[0]
 
-        if above_200 and above_mid_band and not above_high_band:
-            scenario, desc = 1, "Pullback in uptrend — aggressive, full Focus List execution"
-        elif above_200 and above_mid_band and recent_recovery:
+        if above_200 and above_mid_band and recent_recovery:
             scenario, desc = 2, "Reclaim & backtest — engage, build positions"
+        elif above_200 and above_mid_band and not above_high_band:
+            scenario, desc = 1, "Pullback in uptrend — aggressive, full Focus List execution"
+        elif above_200 and above_high_band:
+            # Trending above the whole band is still an uptrend, not a rejection
+            scenario, desc = 1, "Trending above 21DMA structure — uptrend, buy pullbacks into the band"
         elif above_200 and not above_mid_band and making_higher_lows:
             scenario, desc = 3, "Reject & higher low — pilot positions only (max 1-2% NER)"
         else:

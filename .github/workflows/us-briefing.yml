@@ -42,6 +42,10 @@ jobs:
         run: python scripts/finviz_screener.py
         continue-on-error: true
 
+      - name: Run six-gate idea filter
+        run: python scripts/idea_gates.py --session=us
+        continue-on-error: true
+
       - name: Generate briefing and send email
         env:
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
@@ -56,7 +60,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
-          git add data/*.json
+          git add -A data/   # JSON, idea ledger, research memos (briefing HTML is gitignored)
           git diff --staged --quiet || git commit -m "chore: refresh market data (US session) [skip ci]"
           git pull --rebase -X theirs origin ${{ github.ref_name }}
           git push origin HEAD:${{ github.ref_name }}

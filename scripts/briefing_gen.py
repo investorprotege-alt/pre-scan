@@ -10,12 +10,15 @@ Reads from:
   data/breadth.json
   data/finviz_screener.json  (US session only)
   data/rs_rankings.json       (if available)
+  data/idea_gates_{session}.json (if available)
+  data/research/{date}_{session}.md (Claude's research memo, if available)
   config/watchlist.json
 
 Outputs: data/briefing_{session}_{date}.html
 """
 
 import argparse
+import html
 import json
 import os
 from datetime import datetime
@@ -333,6 +336,84 @@ def build_finviz_section(finviz: dict, scan: dict) -> str:
 </div>"""
 
 
+GATE_LABELS = {
+    "regime": "Regime", "structure": "Structure", "leadership": "Leadership",
+    "location": "Location", "contrary": "Contrary", "cost_risk": "Cost/Risk",
+}
+
+
+def build_gates_section(gates: dict) -> str:
+    if not gates:
+        return '<div class="section"><h2>Six-Gate Idea Filter</h2><p>No data — run idea_gates.py first.</p></div>'
+
+    kills = gates.get("kill_counts", {})
+    kill_txt = " | ".join(f"{GATE_LABELS[g]}: {n}" for g, n in kills.items() if n) or "none"
+    warn = "" if gates.get("rs_universe_ok") else (
+        '<p class="note"><strong>Warning:</strong> RS rankings universe is too small to trust — '
+        'leadership gate fell back to benchmark-relative RS.</p>')
+
+    focus = gates.get("focus_list", [])
+    if not focus:
+        body = ('<p><strong>Zero survivors.</strong> Every idea was killed by a gate — '
+                'that is the system working. No trade is a position.</p>')
+    else:
+        rows = ""
+        for e in focus:
+            p = e.get("plan", {})
+            rows += f"""
+        <tr>
+          <td><strong>{e['ticker']}</strong></td>
+          <td>{e.get('rs_score') or '—'}</td>
+          <td>{e.get('score')}</td>
+          <td>{p.get('entry_ref')}</td>
+          <td>{p.get('stop')} ({p.get('stop_pct')}%)</td>
+          <td>{p.get('target_2r')}</td>
+          <td>{p.get('position_pct')}%</td>
+          <td>{e['gates']['location']['reason']}<br><small>{e['gates']['contrary']['reason']}</small></td>
+        </tr>"""
+        body = f"""
+  <table>
+    <thead><tr>
+      <th>Ticker</th><th>RS</th><th>Score</th><th>Ref</th><th>Stop</th>
+      <th>2R</th><th>Size</th><th>Why it survived</th>
+    </tr></thead>
+    <tbody>{rows}</tbody>
+  </table>"""
+
+    near = gates.get("near_misses", [])
+    near_html = ""
+    if near:
+        items = "".join(
+            f"<li><strong>{e['ticker']}</strong> — failed {GATE_LABELS.get(e['killed_by'], e['killed_by'])}: "
+            f"{e['gates'][e['killed_by']]['reason']}</li>"
+            for e in near[:8]
+        )
+        near_html = f"<h3>Near misses (5/6 gates) — alerts, not entries</h3><ul>{items}</ul>"
+
+    return f"""
+<div class="section">
+  <h2>Six-Gate Idea Filter — {gates.get('survived', 0)}/{gates.get('evaluated', 0)} survived</h2>
+  {warn}
+  {body}
+  {near_html}
+  <p class="note">Killed by — {kill_txt}. Sizes are R-based from <code>settings.risk_per_trade_pct</code>,
+  capped at <code>settings.max_position_pct</code>; thresholds live in <code>settings.gates</code>.</p>
+</div>"""
+
+
+def build_research_memo_section(session: str, date_str: str) -> str:
+    """Claude's research memo, if the quant-researcher skill has written one for today."""
+    path = DATA_DIR / "research" / f"{date_str}_{session}.md"
+    if not path.exists():
+        return ""
+    text = html.escape(path.read_text(encoding="utf-8"))
+    return f"""
+<div class="section">
+  <h2>Researcher Memo (Claude)</h2>
+  <pre style="white-space:pre-wrap;font-family:inherit;font-size:0.85em;margin:0">{text}</pre>
+</div>"""
+
+
 def build_focus_list_section(session: str, cfg: dict) -> str:
     key = "us_focus_list" if session == "us" else "asx_focus_list"
     focus = cfg.get(key, [])
@@ -558,6 +639,8 @@ def generate_briefing(session: str) -> str:
         ]
 
     body_parts += [
+        build_gates_section(load_json(f"idea_gates_{session}.json")),
+        build_research_memo_section(session, now_aest.strftime("%Y-%m-%d")),
         build_focus_list_section(session, cfg),
         build_preentry_checklist(),
         build_tradingview_actions(scan, session, cfg),

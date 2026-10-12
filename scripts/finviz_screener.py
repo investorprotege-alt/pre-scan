@@ -85,7 +85,7 @@ def get_sp500_universe() -> pd.DataFrame:
 
 def download_universe(tickers: list) -> pd.DataFrame:
     """
-    Batch-download ~7 months of daily OHLCV for the ticker list.
+    Batch-download ~14 months of daily OHLCV for the ticker list.
     Returns a flat DataFrame with columns:
       ticker, date, close, volume, ret_1w, ret_1m, ret_3m, ret_6m,
       sma50, sma200, ema10, ema21, high_52w, avg_vol_20
@@ -93,7 +93,7 @@ def download_universe(tickers: list) -> pd.DataFrame:
     print(f"  Downloading price data for {len(tickers)} tickers...")
     raw = yf.download(
         tickers,
-        period="8mo",        # 8 months = enough for 6M return + buffer
+        period="14mo",       # 200SMA + 52-week high need ~252 sessions
         auto_adjust=True,
         progress=False,
         threads=True,
