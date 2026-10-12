@@ -11,15 +11,18 @@ Run weekly (Sunday). Outputs: data/rs_rankings.json
 import json
 import os
 from datetime import datetime
+from io import StringIO
 
 import numpy as np
 import pandas as pd
+import requests
 import yfinance as yf
 import pytz
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
 CONFIG_PATH = os.path.join(os.path.dirname(__file__), "..", "config", "watchlist.json")
 os.makedirs(DATA_DIR, exist_ok=True)
+WIKI_HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; pre-market-bot/1.0)"}
 
 
 def load_config():
@@ -27,9 +30,16 @@ def load_config():
         return json.load(f)
 
 
+def read_wiki_tables(url: str) -> list:
+    """pd.read_html with a User-Agent — Wikipedia returns 403 to the default urllib agent."""
+    resp = requests.get(url, headers=WIKI_HEADERS, timeout=20)
+    resp.raise_for_status()
+    return pd.read_html(StringIO(resp.text))
+
+
 def get_sp500_tickers() -> list:
     try:
-        tables = pd.read_html("https://en.wikipedia.org/wiki/List_of_S%26P_500_companies")
+        tables = read_wiki_tables("https://en.wikipedia.org/wiki/List_of_S%26P_500_companies")
         return tables[0]["Symbol"].str.replace(".", "-", regex=False).tolist()
     except Exception as e:
         print(f"  WARNING: S&P 500 list fetch failed: {e}")
@@ -38,7 +48,7 @@ def get_sp500_tickers() -> list:
 
 def get_asx200_tickers() -> list:
     try:
-        tables = pd.read_html("https://en.wikipedia.org/wiki/S%26P/ASX_200")
+        tables = read_wiki_tables("https://en.wikipedia.org/wiki/S%26P/ASX_200")
         for t in tables:
             for col in t.columns:
                 if "ticker" in str(col).lower() or "code" in str(col).lower():

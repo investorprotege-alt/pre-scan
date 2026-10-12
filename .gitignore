@@ -7,8 +7,8 @@ data/briefing_*.html
 # Email config contains Gmail App Password — never commit this
 config/email_config.json
 
-# Claude Code local settings
-.claude/
+# Claude Code local settings (skills under .claude/skills/ ARE tracked)
+.claude/settings.local.json
 
 # Python
 __pycache__/
