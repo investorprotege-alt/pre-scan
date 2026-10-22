@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-23T04:12:35.632122+11:00",
+  "generated_at": "2026-10-23T10:40:48.498542+11:00",
   "mmtw_proxy": {
-    "mmtw_proxy": 68.0,
-    "above_count": 68,
+    "mmtw_proxy": 70.0,
+    "above_count": 70,
     "valid_count": 100,
     "signal": "HEALTHY \u2014 Uptrend participation broad",
     "note": "Sampled 100 of 503 S&P 500 components"
@@ -17,27 +17,27 @@
     "source": "yfinance"
   },
   "mco_mcsi": {
-    "mco": 1.34,
-    "mcsi": -1.55,
+    "mco": 1.63,
+    "mcsi": -1.21,
     "mco_1sigma_plus": 1.94,
     "mco_1sigma_minus": -1.94,
     "mco_2sigma_plus": 3.87,
     "mco_2sigma_minus": -3.87,
-    "mcsi_10ma": -5.49,
+    "mcsi_10ma": -5.41,
     "mcsi_above_10ma": true,
     "mcsi_curling_up": false,
     "mcsi_curling_down": false,
     "mco_signal": "NEUTRAL \u2014 Normal conditions",
     "mcsi_signal": "ABOVE 10MA \u2014 Participation confirmed",
     "mco_history": [
-      1.0,
+      0.99,
       -0.01,
-      0.09,
+      0.08,
       0.67,
       0.56,
-      0.92,
-      2.02,
-      2.55,
+      0.91,
+      2.01,
+      2.54,
       1.39,
       0.89,
       1.66,
@@ -47,17 +47,17 @@
       1.53,
       -1.22,
       -0.31,
-      1.52,
+      1.51,
       2.07,
-      1.34
+      1.63
     ],
     "universe_size": 100
   },
-  "breadth_score": 77.4,
+  "breadth_score": 79.3,
   "breadth_summary": "BULLISH",
   "breadth_factors": [
-    "$MMTW: 68.0%",
-    "MCO: 1.34",
+    "$MMTW: 70.0%",
+    "MCO: 1.63",
     "MCSI above 10MA"
   ]
 }
