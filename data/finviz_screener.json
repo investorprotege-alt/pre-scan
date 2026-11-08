@@ -1,24 +1,62 @@
 {
-  "generated_at": "2026-11-06T06:58:52.534682+11:00",
+  "generated_at": "2026-11-09T04:57:07.550858+11:00",
   "screener_breakdown": {
-    "1-Week Movers >20%": 3,
-    "1-Month Movers >30%": 10,
-    "3-Month Movers >50%": 2,
+    "1-Week Movers >20%": 4,
+    "1-Month Movers >30%": 7,
+    "3-Month Movers >50%": 1,
     "6-Month Movers >100%": 2,
     "Daily Pullback-to-MA": 0
   },
   "combined_candidates": [
     {
+      "ticker": "APP",
+      "company": "AppLovin",
+      "sector": "Communication Services",
+      "industry": "Advertising",
+      "price": 391.22,
+      "ret_1w": 71.21,
+      "ret_1m": 39.66,
+      "ret_3m": 15.4,
+      "ret_6m": -16.5,
+      "avg_vol": 5564180,
+      "screeners": [
+        "1-Week Movers >20%",
+        "1-Month Movers >30%"
+      ],
+      "screener_count": 2,
+      "high_confluence": true,
+      "in_top_sector": true
+    },
+    {
       "ticker": "FISV",
       "company": "Fiserv",
       "sector": "Financials",
       "industry": "Transaction & Payment Processing Services",
-      "price": 62.82,
-      "ret_1w": 29.58,
-      "ret_1m": 38.64,
-      "ret_3m": 19.86,
-      "ret_6m": 10.58,
-      "avg_vol": 6853831,
+      "price": 62.88,
+      "ret_1w": 25.71,
+      "ret_1m": 36.87,
+      "ret_3m": 20.41,
+      "ret_6m": 13.34,
+      "avg_vol": 7366010,
+      "screeners": [
+        "1-Week Movers >20%",
+        "1-Month Movers >30%"
+      ],
+      "screener_count": 2,
+      "high_confluence": true,
+      "in_top_sector": false
+    },
+    {
+      "ticker": "IDXX",
+      "company": "Idexx Laboratories",
+      "sector": "Health Care",
+      "industry": "Health Care Equipment",
+      "price": 676.04,
+      "ret_1w": 22.65,
+      "ret_1m": 31.75,
+      "ret_3m": 13.48,
+      "ret_6m": 20.7,
+      "avg_vol": 714695,
       "screeners": [
         "1-Week Movers >20%",
         "1-Month Movers >30%"
@@ -32,12 +70,12 @@
       "company": "Moderna",
       "sector": "Health Care",
       "industry": "Biotechnology",
-      "price": 243.09,
-      "ret_1w": 9.12,
-      "ret_1m": 23.72,
-      "ret_3m": 310.82,
-      "ret_6m": 400.79,
-      "avg_vol": 17094415,
+      "price": 254.19,
+      "ret_1w": 14.64,
+      "ret_1m": 29.03,
+      "ret_3m": 325.0,
+      "ret_6m": 367.69,
+      "avg_vol": 16624480,
       "screeners": [
         "3-Month Movers >50%",
         "6-Month Movers >100%"
@@ -47,53 +85,16 @@
       "in_top_sector": false
     },
     {
-      "ticker": "ACN",
-      "company": "Accenture",
-      "sector": "Information Technology",
-      "industry": "IT Consulting & Other Services",
-      "price": 268.76,
-      "ret_1w": 8.71,
-      "ret_1m": 37.77,
-      "ret_3m": 54.17,
-      "ret_6m": 52.16,
-      "avg_vol": 6443147,
-      "screeners": [
-        "1-Month Movers >30%",
-        "3-Month Movers >50%"
-      ],
-      "screener_count": 2,
-      "high_confluence": true,
-      "in_top_sector": false
-    },
-    {
-      "ticker": "APP",
-      "company": "AppLovin",
-      "sector": "Communication Services",
-      "industry": "Advertising",
-      "price": 352.39,
-      "ret_1w": 38.24,
-      "ret_1m": 25.28,
-      "ret_3m": 1.61,
-      "ret_6m": -29.36,
-      "avg_vol": 4971396,
-      "screeners": [
-        "1-Week Movers >20%"
-      ],
-      "screener_count": 1,
-      "high_confluence": false,
-      "in_top_sector": true
-    },
-    {
       "ticker": "MOS",
       "company": "Mosaic Company (The)",
       "sector": "Materials",
       "industry": "Fertilizers & Agricultural Chemicals",
-      "price": 22.22,
-      "ret_1w": 21.89,
-      "ret_1m": 11.27,
-      "ret_3m": -2.83,
-      "ret_6m": -1.2,
-      "avg_vol": 11152640,
+      "price": 22.36,
+      "ret_1w": 21.59,
+      "ret_1m": 13.33,
+      "ret_3m": -3.92,
+      "ret_6m": 2.65,
+      "avg_vol": 11438350,
       "screeners": [
         "1-Week Movers >20%"
       ],
@@ -102,70 +103,16 @@
       "in_top_sector": false
     },
     {
-      "ticker": "IDXX",
-      "company": "Idexx Laboratories",
-      "sector": "Health Care",
-      "industry": "Health Care Equipment",
-      "price": 672.78,
-      "ret_1w": 16.81,
-      "ret_1m": 32.79,
-      "ret_3m": 14.68,
-      "ret_6m": 17.58,
-      "avg_vol": 690800,
-      "screeners": [
-        "1-Month Movers >30%"
-      ],
-      "screener_count": 1,
-      "high_confluence": false,
-      "in_top_sector": false
-    },
-    {
-      "ticker": "SWK",
-      "company": "Stanley Black & Decker",
+      "ticker": "PNR",
+      "company": "Pentair",
       "sector": "Industrials",
       "industry": "Industrial Machinery & Supplies & Components",
-      "price": 115.25,
-      "ret_1w": 11.23,
-      "ret_1m": 30.51,
-      "ret_3m": 11.9,
-      "ret_6m": 46.5,
-      "avg_vol": 1722086,
-      "screeners": [
-        "1-Month Movers >30%"
-      ],
-      "screener_count": 1,
-      "high_confluence": false,
-      "in_top_sector": false
-    },
-    {
-      "ticker": "ROP",
-      "company": "Roper Technologies",
-      "sector": "Information Technology",
-      "industry": "Electronic Equipment & Instruments",
-      "price": 494.82,
-      "ret_1w": 10.04,
-      "ret_1m": 38.0,
-      "ret_3m": 23.01,
-      "ret_6m": 40.75,
-      "avg_vol": 1068291,
-      "screeners": [
-        "1-Month Movers >30%"
-      ],
-      "screener_count": 1,
-      "high_confluence": false,
-      "in_top_sector": false
-    },
-    {
-      "ticker": "GEN",
-      "company": "Gen Digital",
-      "sector": "Information Technology",
-      "industry": "Systems Software",
-      "price": 30.59,
-      "ret_1w": 8.49,
-      "ret_1m": 36.65,
-      "ret_3m": 5.35,
-      "ret_6m": 53.02,
-      "avg_vol": 7054652,
+      "price": 68.12,
+      "ret_1w": 2.81,
+      "ret_1m": 30.89,
+      "ret_3m": 2.58,
+      "ret_6m": -10.5,
+      "avg_vol": 3767600,
       "screeners": [
         "1-Month Movers >30%"
       ],
@@ -178,12 +125,12 @@
       "company": "Equifax",
       "sector": "Industrials",
       "industry": "Research & Consulting Services",
-      "price": 194.58,
-      "ret_1w": 8.47,
-      "ret_1m": 36.61,
-      "ret_3m": 6.89,
-      "ret_6m": 11.5,
-      "avg_vol": 2003227,
+      "price": 189.59,
+      "ret_1w": 2.7,
+      "ret_1m": 30.27,
+      "ret_3m": 5.03,
+      "ret_6m": 8.51,
+      "avg_vol": 2062125,
       "screeners": [
         "1-Month Movers >30%"
       ],
@@ -192,16 +139,16 @@
       "in_top_sector": false
     },
     {
-      "ticker": "PNR",
-      "company": "Pentair",
-      "sector": "Industrials",
-      "industry": "Industrial Machinery & Supplies & Components",
-      "price": 69.65,
-      "ret_1w": 5.79,
-      "ret_1m": 34.11,
-      "ret_3m": 1.6,
-      "ret_6m": -10.97,
-      "avg_vol": 3697100,
+      "ticker": "GEN",
+      "company": "Gen Digital",
+      "sector": "Information Technology",
+      "industry": "Systems Software",
+      "price": 29.79,
+      "ret_1w": 2.27,
+      "ret_1m": 30.95,
+      "ret_3m": 2.16,
+      "ret_6m": 32.64,
+      "avg_vol": 7165340,
       "screeners": [
         "1-Month Movers >30%"
       ],
@@ -210,34 +157,16 @@
       "in_top_sector": false
     },
     {
-      "ticker": "CCI",
-      "company": "Crown Castle",
-      "sector": "Real Estate",
-      "industry": "Telecom Tower REITs",
-      "price": 91.44,
-      "ret_1w": 2.94,
-      "ret_1m": 32.5,
-      "ret_3m": 22.73,
-      "ret_6m": 3.05,
-      "avg_vol": 6314360,
-      "screeners": [
-        "1-Month Movers >30%"
-      ],
-      "screener_count": 1,
-      "high_confluence": false,
-      "in_top_sector": true
-    },
-    {
-      "ticker": "HAS",
-      "company": "Hasbro",
-      "sector": "Consumer Discretionary",
-      "industry": "Leisure Products",
-      "price": 119.45,
-      "ret_1w": -0.1,
-      "ret_1m": 31.63,
-      "ret_3m": 28.69,
-      "ret_6m": 24.58,
-      "avg_vol": 2612251,
+      "ticker": "ROP",
+      "company": "Roper Technologies",
+      "sector": "Information Technology",
+      "industry": "Electronic Equipment & Instruments",
+      "price": 476.6,
+      "ret_1w": 2.14,
+      "ret_1m": 30.85,
+      "ret_3m": 18.3,
+      "ret_6m": 39.52,
+      "avg_vol": 1151210,
       "screeners": [
         "1-Month Movers >30%"
       ],
@@ -250,12 +179,12 @@
       "company": "Okta, Inc.",
       "sector": "Information Technology",
       "industry": "Application Software",
-      "price": 173.43,
-      "ret_1w": -21.83,
-      "ret_1m": -20.44,
-      "ret_3m": 16.93,
-      "ret_6m": 114.43,
-      "avg_vol": 5094871,
+      "price": 168.69,
+      "ret_1w": -18.99,
+      "ret_1m": -23.4,
+      "ret_3m": 11.89,
+      "ret_6m": 101.06,
+      "avg_vol": 5315555,
       "screeners": [
         "6-Month Movers >100%"
       ],
@@ -264,8 +193,8 @@
       "in_top_sector": false
     }
   ],
-  "high_confluence_count": 3,
-  "in_top_sector_count": 2,
+  "high_confluence_count": 4,
+  "in_top_sector_count": 1,
   "universe_size": 499,
   "source": "yfinance (S&P 500)"
 }
