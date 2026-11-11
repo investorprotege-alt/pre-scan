@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T06:45:14.414994+11:00",
+  "generated_at": "2026-11-11T11:56:08.973499+11:00",
   "mmtw_proxy": {
     "mmtw_proxy": 73.0,
     "above_count": 73,
@@ -8,9 +8,9 @@
     "note": "Sampled 100 of 503 S&P 500 components"
   },
   "nh_nl": {
-    "new_highs": 3,
+    "new_highs": 4,
     "new_lows": 0,
-    "nh_nl_ratio": 3.0,
+    "nh_nl_ratio": 4.0,
     "total_checked": 100,
     "signal": "STRONG \u2014 NH/NL ratio bullish",
     "note": "Sampled 100 tickers, within 1% of 52-week range",
