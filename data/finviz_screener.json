@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-11T06:45:29.790824+11:00",
+  "generated_at": "2026-11-12T06:37:53.078597+11:00",
   "screener_breakdown": {
     "1-Week Movers >20%": 2,
-    "1-Month Movers >30%": 5,
+    "1-Month Movers >30%": 4,
     "3-Month Movers >50%": 1,
     "6-Month Movers >100%": 3,
     "Daily Pullback-to-MA": 0
@@ -13,12 +13,12 @@
       "company": "AppLovin",
       "sector": "Communication Services",
       "industry": "Advertising",
-      "price": 386.86,
-      "ret_1w": 57.57,
-      "ret_1m": 42.82,
-      "ret_3m": 27.36,
-      "ret_6m": -21.16,
-      "avg_vol": 5745717,
+      "price": 408.0,
+      "ret_1w": 50.14,
+      "ret_1m": 49.85,
+      "ret_3m": 30.49,
+      "ret_6m": -10.04,
+      "avg_vol": 5773806,
       "screeners": [
         "1-Week Movers >20%",
         "1-Month Movers >30%"
@@ -32,12 +32,12 @@
       "company": "Moderna",
       "sector": "Health Care",
       "industry": "Biotechnology",
-      "price": 252.54,
-      "ret_1w": 10.55,
-      "ret_1m": 18.15,
-      "ret_3m": 296.64,
-      "ret_6m": 374.08,
-      "avg_vol": 16323188,
+      "price": 248.24,
+      "ret_1w": -3.92,
+      "ret_1m": 14.79,
+      "ret_3m": 290.01,
+      "ret_6m": 392.34,
+      "avg_vol": 15900190,
       "screeners": [
         "3-Month Movers >50%",
         "6-Month Movers >100%"
@@ -47,16 +47,16 @@
       "in_top_sector": false
     },
     {
-      "ticker": "MOS",
-      "company": "Mosaic Company (The)",
-      "sector": "Materials",
-      "industry": "Fertilizers & Agricultural Chemicals",
-      "price": 22.86,
-      "ret_1w": 24.13,
-      "ret_1m": 21.3,
-      "ret_3m": 2.03,
-      "ret_6m": 4.03,
-      "avg_vol": 11227568,
+      "ticker": "COHR",
+      "company": "Coherent Corp.",
+      "sector": "Information Technology",
+      "industry": "Electronic Components",
+      "price": 237.33,
+      "ret_1w": 21.65,
+      "ret_1m": -18.16,
+      "ret_3m": -27.47,
+      "ret_6m": -41.21,
+      "avg_vol": 9536209,
       "screeners": [
         "1-Week Movers >20%"
       ],
@@ -65,18 +65,18 @@
       "in_top_sector": false
     },
     {
-      "ticker": "SWK",
-      "company": "Stanley Black & Decker",
-      "sector": "Industrials",
-      "industry": "Industrial Machinery & Supplies & Components",
-      "price": 116.42,
-      "ret_1w": 11.27,
-      "ret_1m": 31.32,
-      "ret_3m": 14.12,
-      "ret_6m": 50.46,
-      "avg_vol": 1850396,
+      "ticker": "CRL",
+      "company": "Charles River Laboratories",
+      "sector": "Health Care",
+      "industry": "Life Sciences Tools & Services",
+      "price": 347.31,
+      "ret_1w": 6.44,
+      "ret_1m": 16.15,
+      "ret_3m": 23.48,
+      "ret_6m": 113.27,
+      "avg_vol": 1267630,
       "screeners": [
-        "1-Month Movers >30%"
+        "6-Month Movers >100%"
       ],
       "screener_count": 1,
       "high_confluence": false,
@@ -87,12 +87,12 @@
       "company": "Fiserv",
       "sector": "Financials",
       "industry": "Transaction & Payment Processing Services",
-      "price": 63.57,
-      "ret_1w": 8.85,
-      "ret_1m": 38.05,
-      "ret_3m": 23.29,
-      "ret_6m": 15.83,
-      "avg_vol": 7495564,
+      "price": 63.81,
+      "ret_1w": 2.84,
+      "ret_1m": 36.76,
+      "ret_3m": 14.97,
+      "ret_6m": 21.84,
+      "avg_vol": 7659082,
       "screeners": [
         "1-Month Movers >30%"
       ],
@@ -105,50 +105,14 @@
       "company": "Idexx Laboratories",
       "sector": "Health Care",
       "industry": "Health Care Equipment",
-      "price": 697.4,
-      "ret_1w": 3.77,
-      "ret_1m": 33.11,
-      "ret_3m": 22.23,
-      "ret_6m": 30.62,
-      "avg_vol": 711491,
+      "price": 701.3,
+      "ret_1w": 0.39,
+      "ret_1m": 34.79,
+      "ret_3m": 23.7,
+      "ret_6m": 32.65,
+      "avg_vol": 692307,
       "screeners": [
         "1-Month Movers >30%"
-      ],
-      "screener_count": 1,
-      "high_confluence": false,
-      "in_top_sector": false
-    },
-    {
-      "ticker": "PNR",
-      "company": "Pentair",
-      "sector": "Industrials",
-      "industry": "Industrial Machinery & Supplies & Components",
-      "price": 69.59,
-      "ret_1w": -0.2,
-      "ret_1m": 33.63,
-      "ret_3m": 6.33,
-      "ret_6m": -6.68,
-      "avg_vol": 3639980,
-      "screeners": [
-        "1-Month Movers >30%"
-      ],
-      "screener_count": 1,
-      "high_confluence": false,
-      "in_top_sector": false
-    },
-    {
-      "ticker": "CRL",
-      "company": "Charles River Laboratories",
-      "sector": "Health Care",
-      "industry": "Life Sciences Tools & Services",
-      "price": 347.68,
-      "ret_1w": -1.19,
-      "ret_1m": 15.18,
-      "ret_3m": 22.26,
-      "ret_6m": 106.11,
-      "avg_vol": 1280043,
-      "screeners": [
-        "6-Month Movers >100%"
       ],
       "screener_count": 1,
       "high_confluence": false,
@@ -159,22 +123,40 @@
       "company": "Okta, Inc.",
       "sector": "Information Technology",
       "industry": "Application Software",
-      "price": 177.41,
-      "ret_1w": -6.47,
-      "ret_1m": -21.87,
-      "ret_3m": 20.44,
-      "ret_6m": 124.4,
-      "avg_vol": 5279214,
+      "price": 184.11,
+      "ret_1w": -3.63,
+      "ret_1m": -18.73,
+      "ret_3m": 18.82,
+      "ret_6m": 135.43,
+      "avg_vol": 5172229,
       "screeners": [
         "6-Month Movers >100%"
       ],
       "screener_count": 1,
       "high_confluence": false,
       "in_top_sector": false
+    },
+    {
+      "ticker": "PNR",
+      "company": "Pentair",
+      "sector": "Industrials",
+      "industry": "Industrial Machinery & Supplies & Components",
+      "price": 69.31,
+      "ret_1w": -3.78,
+      "ret_1m": 31.48,
+      "ret_3m": 4.15,
+      "ret_6m": -5.0,
+      "avg_vol": 3571155,
+      "screeners": [
+        "1-Month Movers >30%"
+      ],
+      "screener_count": 1,
+      "high_confluence": false,
+      "in_top_sector": true
     }
   ],
   "high_confluence_count": 2,
-  "in_top_sector_count": 1,
+  "in_top_sector_count": 2,
   "universe_size": 499,
   "source": "yfinance (S&P 500)"
 }
