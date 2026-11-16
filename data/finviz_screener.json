@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T05:53:04.597690+11:00",
+  "generated_at": "2026-11-17T09:05:21.706144+11:00",
   "screener_breakdown": {
     "1-Week Movers >20%": 0,
     "1-Month Movers >30%": 2,
@@ -13,12 +13,12 @@
       "company": "Moderna",
       "sector": "Health Care",
       "industry": "Biotechnology",
-      "price": 223.37,
-      "ret_1w": -12.12,
-      "ret_1m": -5.55,
-      "ret_3m": 246.52,
-      "ret_6m": 355.49,
-      "avg_vol": 14854175,
+      "price": 215.27,
+      "ret_1w": -19.97,
+      "ret_1m": -1.26,
+      "ret_3m": 241.92,
+      "ret_6m": 347.45,
+      "avg_vol": 14264779,
       "screeners": [
         "3-Month Movers >50%",
         "6-Month Movers >100%"
@@ -28,16 +28,34 @@
       "in_top_sector": false
     },
     {
+      "ticker": "APP",
+      "company": "AppLovin",
+      "sector": "Communication Services",
+      "industry": "Advertising",
+      "price": 415.22,
+      "ret_1w": 1.27,
+      "ret_1m": 56.02,
+      "ret_3m": 35.14,
+      "ret_6m": -15.67,
+      "avg_vol": 5864015,
+      "screeners": [
+        "1-Month Movers >30%"
+      ],
+      "screener_count": 1,
+      "high_confluence": false,
+      "in_top_sector": false
+    },
+    {
       "ticker": "OKTA",
       "company": "Okta, Inc.",
       "sector": "Information Technology",
       "industry": "Application Software",
-      "price": 182.87,
-      "ret_1w": 8.41,
-      "ret_1m": -12.3,
-      "ret_3m": 27.67,
-      "ret_6m": 120.94,
-      "avg_vol": 4886335,
+      "price": 178.22,
+      "ret_1w": 0.37,
+      "ret_1m": -4.83,
+      "ret_3m": 23.83,
+      "ret_6m": 104.76,
+      "avg_vol": 4826725,
       "screeners": [
         "6-Month Movers >100%"
       ],
@@ -46,34 +64,16 @@
       "in_top_sector": false
     },
     {
-      "ticker": "APP",
-      "company": "AppLovin",
-      "sector": "Communication Services",
-      "industry": "Advertising",
-      "price": 409.1,
-      "ret_1w": 4.57,
-      "ret_1m": 46.48,
-      "ret_3m": 31.13,
-      "ret_6m": -18.34,
-      "avg_vol": 5782990,
-      "screeners": [
-        "1-Month Movers >30%"
-      ],
-      "screener_count": 1,
-      "high_confluence": false,
-      "in_top_sector": true
-    },
-    {
       "ticker": "FISV",
       "company": "Fiserv",
       "sector": "Financials",
       "industry": "Transaction & Payment Processing Services",
-      "price": 63.78,
-      "ret_1w": 1.43,
-      "ret_1m": 35.1,
-      "ret_3m": 22.16,
-      "ret_6m": 15.27,
-      "avg_vol": 8070250,
+      "price": 63.32,
+      "ret_1w": -0.31,
+      "ret_1m": 33.17,
+      "ret_3m": 22.43,
+      "ret_6m": 11.75,
+      "avg_vol": 8328951,
       "screeners": [
         "1-Month Movers >30%"
       ],
@@ -86,12 +86,12 @@
       "company": "Charles River Laboratories",
       "sector": "Health Care",
       "industry": "Life Sciences Tools & Services",
-      "price": 337.97,
-      "ret_1w": 0.13,
-      "ret_1m": 10.36,
-      "ret_3m": 17.91,
-      "ret_6m": 124.04,
-      "avg_vol": 1302310,
+      "price": 335.52,
+      "ret_1w": -5.04,
+      "ret_1m": 11.78,
+      "ret_3m": 20.18,
+      "ret_6m": 123.78,
+      "avg_vol": 1311659,
       "screeners": [
         "6-Month Movers >100%"
       ],
@@ -101,7 +101,7 @@
     }
   ],
   "high_confluence_count": 1,
-  "in_top_sector_count": 1,
+  "in_top_sector_count": 0,
   "universe_size": 499,
   "source": "yfinance (S&P 500)"
 }
