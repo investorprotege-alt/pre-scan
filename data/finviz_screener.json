@@ -1,43 +1,42 @@
 {
-  "generated_at": "2026-11-17T09:05:21.706144+11:00",
+  "generated_at": "2026-11-18T07:58:04.749386+11:00",
   "screener_breakdown": {
     "1-Week Movers >20%": 0,
     "1-Month Movers >30%": 2,
-    "3-Month Movers >50%": 1,
+    "3-Month Movers >50%": 0,
     "6-Month Movers >100%": 3,
     "Daily Pullback-to-MA": 0
   },
   "combined_candidates": [
     {
-      "ticker": "MRNA",
-      "company": "Moderna",
-      "sector": "Health Care",
-      "industry": "Biotechnology",
-      "price": 215.27,
-      "ret_1w": -19.97,
-      "ret_1m": -1.26,
-      "ret_3m": 241.92,
-      "ret_6m": 347.45,
-      "avg_vol": 14264779,
-      "screeners": [
-        "3-Month Movers >50%",
-        "6-Month Movers >100%"
-      ],
-      "screener_count": 2,
-      "high_confluence": true,
-      "in_top_sector": false
-    },
-    {
       "ticker": "APP",
       "company": "AppLovin",
       "sector": "Communication Services",
       "industry": "Advertising",
-      "price": 415.22,
-      "ret_1w": 1.27,
-      "ret_1m": 56.02,
-      "ret_3m": 35.14,
-      "ret_6m": -15.67,
-      "avg_vol": 5864015,
+      "price": 397.86,
+      "ret_1w": 0.6,
+      "ret_1m": 47.84,
+      "ret_3m": 28.02,
+      "ret_6m": -16.57,
+      "avg_vol": 5914313,
+      "screeners": [
+        "1-Month Movers >30%"
+      ],
+      "screener_count": 1,
+      "high_confluence": false,
+      "in_top_sector": false
+    },
+    {
+      "ticker": "FISV",
+      "company": "Fiserv",
+      "sector": "Financials",
+      "industry": "Transaction & Payment Processing Services",
+      "price": 62.4,
+      "ret_1w": -1.45,
+      "ret_1m": 30.86,
+      "ret_3m": 19.83,
+      "ret_6m": 11.38,
+      "avg_vol": 8385127,
       "screeners": [
         "1-Month Movers >30%"
       ],
@@ -50,32 +49,14 @@
       "company": "Okta, Inc.",
       "sector": "Information Technology",
       "industry": "Application Software",
-      "price": 178.22,
-      "ret_1w": 0.37,
-      "ret_1m": -4.83,
+      "price": 174.85,
+      "ret_1w": -1.97,
+      "ret_1m": -7.94,
       "ret_3m": 23.83,
-      "ret_6m": 104.76,
-      "avg_vol": 4826725,
+      "ret_6m": 104.03,
+      "avg_vol": 4829539,
       "screeners": [
         "6-Month Movers >100%"
-      ],
-      "screener_count": 1,
-      "high_confluence": false,
-      "in_top_sector": false
-    },
-    {
-      "ticker": "FISV",
-      "company": "Fiserv",
-      "sector": "Financials",
-      "industry": "Transaction & Payment Processing Services",
-      "price": 63.32,
-      "ret_1w": -0.31,
-      "ret_1m": 33.17,
-      "ret_3m": 22.43,
-      "ret_6m": 11.75,
-      "avg_vol": 8328951,
-      "screeners": [
-        "1-Month Movers >30%"
       ],
       "screener_count": 1,
       "high_confluence": false,
@@ -86,12 +67,30 @@
       "company": "Charles River Laboratories",
       "sector": "Health Care",
       "industry": "Life Sciences Tools & Services",
-      "price": 335.52,
-      "ret_1w": -5.04,
-      "ret_1m": 11.78,
-      "ret_3m": 20.18,
-      "ret_6m": 123.78,
-      "avg_vol": 1311659,
+      "price": 332.77,
+      "ret_1w": -3.77,
+      "ret_1m": 10.92,
+      "ret_3m": 14.75,
+      "ret_6m": 118.31,
+      "avg_vol": 1271712,
+      "screeners": [
+        "6-Month Movers >100%"
+      ],
+      "screener_count": 1,
+      "high_confluence": false,
+      "in_top_sector": false
+    },
+    {
+      "ticker": "MRNA",
+      "company": "Moderna",
+      "sector": "Health Care",
+      "industry": "Biotechnology",
+      "price": 206.84,
+      "ret_1w": -17.54,
+      "ret_1m": -8.84,
+      "ret_3m": 18.61,
+      "ret_6m": 352.41,
+      "avg_vol": 13765929,
       "screeners": [
         "6-Month Movers >100%"
       ],
@@ -100,7 +99,7 @@
       "in_top_sector": false
     }
   ],
-  "high_confluence_count": 1,
+  "high_confluence_count": 0,
   "in_top_sector_count": 0,
   "universe_size": 499,
   "source": "yfinance (S&P 500)"
