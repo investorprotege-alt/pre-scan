@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-19T07:33:55.045002+11:00",
+  "generated_at": "2026-11-20T07:40:03.825573+11:00",
   "screener_breakdown": {
     "1-Week Movers >20%": 0,
     "1-Month Movers >30%": 2,
-    "3-Month Movers >50%": 0,
+    "3-Month Movers >50%": 1,
     "6-Month Movers >100%": 3,
     "Daily Pullback-to-MA": 0
   },
@@ -13,17 +13,18 @@
       "company": "Okta, Inc.",
       "sector": "Information Technology",
       "industry": "Application Software",
-      "price": 194.81,
-      "ret_1w": 6.89,
-      "ret_1m": 0.41,
-      "ret_3m": 45.21,
-      "ret_6m": 118.79,
-      "avg_vol": 4833735,
+      "price": 205.73,
+      "ret_1w": 12.7,
+      "ret_1m": -1.39,
+      "ret_3m": 52.23,
+      "ret_6m": 130.02,
+      "avg_vol": 5028857,
       "screeners": [
+        "3-Month Movers >50%",
         "6-Month Movers >100%"
       ],
-      "screener_count": 1,
-      "high_confluence": false,
+      "screener_count": 2,
+      "high_confluence": true,
       "in_top_sector": false
     },
     {
@@ -31,12 +32,12 @@
       "company": "Pentair",
       "sector": "Industrials",
       "industry": "Industrial Machinery & Supplies & Components",
-      "price": 68.78,
-      "ret_1w": -0.79,
-      "ret_1m": 30.7,
-      "ret_3m": 8.37,
-      "ret_6m": -6.43,
-      "avg_vol": 3264593,
+      "price": 68.57,
+      "ret_1w": 0.62,
+      "ret_1m": 30.35,
+      "ret_3m": 6.99,
+      "ret_6m": -7.02,
+      "avg_vol": 3304046,
       "screeners": [
         "1-Month Movers >30%"
       ],
@@ -49,12 +50,12 @@
       "company": "Charles River Laboratories",
       "sector": "Health Care",
       "industry": "Life Sciences Tools & Services",
-      "price": 333.07,
-      "ret_1w": -2.81,
-      "ret_1m": 5.59,
-      "ret_3m": 14.28,
-      "ret_6m": 113.47,
-      "avg_vol": 1161395,
+      "price": 328.48,
+      "ret_1w": -3.62,
+      "ret_1m": -4.75,
+      "ret_3m": 11.28,
+      "ret_6m": 106.77,
+      "avg_vol": 1054349,
       "screeners": [
         "6-Month Movers >100%"
       ],
@@ -67,12 +68,12 @@
       "company": "AppLovin",
       "sector": "Communication Services",
       "industry": "Advertising",
-      "price": 390.7,
-      "ret_1w": -3.47,
-      "ret_1m": 43.4,
-      "ret_3m": 26.54,
-      "ret_6m": -18.99,
-      "avg_vol": 5943417,
+      "price": 378.38,
+      "ret_1w": -3.89,
+      "ret_1m": 41.24,
+      "ret_3m": 23.75,
+      "ret_6m": -22.13,
+      "avg_vol": 5969823,
       "screeners": [
         "1-Month Movers >30%"
       ],
@@ -85,12 +86,12 @@
       "company": "Moderna",
       "sector": "Health Care",
       "industry": "Biotechnology",
-      "price": 198.15,
-      "ret_1w": -20.32,
-      "ret_1m": -18.15,
-      "ret_3m": 48.63,
-      "ret_6m": 311.78,
-      "avg_vol": 13286390,
+      "price": 199.85,
+      "ret_1w": -13.61,
+      "ret_1m": -18.7,
+      "ret_3m": 37.71,
+      "ret_6m": 322.88,
+      "avg_vol": 11243565,
       "screeners": [
         "6-Month Movers >100%"
       ],
@@ -99,8 +100,8 @@
       "in_top_sector": false
     }
   ],
-  "high_confluence_count": 0,
+  "high_confluence_count": 1,
   "in_top_sector_count": 0,
-  "universe_size": 499,
+  "universe_size": 498,
   "source": "yfinance (S&P 500)"
 }
