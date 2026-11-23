@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-11-23T06:43:02.898485+11:00",
+  "generated_at": "2026-11-24T10:55:35.966964+11:00",
   "screener_breakdown": {
     "1-Week Movers >20%": 0,
-    "1-Month Movers >30%": 1,
-    "3-Month Movers >50%": 0,
-    "6-Month Movers >100%": 2,
+    "1-Month Movers >30%": 2,
+    "3-Month Movers >50%": 1,
+    "6-Month Movers >100%": 3,
     "Daily Pullback-to-MA": 0
   },
   "combined_candidates": [
@@ -13,12 +13,49 @@
       "company": "Okta, Inc.",
       "sector": "Information Technology",
       "industry": "Application Software",
-      "price": 191.46,
-      "ret_1w": 4.7,
-      "ret_1m": -4.9,
-      "ret_3m": 46.19,
-      "ret_6m": 107.57,
-      "avg_vol": 5117240,
+      "price": 206.28,
+      "ret_1w": 15.74,
+      "ret_1m": -3.18,
+      "ret_3m": 57.94,
+      "ret_6m": 119.89,
+      "avg_vol": 5172758,
+      "screeners": [
+        "3-Month Movers >50%",
+        "6-Month Movers >100%"
+      ],
+      "screener_count": 2,
+      "high_confluence": true,
+      "in_top_sector": true
+    },
+    {
+      "ticker": "CMG",
+      "company": "Chipotle Mexican Grill",
+      "sector": "Consumer Discretionary",
+      "industry": "Restaurants",
+      "price": 36.25,
+      "ret_1w": 0.86,
+      "ret_1m": 31.72,
+      "ret_3m": -3.15,
+      "ret_6m": 12.19,
+      "avg_vol": 18434482,
+      "screeners": [
+        "1-Month Movers >30%"
+      ],
+      "screener_count": 1,
+      "high_confluence": false,
+      "in_top_sector": true
+    },
+    {
+      "ticker": "CRL",
+      "company": "Charles River Laboratories",
+      "sector": "Health Care",
+      "industry": "Life Sciences Tools & Services",
+      "price": 338.26,
+      "ret_1w": 0.82,
+      "ret_1m": -2.06,
+      "ret_3m": 13.65,
+      "ret_6m": 115.82,
+      "avg_vol": 1084444,
       "screeners": [
         "6-Month Movers >100%"
       ],
@@ -31,12 +68,12 @@
       "company": "Moderna",
       "sector": "Health Care",
       "industry": "Biotechnology",
-      "price": 195.0,
-      "ret_1w": -12.7,
-      "ret_1m": -3.77,
-      "ret_3m": 40.4,
-      "ret_6m": 315.96,
-      "avg_vol": 10705105,
+      "price": 212.08,
+      "ret_1w": -1.48,
+      "ret_1m": 5.99,
+      "ret_3m": 33.53,
+      "ret_6m": 350.95,
+      "avg_vol": 10258960,
       "screeners": [
         "6-Month Movers >100%"
       ],
@@ -49,12 +86,12 @@
       "company": "AppLovin",
       "sector": "Communication Services",
       "industry": "Advertising",
-      "price": 348.29,
-      "ret_1w": -14.86,
-      "ret_1m": 31.79,
-      "ret_3m": 16.64,
-      "ret_6m": -27.69,
-      "avg_vol": 6125825,
+      "price": 373.92,
+      "ret_1w": -9.95,
+      "ret_1m": 43.68,
+      "ret_3m": 20.41,
+      "ret_6m": -27.29,
+      "avg_vol": 6230987,
       "screeners": [
         "1-Month Movers >30%"
       ],
@@ -63,8 +100,8 @@
       "in_top_sector": false
     }
   ],
-  "high_confluence_count": 0,
-  "in_top_sector_count": 0,
+  "high_confluence_count": 1,
+  "in_top_sector_count": 2,
   "universe_size": 499,
   "source": "yfinance (S&P 500)"
 }
