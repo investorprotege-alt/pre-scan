@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T09:28:39.363232+11:00",
+  "generated_at": "2026-11-25T14:48:45.248346+11:00",
   "mmtw_proxy": {
     "mmtw_proxy": 45.0,
     "above_count": 45,
@@ -17,13 +17,13 @@
     "source": "yfinance"
   },
   "mco_mcsi": {
-    "mco": -2.82,
-    "mcsi": -22.84,
+    "mco": -2.72,
+    "mcsi": -22.74,
     "mco_1sigma_plus": 2.27,
     "mco_1sigma_minus": -2.27,
-    "mco_2sigma_plus": 4.54,
-    "mco_2sigma_minus": -4.54,
-    "mcsi_10ma": -1.65,
+    "mco_2sigma_plus": 4.53,
+    "mco_2sigma_minus": -4.53,
+    "mcsi_10ma": -1.64,
     "mcsi_above_10ma": false,
     "mcsi_curling_up": false,
     "mcsi_curling_down": false,
@@ -49,14 +49,14 @@
       -7.09,
       -9.17,
       -4.11,
-      -2.82
+      -2.72
     ],
     "universe_size": 100
   },
-  "breadth_score": 23.7,
+  "breadth_score": 24.0,
   "breadth_summary": "BEARISH",
   "breadth_factors": [
     "$MMTW: 45.0%",
-    "MCO: -2.82"
+    "MCO: -2.72"
   ]
 }
