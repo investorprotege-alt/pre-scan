@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-11-25T09:29:02.912860+11:00",
+  "generated_at": "2026-11-26T08:43:55.341526+11:00",
   "screener_breakdown": {
     "1-Week Movers >20%": 0,
     "1-Month Movers >30%": 3,
     "3-Month Movers >50%": 1,
-    "6-Month Movers >100%": 3,
+    "6-Month Movers >100%": 2,
     "Daily Pullback-to-MA": 0
   },
   "combined_candidates": [
@@ -13,12 +13,12 @@
       "company": "Moderna",
       "sector": "Health Care",
       "industry": "Biotechnology",
-      "price": 227.38,
-      "ret_1w": 9.95,
-      "ret_1m": 14.35,
-      "ret_3m": 51.93,
-      "ret_6m": 377.59,
-      "avg_vol": 9848204,
+      "price": 220.84,
+      "ret_1w": 12.22,
+      "ret_1m": 6.19,
+      "ret_3m": 54.68,
+      "ret_6m": 364.24,
+      "avg_vol": 9584013,
       "screeners": [
         "3-Month Movers >50%",
         "6-Month Movers >100%"
@@ -28,16 +28,34 @@
       "in_top_sector": false
     },
     {
+      "ticker": "CHTR",
+      "company": "Charter Communications",
+      "sector": "Communication Services",
+      "industry": "Cable & Satellite",
+      "price": 147.27,
+      "ret_1w": 5.81,
+      "ret_1m": 40.35,
+      "ret_3m": -0.71,
+      "ret_6m": 0.01,
+      "avg_vol": 3082130,
+      "screeners": [
+        "1-Month Movers >30%"
+      ],
+      "screener_count": 1,
+      "high_confluence": false,
+      "in_top_sector": false
+    },
+    {
       "ticker": "OKTA",
       "company": "Okta, Inc.",
       "sector": "Information Technology",
       "industry": "Application Software",
-      "price": 198.12,
-      "ret_1w": 13.51,
-      "ret_1m": -9.95,
-      "ret_3m": 47.39,
-      "ret_6m": 121.36,
-      "avg_vol": 5176416,
+      "price": 201.77,
+      "ret_1w": 3.15,
+      "ret_1m": -10.75,
+      "ret_3m": 16.69,
+      "ret_6m": 113.02,
+      "avg_vol": 5195824,
       "screeners": [
         "6-Month Movers >100%"
       ],
@@ -50,48 +68,12 @@
       "company": "Chipotle Mexican Grill",
       "sector": "Consumer Discretionary",
       "industry": "Restaurants",
-      "price": 37.05,
-      "ret_1w": 3.4,
-      "ret_1m": 30.41,
-      "ret_3m": -0.78,
-      "ret_6m": 13.34,
-      "avg_vol": 18176673,
-      "screeners": [
-        "1-Month Movers >30%"
-      ],
-      "screener_count": 1,
-      "high_confluence": false,
-      "in_top_sector": true
-    },
-    {
-      "ticker": "CRL",
-      "company": "Charles River Laboratories",
-      "sector": "Health Care",
-      "industry": "Life Sciences Tools & Services",
-      "price": 336.13,
-      "ret_1w": 1.2,
-      "ret_1m": -5.92,
-      "ret_3m": 13.9,
-      "ret_6m": 104.35,
-      "avg_vol": 1063167,
-      "screeners": [
-        "6-Month Movers >100%"
-      ],
-      "screener_count": 1,
-      "high_confluence": false,
-      "in_top_sector": false
-    },
-    {
-      "ticker": "CHTR",
-      "company": "Charter Communications",
-      "sector": "Communication Services",
-      "industry": "Cable & Satellite",
-      "price": 135.87,
-      "ret_1w": -1.9,
-      "ret_1m": 32.97,
-      "ret_3m": -11.71,
-      "ret_6m": -7.68,
-      "avg_vol": 3011962,
+      "price": 37.4,
+      "ret_1w": 1.22,
+      "ret_1m": 33.67,
+      "ret_3m": 0.48,
+      "ret_6m": 15.36,
+      "avg_vol": 17297075,
       "screeners": [
         "1-Month Movers >30%"
       ],
@@ -104,12 +86,12 @@
       "company": "AppLovin",
       "sector": "Communication Services",
       "industry": "Advertising",
-      "price": 381.11,
-      "ret_1w": -4.47,
-      "ret_1m": 46.16,
-      "ret_3m": 23.69,
-      "ret_6m": -32.88,
-      "avg_vol": 6328266,
+      "price": 378.95,
+      "ret_1w": -3.06,
+      "ret_1m": 44.19,
+      "ret_3m": 21.21,
+      "ret_6m": -36.83,
+      "avg_vol": 6441505,
       "screeners": [
         "1-Month Movers >30%"
       ],
@@ -119,7 +101,7 @@
     }
   ],
   "high_confluence_count": 1,
-  "in_top_sector_count": 1,
+  "in_top_sector_count": 0,
   "universe_size": 499,
   "source": "yfinance (S&P 500)"
 }
