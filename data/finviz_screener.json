@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T08:43:55.341526+11:00",
+  "generated_at": "2026-11-27T08:34:29.906672+11:00",
   "screener_breakdown": {
     "1-Week Movers >20%": 0,
     "1-Month Movers >30%": 3,
@@ -18,7 +18,7 @@
       "ret_1m": 6.19,
       "ret_3m": 54.68,
       "ret_6m": 364.24,
-      "avg_vol": 9584013,
+      "avg_vol": 9588710,
       "screeners": [
         "3-Month Movers >50%",
         "6-Month Movers >100%"
@@ -37,7 +37,7 @@
       "ret_1m": 40.35,
       "ret_3m": -0.71,
       "ret_6m": 0.01,
-      "avg_vol": 3082130,
+      "avg_vol": 3082245,
       "screeners": [
         "1-Month Movers >30%"
       ],
@@ -55,7 +55,7 @@
       "ret_1m": -10.75,
       "ret_3m": 16.69,
       "ret_6m": 113.02,
-      "avg_vol": 5195824,
+      "avg_vol": 5196005,
       "screeners": [
         "6-Month Movers >100%"
       ],
@@ -73,7 +73,7 @@
       "ret_1m": 33.67,
       "ret_3m": 0.48,
       "ret_6m": 15.36,
-      "avg_vol": 17297075,
+      "avg_vol": 17297630,
       "screeners": [
         "1-Month Movers >30%"
       ],
@@ -91,7 +91,7 @@
       "ret_1m": 44.19,
       "ret_3m": 21.21,
       "ret_6m": -36.83,
-      "avg_vol": 6441505,
+      "avg_vol": 6441855,
       "screeners": [
         "1-Month Movers >30%"
       ],
